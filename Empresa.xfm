@@ -1,0 +1,593 @@
+object frmEmpresa: TfrmEmpresa
+  Left = 202
+  Top = 110
+  Width = 675
+  Height = 426
+  VertScrollBar.Range = 422
+  HorzScrollBar.Range = 662
+  ActiveControl = txtRFC
+  BorderIcons = [biSystemMenu]
+  Caption = 'Empresa'
+  Color = clBackground
+  Font.Color = clBlack
+  Font.Height = 13
+  Font.Name = 'MS Shell Dlg'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Font.Weight = 40
+  ParentFont = False
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  object grpProveed: TGroupBox
+    Left = 8
+    Top = 5
+    Width = 653
+    Height = 86
+    Caption = 'Empresa'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 161
+      Top = 26
+      Width = 52
+      Height = 16
+      Caption = 'No&mbre:'
+      FocusControl = txtNombre
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 10
+      Top = 26
+      Width = 39
+      Height = 16
+      Caption = '&R.F.C.:'
+      FocusControl = txtRFC
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtNombre: TEdit
+      Left = 158
+      Top = 46
+      Width = 479
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 75
+      ParentFont = False
+      TabOrder = 1
+      OnKeyUp = Salta
+    end
+    object txtRFC: TEdit
+      Left = 10
+      Top = 46
+      Width = 136
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 13
+      ParentFont = False
+      TabOrder = 0
+      OnKeyUp = Salta
+    end
+  end
+  object btnCancelar: TBitBtn
+    Left = 572
+    Top = 389
+    Width = 90
+    Height = 33
+    Cancel = True
+    Caption = 'Cancelar'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ModalResult = 2
+    ParentFont = False
+    TabOrder = 4
+    Glyph.Data = {
+      E2010000424DDE01000000000000760000002800000024000000120000000100
+      04000000000068010000120B0000120B00001000000010000000000000000000
+      80000080000000808000800000008000800080800000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      333333333333333333333333000033338833333333333333333F333333333333
+      0000333911833333983333333388F333333F3333000033391118333911833333
+      38F38F333F88F33300003339111183911118333338F338F3F8338F3300003333
+      911118111118333338F3338F833338F3000033333911111111833333338F3338
+      3333F8330000333333911111183333333338F333333F83330000333333311111
+      8333333333338F3333383333000033333339111183333333333338F333833333
+      00003333339111118333333333333833338F3333000033333911181118333333
+      33338333338F333300003333911183911183333333383338F338F33300003333
+      9118333911183333338F33838F338F33000033333913333391113333338FF833
+      38F338F300003333333333333919333333388333338FFF830000333333333333
+      3333333333333333333888330000333333333333333333333333333333333333
+      0000}
+    NumGlyphs = 2
+  end
+  object btnAplicar: TBitBtn
+    Left = 572
+    Top = 321
+    Width = 90
+    Height = 33
+    Caption = 'Aplicar'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 3
+    OnClick = btnAplicarClick
+    Glyph.Data = {
+      7A010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000120B0000120B00001000000010000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333033333
+      33333333373F33333333333330B03333333333337F7F33333333333330F03333
+      333333337F7FF3333333333330B00333333333337F773FF33333333330F0F003
+      333333337F7F773F3333333330B0B0B0333333337F7F7F7F3333333300F0F0F0
+      333333377F73737F33333330B0BFBFB03333337F7F33337F33333330F0FBFBF0
+      3333337F7333337F33333330BFBFBFB033333373F3333373333333330BFBFB03
+      33333337FFFFF7FF3333333300000000333333377777777F333333330EEEEEE0
+      33333337FFFFFF7FF3333333000000000333333777777777F33333330000000B
+      03333337777777F7F33333330000000003333337777777773333}
+    NumGlyphs = 2
+  end
+  object grpDomicilio: TGroupBox
+    Left = 8
+    Top = 96
+    Width = 653
+    Height = 217
+    Hint = 'Empresa(Ctrl+2)'
+    Caption = 'Domicilio'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object Label16: TLabel
+      Left = 11
+      Top = 20
+      Width = 34
+      Height = 16
+      Caption = 'Ca&lle:'
+      FocusControl = txtCalle
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label21: TLabel
+      Left = 318
+      Top = 20
+      Width = 49
+      Height = 16
+      Caption = 'Col&onia:'
+      FocusControl = txtColonia
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label22: TLabel
+      Left = 11
+      Top = 70
+      Width = 63
+      Height = 16
+      Caption = 'Locali&dad:'
+      FocusControl = txtLocalidad
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label23: TLabel
+      Left = 244
+      Top = 70
+      Width = 46
+      Height = 16
+      Caption = 'E&stado:'
+      FocusControl = txtEstado
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label24: TLabel
+      Left = 589
+      Top = 20
+      Width = 24
+      Height = 16
+      Caption = '&C.P:'
+      FocusControl = txtCp
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtCalle: TEdit
+      Left = 11
+      Top = 38
+      Width = 290
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 35
+      ParentFont = False
+      TabOrder = 0
+      OnKeyUp = Salta
+    end
+    object txtColonia: TEdit
+      Left = 318
+      Top = 38
+      Width = 254
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 25
+      ParentFont = False
+      TabOrder = 1
+      OnKeyUp = Salta
+    end
+    object txtLocalidad: TEdit
+      Left = 11
+      Top = 90
+      Width = 211
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 25
+      ParentFont = False
+      TabOrder = 3
+      OnKeyUp = Salta
+    end
+    object txtEstado: TEdit
+      Left = 244
+      Top = 90
+      Width = 211
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 25
+      ParentFont = False
+      TabOrder = 4
+      OnKeyUp = Salta
+    end
+    object txtCp: TEdit
+      Left = 590
+      Top = 38
+      Width = 50
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 5
+      ParentFont = False
+      TabOrder = 2
+      OnKeyUp = Salta
+    end
+    object Label34: TLabel
+      Left = 472
+      Top = 70
+      Width = 57
+      Height = 16
+      Caption = '&Tel'#233'fono:'
+      FocusControl = txtTelefono
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtTelefono: TEdit
+      Left = 470
+      Top = 90
+      Width = 170
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 20
+      ParentFont = False
+      TabOrder = 5
+      OnKeyUp = Salta
+    end
+    object Label35: TLabel
+      Left = 11
+      Top = 120
+      Width = 25
+      Height = 16
+      Caption = 'Fa&x:'
+      FocusControl = txtFax
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtFax: TEdit
+      Left = 11
+      Top = 140
+      Width = 170
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 20
+      ParentFont = False
+      TabOrder = 6
+      OnKeyUp = Salta
+    end
+    object Label36: TLabel
+      Left = 190
+      Top = 122
+      Width = 113
+      Height = 16
+      Caption = 'Correo &electr'#243'nico:'
+      FocusControl = txtCorreo
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      WordWrap = True
+    end
+    object txtCorreo: TEdit
+      Left = 189
+      Top = 140
+      Width = 453
+      Height = 24
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 50
+      ParentFont = False
+      TabOrder = 7
+      OnKeyUp = Salta
+    end
+    object Label1: TLabel
+      Left = 14
+      Top = 184
+      Width = 74
+      Height = 16
+      Caption = 'Pagina &web:'
+      FocusControl = txtPagina
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      WordWrap = True
+    end
+    object txtPagina: TEdit
+      Left = 99
+      Top = 181
+      Width = 541
+      Height = 24
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 50
+      ParentFont = False
+      TabOrder = 8
+      OnKeyUp = Salta
+    end
+  end
+  object grpLogo: TGroupBox
+    Left = 8
+    Top = 315
+    Width = 557
+    Height = 107
+    Caption = 'Logo'
+    TabOrder = 2
+    object Label3: TLabel
+      Left = 98
+      Top = 19
+      Width = 65
+      Height = 16
+      Caption = 'R&uta Logo:'
+      FocusControl = txtRutaLogo
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      WordWrap = True
+    end
+    object txtRutaLogo: TEdit
+      Left = 98
+      Top = 39
+      Width = 402
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      TabOrder = 1
+      OnKeyUp = Salta
+    end
+    object btnDir: TBitBtn
+      Left = 508
+      Top = 34
+      Width = 36
+      Height = 32
+      TabOrder = 2
+      OnClick = btnDirClick
+      Glyph.Data = {
+        7A010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000010000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+        5555555555555555555555555555555555555555555555555555555555555555
+        555555555555555555555555555555555555555FFFFFFFFFF555550000000000
+        55555577777777775F55500B8B8B8B8B05555775F555555575F550F0B8B8B8B8
+        B05557F75F555555575F50BF0B8B8B8B8B0557F575FFFFFFFF7F50FBF0000000
+        000557F557777777777550BFBFBFBFB0555557F555555557F55550FBFBFBFBF0
+        555557F555555FF7555550BFBFBF00055555575F555577755555550BFBF05555
+        55555575FFF75555555555700007555555555557777555555555555555555555
+        5555555555555555555555555555555555555555555555555555}
+      NumGlyphs = 2
+    end
+    object pnlLogo: TPanel
+      Left = 6
+      Top = 18
+      Width = 86
+      Height = 84
+      TabOrder = 3
+      object imgLogo: TImage
+        Left = 3
+        Top = 3
+        Width = 79
+        Height = 80
+        Stretch = True
+        Transparent = True
+      end
+    end
+    object Label5: TLabel
+      Left = 98
+      Top = 66
+      Width = 195
+      Height = 13
+      Caption = 'Tama'#241'o recomendado: 250 x 250 pixeles'
+      FocusControl = txtPagina
+      Font.Color = clText
+      Font.Height = 11
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object btnAceptar: TBitBtn
+    Left = 572
+    Top = 355
+    Width = 90
+    Height = 33
+    Caption = 'Aceptar'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 5
+    OnClick = btnAplicarClick
+    Kind = bkOK
+  end
+  object dlgAbrir: TOpenDialog
+    Filter = 'Portable Network Graphics (*.png)|*.png'
+    FilterIndex = 0
+    Height = 0
+    Title = 'Logo'
+    Width = 0
+    Left = 464
+    Top = 398
+  end
+end

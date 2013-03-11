@@ -1,0 +1,159 @@
+object dmDatos: TdmDatos
+  OldCreateOrder = False
+  Left = 594
+  Top = 134
+  Height = 356
+  Width = 355
+  object sqlBase: TSQLConnection
+    ConnectionName = 'Ventas'
+    DriverName = 'Interbase'
+    GetDriverFunc = 'getSQLDriverINTERBASE'
+    LibraryName = 'dbexpint.dll'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Interbase'
+      'Database=database.gdb'
+      'RoleName=RoleName'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'ServerCharSet='
+      'SQLDialect=1'
+      'BlobSize=-1'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'ErrorResourceFile='
+      'LocaleCode=0000'
+      'Interbase TransIsolation=ReadCommited'
+      'Trim Char=False')
+    VendorLib = 'GDS32.DLL'
+    Left = 30
+    Top = 45
+  end
+  object dspProvList: TDataSetProvider
+    DataSet = qryListados
+    Left = 96
+    Top = 160
+  end
+  object cdsCliente: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspProvList'
+    Left = 160
+    Top = 160
+  end
+  object dtsFuente: TDataSource
+    DataSet = cdsCliente
+    Left = 224
+    Top = 160
+  end
+  object dspProvList1: TDataSetProvider
+    DataSet = qryListados1
+    Left = 88
+    Top = 112
+  end
+  object cdsCliente1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspProvList1'
+    Left = 152
+    Top = 112
+  end
+  object dtsFuente1: TDataSource
+    DataSet = cdsCliente1
+    Left = 208
+    Top = 112
+  end
+  object qryModifica: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 149
+    Top = 45
+  end
+  object qryAuxiliar1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 208
+    Top = 45
+  end
+  object dtsArticulos: TDataSetProvider
+    DataSet = qryArticulos
+    Left = 96
+    Top = 208
+  end
+  object cdsArticulos: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dtsArticulos'
+    Left = 160
+    Top = 208
+  end
+  object dscArticulos: TDataSource
+    DataSet = cdsArticulos
+    Left = 208
+    Top = 208
+  end
+  object qryAuxiliar2: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 268
+    Top = 45
+  end
+  object cdsImExportar: TClientDataSet
+    Aggregates = <>
+    AutoCalcFields = False
+    Params = <>
+    ProviderName = 'dtsImExportar'
+    Left = 168
+    Top = 264
+  end
+  object dtsImExportar: TDataSetProvider
+    DataSet = qryImExportar
+    Left = 96
+    Top = 264
+  end
+  object qryConsulta: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 89
+    Top = 45
+  end
+  object qryArticulos: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 32
+    Top = 208
+  end
+  object qryImExportar: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 32
+    Top = 264
+  end
+  object qryListados: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 32
+    Top = 160
+  end
+  object qryListados1: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 32
+    Top = 112
+  end
+  object qryAuxiliar3: TSQLQuery
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = sqlBase
+    Left = 268
+    Top = 109
+  end
+end

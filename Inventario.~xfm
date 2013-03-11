@@ -1,0 +1,1267 @@
+object frmInventario: TfrmInventario
+  Left = 206
+  Top = 129
+  Width = 644
+  Height = 448
+  VertScrollBar.Range = 421
+  HorzScrollBar.Range = 637
+  ActiveControl = pgeGeneral
+  BorderIcons = [biSystemMenu]
+  BorderStyle = fbsSingle
+  Caption = 'Inventarios f'#237'sicos'
+  Color = clBackground
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object pgeGeneral: TPageControl
+    Left = 6
+    Top = 4
+    Width = 631
+    Height = 417
+    ActivePage = tabDatos
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 0
+    OnChange = pgeGeneralChange
+    object tabDatos: TTabSheet
+      Caption = 'Ajuste'
+      object pnlDescCorta: TPanel
+        Left = 125
+        Top = 263
+        Width = 374
+        Height = 120
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 3
+        object Label29: TLabel
+          Left = 11
+          Top = 41
+          Width = 109
+          Height = 16
+          Caption = 'Descripci'#243'n larga:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtDescCortaBusq: TEdit
+          Left = 11
+          Top = 59
+          Width = 350
+          Height = 24
+          CharCase = ecUpperCase
+          MaxLength = 45
+          TabOrder = 1
+        end
+      end
+      object pnlDepto: TPanel
+        Left = 125
+        Top = 263
+        Width = 374
+        Height = 120
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 4
+        object Label30: TLabel
+          Left = 28
+          Top = 51
+          Width = 89
+          Height = 16
+          Caption = 'Departamento:'
+        end
+        object cmbDeptosBusq: TComboBox
+          Left = 122
+          Top = 44
+          Width = 191
+          Height = 24
+          Style = csDropDownList
+          ItemHeight = 18
+          TabOrder = 1
+        end
+      end
+      object pnlCodigo: TPanel
+        Left = 125
+        Top = 263
+        Width = 374
+        Height = 120
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 5
+        object Label27: TLabel
+          Left = 82
+          Top = 52
+          Width = 47
+          Height = 16
+          Caption = 'C'#243'digo:'
+        end
+        object txtCodigoBusq: TEdit
+          Left = 142
+          Top = 46
+          Width = 146
+          Height = 24
+          CharCase = ecUpperCase
+          MaxLength = 13
+          TabOrder = 1
+        end
+      end
+      object pnlCateg: TPanel
+        Left = 125
+        Top = 263
+        Width = 374
+        Height = 120
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Font.Color = clBlack
+        Font.Height = 12
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 6
+        object Label28: TLabel
+          Left = 62
+          Top = 60
+          Width = 59
+          Height = 16
+          Caption = 'Categor'#237'a'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object cmbCategBusq: TComboBox
+          Left = 136
+          Top = 54
+          Width = 165
+          Height = 24
+          Style = csDropDownList
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ItemHeight = 18
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object pnlProveedor: TPanel
+        Left = 125
+        Top = 263
+        Width = 374
+        Height = 120
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        TabOrder = 2
+        object Label37: TLabel
+          Left = 102
+          Top = 36
+          Width = 67
+          Height = 16
+          Caption = 'Proveedor:'
+          FocusControl = txtProvClave
+          Font.Color = clText
+          Font.Height = 13
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtProvClave: TcurrEdit
+          Left = 178
+          Top = 30
+          Width = 33
+          Height = 24
+          Alignment = taRightJustify
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 1
+          Text = '0'
+          OnChange = txtProvClaveChange
+          Mask = '0'
+        end
+        object txtProvDesc: TEdit
+          Left = 8
+          Top = 60
+          Width = 353
+          Height = 24
+          TabStop = False
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+      end
+      object btnBuscar: TBitBtn
+        Left = 505
+        Top = 7
+        Width = 110
+        Height = 37
+        Caption = 'Buscar'
+        Default = True
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 7
+        OnClick = btnBuscarClick
+        Glyph.Data = {
+          EA040000424DE604000000000000360000002800000014000000140000000100
+          180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+          F3F3F3E7E6E6E8E8E8E8E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8
+          E8E9E8E8E9E9E8E9E9E8E8E8E7F3F2F2FFFFFFFFFFFFFFFFFFD6D6D62E2F2F07
+          0B0C0B0F110B0F110B0F110B0F100A0E100A0E100A0E100A0E100B0E10090D0F
+          080C0D090D0F0105061B1D1DD2D1D1FFFFFFFFFFFFA4A4A4414243CBD2D6C2CB
+          D0C2CACEC1CACEC1CACDC0C9CDC0C9CCC1CACEBFC8CDBBC4C8AFB8BDA1A8ABA6
+          AEB2A6B0B51C2225A9A9A8FFFFFFFFFFFFA6A6A65F5F5FF0F2F3DFE2E4DFE3E3
+          DFE3E3DFE3E4E0E3E4DEE2E3E0E3E5DADEDFCDD1D2BDC0C2ADB0B2B0B2B3BEC5
+          C72C3236ACABAAFFFFFFFFFFFFA5A5A5696969F5F7F8DDE0E1DDE1E2DFE2E4DE
+          E2E3DDE1E2DCE0E1DCE0E1D3D7D8B1B5B62F2F31000000C9CDCFC0C6CA2B3235
+          ABABAAFFFFFFFFFFFFA4A4A46D6D6DFBFDFEE1E4E5E2E5E6DBDEDFD1D4D5C8CB
+          CCC8CBCDCDD1D2A4A7A81B1B1B000000000000E5EAEAC7CDD22C3336ABAAAAFF
+          FFFFFFFFFFA4A4A46C6C6CFFFFFFE6E9EAE1E3E4D0D1D3BBBDBDADB0B0ACAEAF
+          A4A6A7252626000000111212AAADAEE1E5E6CBD2D52C3337ABAAAAFFFFFFFFFF
+          FFA4A4A46C6C6CFFFFFFEBEDEEDDDFE0999B9B5A5C5D3F3F405F5F6084868600
+          0000161617AAADADE3E6E8DEE2E3CCD3D62C3336ABAAAAFFFFFFFFFFFFA4A4A4
+          6C6B6BFFFFFFF7F8F99B9B9B3C42425F6C6C656E6EA2A6A6000000171717AAAC
+          ADDFE1E3E1E4E6E0E3E4CFD5D92E3437ABAAAAFFFFFFFFFFFFA4A4A46C6B6BFF
+          FFFFFFFFFF374040839393A3B7B794A7A7AAB6B6ADAEAE595F5FCDCDCEDADEDF
+          E0E4E5E1E4E5CDD3D6292E32ABABAAFFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFF
+          FF000000DCF1F1C3D1D19AADAD899A9A8D9898252524D7D9DAE4E6E7E4E6E7E0
+          E2E3BAC1C222282BACACABFFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFFFF030808
+          DCEDEDE4EDEDADC0C09EB1B17380803F4141EAECECE4E6E7E5E8E8D0D1D2B1B6
+          B8272B2EACACABFFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFFFF595D5D677474D4
+          E5E5CDE1E19EB0B03C45459EA3A3FBFCFDE8EAEAD6D9D9BABBBC8D91931B2022
+          AAA9A9FFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFFFFDDDEDE666A6A2B36361C23
+          23333E3E929393E6E7E76C6C6C1D1D1E1A1B1B1414140809091F2021CDCDCDFF
+          FFFFFFFFFFA4A4A46A6A6AFFFFFFFFFFFFFFFFFFF5F6F6E1E2E2DCDBDBE5E6E6
+          FDFEFEDEDFDFB1B0B0E0E0E0E1E1E1BDBDBD6C6C6C8A8989FFFFFFFFFFFFFFFF
+          FFA4A4A46B6B6BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE1
+          E2E2C7C7C7FFFFFFF2F2F25353534F4F4FFFFFFFFFFFFFFFFFFFFFFFFFA4A4A4
+          6A6A6AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFFFFFFFFFFEBEBEBCDCD
+          CDFBFBFB6464644D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA1A1A15C5C5CFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB6B6B67C7C7C
+          626262FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6D6D63939392626263030
+          302F2F2F2F2F2F2F2F2F2F2F2F2F2F2F3030302929293A3A3A9C9C9CFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2E3E3E3E4E4E4E4E4E4
+          E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E3E3E3EDEDEDFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF}
+      end
+      object btnLimpiar: TBitBtn
+        Left = 505
+        Top = 44
+        Width = 110
+        Height = 37
+        Caption = '&Limpiar'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 9
+        OnClick = btnLimpiarClick
+        Glyph.Data = {
+          EA040000424DE604000000000000360000002800000014000000140000000100
+          180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFEDEDF0A3A3B3C2C3CEF2F2F3FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFF3F3F90F0E1730312B2E2E2A1F1F2B69697BCBCBCDF9F9F9FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFF3131
+          3D64645FFFFFFFEFEFEFADADA95353511F1F244F4F4EA6A6A6FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8080851F1F1EFFFFFF
+          E3E3E3D4D4D4E2E2E3D8D8D9BDBDBD7373732D2D2D333333878787FFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFF2F3FC5A5B66000000CFCFD0F9F9F9CBCBCBD7
+          D7D6D0D0D0DADADAF4F4F4F5F5F5E7E7E78F8F8F171717000000808080FFFFFF
+          FFFFFFFFFFFFFFFFFF61615E0000006C6C81D7D6CFD1D1CFD7D7D7D7D7D7DADA
+          DAE1E1E1DCDCDCDADADAD9D9D9FFFFFFFFFFFFC9C9C93A3A3A020202636363ED
+          EDEDDADAD800000B22226827267D47467994959AC7C7C2DADAD8DDDDDEDFDFDF
+          E2E2E2E2E2E2EBEBEBF6F6F6D2D2D29B9B9B9292925656560000003939399898
+          950002253536A11F1E6E17166A2B2A72666686AAAAAAD2D2CDE2E2E2E8E8E9E6
+          E6E6F6F6F6D8D8D8252525454545595959636363515151A3A3A3C9C9C7000013
+          3239B23739BC2625791E1D6B1D1C6E3B3B78828295C1C2B9DEDEDCF1F1F3F6F6
+          F6393939696969FFFFFFFFFFFFFBFBFBF1F1F1FFFFFFFFFFFF74747300000022
+          28803C43D92A2A8D2423721E1D6C1B1A6D4F4E80B2B2AAE2E2D9787878404040
+          F4F4F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD7D7D51A19081417
+          372B2C8C27267F29298523236E111168242474545470050505C7C7C7FFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFFFFCDCDCC2222241E1E59232273
+          2323713237A43132A029287B201F7211105F030210C1C2C0FFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFF5F5F55353500F103527267A2423760A092008
+          0B1C212573373AAD2F2F890807275E5D5BF7F7F7FFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFA4A4A207081522236A27267F1010462A2926AFAFA93E3F
+          4100001C0000142A2A2ADADAD9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFCFCFC29292714144125247728277E0000009C9C9AFFFFFFFAFAF9BAB9B6
+          AFAFACF8F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA5A6
+          A200001D373AB32C2A8F0000204D4D47FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBDBDB900021F
+          3741CF222484000000ECECEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7272721C1F3223
+          242F9C9C9AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFCC8C8C5D2D2D0FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF}
+      end
+      object txtRegistros: TcurrEdit
+        Left = 509
+        Top = 160
+        Width = 72
+        Height = 24
+        TabStop = False
+        Alignment = taRightJustify
+        Font.Color = clBlue
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 10
+        Text = '0'
+        Mask = '#,##0'
+      end
+      object rdgOrden: TRadioGroup
+        Left = 505
+        Top = 257
+        Width = 108
+        Height = 126
+        Items.Strings = (
+          'C'#243'di&go'
+          'Descrip. &larga'
+          'Categ&or'#237'a'
+          'Departa&mento'
+          'P&roveedor')
+        Caption = 'Orden'
+        Font.Color = clText
+        Font.Height = 11
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ItemIndex = 0
+        ParentFont = False
+        TabOrder = 8
+        OnClick = rdgOrdenClick
+      end
+      object rdgBuscar: TRadioGroup
+        Left = 5
+        Top = 257
+        Width = 118
+        Height = 126
+        Items.Strings = (
+          'C'#243'&digo'
+          '&Descripci'#243'n larga'
+          'Ca&tegor'#237'a'
+          'D&epartamento'
+          '&Proveedor')
+        Caption = 'Buscar'
+        Font.Color = clText
+        Font.Height = 11
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ItemIndex = 0
+        ParentFont = False
+        TabOrder = 1
+        OnClick = rdgBuscarClick
+      end
+      object Label2: TLabel
+        Left = 510
+        Top = 142
+        Width = 61
+        Height = 16
+        Caption = 'Registros:'
+        Font.Color = clText
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+      end
+      object grdListado: TStringGrid
+        Left = 8
+        Top = 6
+        Width = 491
+        Height = 247
+        ColCount = 6
+        DefaultRowHeight = 18
+        FixedCols = 0
+        RowCount = 2
+        Font.Color = clBlack
+        Font.Height = 11
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goAlwaysShowEditor]
+        ParentFont = False
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+        OnClick = grdListadoClick
+        OnDrawCell = grdListadoDrawCell
+        OnExit = grdListadoExit
+        OnKeyDown = grdListadoKeyDown
+        OnKeyPress = grdListadoKeyPress
+        OnKeyUp = grdListadoKeyUp
+      end
+      object btnInventarios: TBitBtn
+        Left = 505
+        Top = 82
+        Width = 110
+        Height = 37
+        Caption = 'Inventarios'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 12
+        OnClick = btnInventariosClick
+        Glyph.Data = {
+          3A030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FFFFFF598298
+          598298598298F5FFFF5982985982985982985982985982985982985982985982
+          98598298598298FFFFFFFFFFFFC2FFFF69C5EEF5FFFFFF1EB0F5FFFF61E2FF61
+          E2FF61E2FF61E2FF61E2FF61E2FF61E2FF69C5EE598298FFFFFFFFFFFFC2FFFF
+          F5FFFFFF1EB0FF1EB0FF1EB0F5FFFF69C5EE69C5EE69C5EE69C5EE69C5EE69C5
+          EE69C5EE598298FFFFFFFFFFFFF5FFFFFF1EB0FF1EB0FF1EB0FF1EB0FF1EB0F5
+          FFFF69C5EE69C5EE69C5EE69C5EE69C5EE69C5EE598298FFFFFFFFFFFFC2FFFF
+          F5FFFFFF1EB0FF1EB0FF1EB0F5FFFF4A49F9F5FFFF69C5EE69C5EE69C5EE69C5
+          EE61E2FF598298FFFFFFFFFFFFF5FFFF73731EF5FFFFFF1EB0F5FFFF4A49F94A
+          49F94A49F9F5FFFF69C5EE69C5EE61E2FF69C5EE598298FFFFFFF5FFFF73731E
+          73731E73731EF5FFFF4A49F94A49F94A49F9F5FFFF8C9EA88C9EA88C9EA88C9E
+          A88C9EA88C9EA8FFFFFFFFFFFFF5FFFF73731E73731E73731EF5FFFF4A49F9F5
+          FFFF69C5EE8C9EA84C54594C54594C54594C54594C54594C5459FFFFFFC2FFFF
+          F5FFFF73731EF5FFFF61E2FFF5FFFF84EAEA69C5EE8C9EA8FFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFF4C5459FFFFFFC2FFFF84EAEAF5FFFF61E2FF69C5EE61E2FF84
+          84EA4A49F98C9EA8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4C5459FFFFFFC2FFFF
+          69C5EE61E2FF69C5EE61E2FF69C5EE4A49F96968C48C9EA8FFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFF4C5459FFFFFFC2FFFF69C5EE69C5EE69C5EE61E2FF61E2FF61
+          E2FF61E2FF8C9EA8FFFFFFFFFFFFFFFFFFFFFFFF4C54594C5459FFFFFFC2FFFF
+          69C5EE69C5EE9C759A9C759A9C759A9C759AFFFFFFD2E7EAFFFFFFFFFFFFFFFF
+          FFFFFFFF8C9EA8FFFFFFFFFFFFC2FFFF8C9EA8FFFFFF9C759A9C759A9C759A9C
+          759AFFFFFFD2E7EAD2E7EAD2E7EAD2E7EAD2E7EAD2E7EAFFFFFFFFFFFF69C5EE
+          69C5EEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF69C5EE69C5EE69C5EE69C5
+          EE69C5EEFFFFFFFFFFFFFFFFFFFFFFFF69C5EE69C5EE69C5EE69C5EE69C5EE69
+          C5EE69C5EE69C5EE69C5EE69C5EE69C5EEFFFFFFFFFFFFFFFFFF}
+      end
+    end
+    object tabBusqueda: TTabSheet
+      Caption = 'Listado'
+      ImageIndex = 1
+      object grdListadoInv: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 496
+        Height = 284
+        Align = alClient
+        DataSource = dmDatos.dtsFuente
+        Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgRowSelect, dgAlwaysShowSelection]
+        TabOrder = 0
+        TitleFont.Color = clBlack
+        TitleFont.Height = 13
+        TitleFont.Name = 'MS Shell Dlg'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Style = []
+        TitleFont.Weight = 40
+        OnCellClick = grdListadoInvCellClick
+        OnDblClick = btnSeleccionarClick
+      end
+      object pnlInventario: TPanel
+        Left = 0
+        Top = 284
+        Width = 623
+        Height = 103
+        Align = alBottom
+        BevelOuter = bvNone
+        TabOrder = 1
+        object grpInventario: TGroupBox
+          Left = 8
+          Top = 12
+          Width = 489
+          Height = 79
+          Caption = 'Datos del inventario'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          object Label3: TLabel
+            Left = 128
+            Top = 26
+            Width = 75
+            Height = 16
+            Caption = '&Descripci'#243'n:'
+            FocusControl = txtDescrip
+            Font.Color = clText
+            Font.Height = 13
+            Font.Name = 'MS Sans Serif'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            ParentFont = False
+          end
+          object txtDescrip: TEdit
+            Left = 128
+            Top = 44
+            Width = 251
+            Height = 24
+            Hint = 'Nombre de la categor'#237'a'
+            CharCase = ecUpperCase
+            Font.Color = clText
+            Font.Height = 13
+            Font.Name = 'MS Sans Serif'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            MaxLength = 30
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
+          end
+          object Label4: TLabel
+            Left = 34
+            Top = 46
+            Width = 4
+            Height = 20
+            Caption = '/'
+            Font.Color = clText
+            Font.Height = 16
+            Font.Name = 'MS Sans Serif'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            ParentFont = False
+          end
+          object txtDia: TEdit
+            Left = 7
+            Top = 44
+            Width = 25
+            Height = 24
+            Font.Color = clBlack
+            Font.Height = 13
+            Font.Name = 'MS Shell Dlg'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            MaxLength = 2
+            ParentFont = False
+            TabOrder = 1
+            OnExit = txtDiaExit
+            OnKeyUp = Salta
+          end
+          object Label5: TLabel
+            Left = 7
+            Top = 26
+            Width = 41
+            Height = 16
+            Caption = 'F&echa:'
+            FocusControl = txtDia
+            Font.Color = clText
+            Font.Height = 13
+            Font.Name = 'MS Sans Serif'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            ParentFont = False
+          end
+          object txtMes: TEdit
+            Left = 40
+            Top = 44
+            Width = 25
+            Height = 24
+            Font.Color = clBlack
+            Font.Height = 13
+            Font.Name = 'MS Shell Dlg'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            MaxLength = 2
+            ParentFont = False
+            TabOrder = 2
+            OnExit = txtDiaExit
+            OnKeyUp = Salta
+          end
+          object Label31: TLabel
+            Left = 67
+            Top = 46
+            Width = 4
+            Height = 20
+            Caption = '/'
+            Font.Color = clText
+            Font.Height = 16
+            Font.Name = 'MS Sans Serif'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            ParentFont = False
+          end
+          object txtAnio: TEdit
+            Left = 73
+            Top = 44
+            Width = 45
+            Height = 24
+            Font.Color = clBlack
+            Font.Height = 13
+            Font.Name = 'MS Shell Dlg'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            MaxLength = 4
+            ParentFont = False
+            TabOrder = 3
+            OnExit = txtAnioExit
+            OnKeyUp = Salta
+          end
+          object Label6: TLabel
+            Left = 387
+            Top = 26
+            Width = 31
+            Height = 16
+            Caption = '&Tipo:'
+            FocusControl = cmbTipo
+            Font.Color = clText
+            Font.Height = 13
+            Font.Name = 'MS Sans Serif'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            Font.Weight = 40
+            ParentFont = False
+          end
+          object cmbTipo: TComboBox
+            Left = 387
+            Top = 44
+            Width = 94
+            Height = 24
+            Style = csDropDownList
+            Font.Color = clBlack
+            Font.Height = 13
+            Font.Name = 'MS Shell Dlg'
+            Font.Pitch = fpVariable
+            Font.Style = []
+            ItemHeight = 18
+            Items.Strings = (
+              'PARCIAL'
+              'TOTAL')
+            ItemIndex = 0
+            ParentFont = False
+            TabOrder = 5
+            Text = 'PARCIAL'
+          end
+        end
+        object btnGuardar: TBitBtn
+          Left = 506
+          Top = 17
+          Width = 110
+          Height = 37
+          Caption = 'Guardar'
+          Default = True
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 1
+          OnClick = btnGuardarClick
+          Glyph.Data = {
+            FA060000424DF606000000000000360000002800000018000000180000000100
+            180000000000C0060000120B0000120B00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC6C6C600000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            0000003E3228000000A2A2A2FFFFFFFFFFFFFFFFFFCACACA0F0D0C6A5E4E7C6E
+            5B625B4F99A0A4B5BCC0ABB3B8C3C9CCC3C9CCD1D5D7E0E2E4E7E9EAD7DBDDB0
+            B5B84D473E76614A70604AD8C39B413C36000000FFFFFFFFFFFFFFFFFF000000
+            9989779E896E9C85653C3833D0D4D7D0D4D6434A4E42494D42494DB5BCC0C9CE
+            D1E2E5E6EAECEDE2E5E6554F4573614878664DDAC1A1403C37000000FFFFFFFF
+            FFFFFFFFFF000000DEC4A4A38B69A18A70433E38DADEE0E8EAEB464E51444C4F
+            444C4FBEC4C7B5BCC0C2C8CBDCE0E1E6E8E958514779684E806C4DDBC3A3433F
+            38000000FFFFFFFFFFFFFFFFFF000000E1C8A8A68D6BA48F724D4740DDE1E2EC
+            EFF05E6567474F52474F52C6CACDB9BFC2B5BCC0C0C6CAD7DADC5D554B7F694E
+            846F4FDCCCBA493E31000000FFFFFFFFFFFFFFFFFF000000E1C9AAA68E6CA48C
+            6C4D4740D3D8DAE2E6E75E6567474F52474F52D4D7D9BFC5C7B5BCC0ABB3B8C9
+            CECF544C437F694D846F4FDCCAB3493E31000000FFFFFFFFFFFFFFFFFF000000
+            E2C9AAAA9170A78F6F59534A8C9397DADDDFDEE1E3E8EAEBE8EAEBE7E9EADADD
+            DFC9CECFC0C6C98E969B6861567A654B8C7354DDC6AA4E4634000000FFFFFFFF
+            FFFFFFFFFF000000E2C4ABAD9472AC906FAE92714E4A41514A42635B52796F62
+            766C5F71695C6F665A6B63586A6357635B5260533B4B4239B39778CBB9A45348
+            36000000FFFFFFFFFFFFFFFFFF000000E2C9A9AF9474B69E81B8A083B9A286B7
+            9F82B69D7FB59C7EB79F82B29879B9A286B8A185B8A185BAA387B79F82BDA78C
+            B8A083BBA58A594A36000000FFFFFFFFFFFFFFFFFF000000E3CEAAB29B7B9A8E
+            7A7A7A7A737373737373737373737373737373726F6B6F6F6F73737373737373
+            73737373736969697E776FB9A2865D513A000000FFFFFFFFFFFFFFFFFF000000
+            E4D1B0B6A1835B5B73FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF737373B8A083645C51000000FFFFFFFF
+            FFFFFFFFFF000000E5CCAEB6A07D737373CECECECDCDCDCDCDCDCDCDCDCDCDCD
+            CDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDC5C5C5737373BAA3876960
+            54000000FFFFFFFFFFFFFFFFFF000000E5CAB5B9A27F737373FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            737373BAA3876D5C45000000FFFFFFFFFFFFFFFFFF000000E7D2B7BBA0826363
+            63FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFF737373BBA488705E46000000FFFFFFFFFFFFFFFFFF000000
+            E6D3B9BFA384737373CECECECDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCDCD
+            CDCDCDCDCDCDCDCDCDCDCDCDCDBFBFBF737373BBA488766248000000FFFFFFFF
+            FFFFFFFFFF000000E7D3B9BFA485737373FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF737373B8A0837C69
+            4F000000FFFFFFFFFFFFFFFFFF000000E7D3B6C1AB87737373FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            737373B8A083806C52000000FFFFFFFFFFFFFFFFFF000000E9D5BAC3A7887066
+            687B81C8747CCB737ACB737BCB727CCC737DCB646BBF707ACC626AC1737CCC5B
+            65C25964C36A6CBA706668B69E81867054000000FFFFFFFFFFFFFFFFFF000000
+            E8D6BBC5AA8A685F607E8DE06E82E06E80E0687ADC7181DC6878DA7381D46E7D
+            D46572CE6472CF6775CE5B67C45865C3696162B7A387877156000000FFFFFFFF
+            FFFFFFFFFF000000F4D7C3E5CDA97A7575BBC5EFBEC8F1BCC6F0B2BCEEB5BEEE
+            B8C1EEB6BFEDADB7E9AFB8E9ADB7E9AFB8E9B1B9E9BABFE5777273E3CDB3D6BE
+            A1000000FFFFFFFFFFFFFFFFFFAAAAAA00000000000000000000000000000000
+            0000000000000000000000000000000000000000000000000000000000000000
+            000000000000000000A6A6A6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+        end
+        object btnCancelar: TBitBtn
+          Left = 506
+          Top = 56
+          Width = 110
+          Height = 37
+          Cancel = True
+          Caption = 'Cancelar'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 2
+          OnClick = btnCancelarClick
+          Glyph.Data = {
+            FA060000424DF606000000000000360000002800000018000000180000000100
+            180000000000C0060000120B0000120B00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB6B6B6323232
+            090A1002081702081708090F303030B4B4B4FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB6B6B611
+            1623061D56072775082C8907297F052064062065051D5E04184D101523B1B1B1
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FF575859061E5A0C36A10C37A40C37A40C37A40C37A20B36A10B359F082A8205
+            1F66062470051951515254FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFF383A410A2C832E55B41F48B00D3AAA0D3AAA0D3AA90C39A80C38
+            A60C37A50C36A20B359F07277B061F6406206534363CFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFF5455570A2E872A53B71F4BB40D3DB00D3DB00D3DB0
+            0D3DB00D3CAE0D3BAC0D3AAA0C38A70C37A40B36A109319606216C051D5D4E4F
+            51FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB2B2B2112B672E58BB1747B60E40B50E
+            40B62F5AC02F5AC00E40B50D3FB40D3EB22550B82E55B82A51B32950B00B36A2
+            09319707236F041647AAAAAAFFFFFFFFFFFFFFFFFFFFFFFF111727325BBC0E41
+            B70E42B90E43BB173E9A788EC07593D83460C60E42BA2654BF2754BC728ED28D
+            A3D92D54B4244CAF0B36A2082C870625710D1222FFFFFFFFFFFFFFFFFFB1B1B1
+            324A800E42B90F44BD0F45BF0B36976B7DA8FFFFFFFFFFFF9CB2E53563C92957
+            C49BB1E2FFFFFFFFFFFF95A9DB2A51B40C38A60A339A07287C041544A8A8A8FF
+            FFFFFFFFFF2E2E2E2951AD0F45BE0F46C20F48C50C3EAA5D74A7FFFFFFFFFFFF
+            FFFFFF9CB3E79CB3E6FFFFFFFFFFFFFFFFFF92A8DC254FB60D3AA90C37A4092F
+            8E051E5F292929FFFFFFFFFFFF080B14456ECC0F47C40F49C70F4BCB0F4DCE0E
+            41A87D8DB1ECECECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB9C8EB2351BD0D3EB2
+            0D3BAD0C38A70B36A2052067060913FFFFFFFFFFFF040D224570D10F49C80F4C
+            CC114ED11250D41251D71554D87D8FB2FFFFFFFFFFFFFFFFFFFFFFFFAFC1EB25
+            56C50E42BA0D3FB50D3DB00D3AAA0C37A406267402091BFFFFFFFFFFFF040D23
+            4572D30F4CCC114ED21251D71253DA1255DD1457DE7386AFFFFFFFFFFFFFFFFF
+            FFFFFFFF9DB4E84E77D32A59C30E41B70D3EB20D3BAC0C38A6082C85030B20FF
+            FFFFFFFFFF070B164875D5104ED01251D61254DB1357E0114ABC7187B1FFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9CB3E74A72CE3C66C70D3FB40D3CAE0C39
+            A80A2F8E050914FFFFFFFFFFFF2929293D68C32A60D71253D91357DF1359E555
+            72ABFFFFFFFFFFFFFFFFFF9BAFD87889ACDADADAFFFFFFFFFFFF7B99DC446DCA
+            0E40B50D3DAF0D3AA9092B7F242424FFFFFFFFFFFFA6A6A615377F4A7ADE1254
+            DB1358E2135BE86980ABFFFFFFFFFFFF9DB3DE1247B1134DC37282A3DBDBDBFF
+            FFFF9EB4E63560C60E40B60D3DB00D3AAA0721649D9D9DFFFFFFFFFFFFFFFFFF
+            0E182E2C63D7477AE31358E3135CE91949A263769C4D638C1044AA1255DA1256
+            DE124BC15D73A07A8CB3274FA60F44BC0E40B60D3DB00D3AA90B1327FFFFFFFF
+            FFFFFFFFFFFFFFFFA6A6A60F34824176E12F6CE4135AE7135DED104FC90F4BC1
+            135BE91358E31255DC1251D60F49C60C3FAC0F46C30F43BC0E40B60D3DB00824
+            6A9D9D9DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF44464B0F44B34479E53470E613
+            5AE7135BE9135BE81359E41357E01253DA124FD40F4DCD0F49C70F46C10E43BB
+            0D3FB50B33933E4045FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2C31
+            3C0F45B5467BE43A73E51358E21358E21356DF1254DB1251D6104ED00F4BCA0F
+            48C50F45BF0E42B90B3597252A35FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFF4144490E36883D72DF4E7FE43D73E11C5ADA1251D6114E
+            D10F4CCC0F49C70F46C20F43BB0929743C3E43FFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9E9E9E0B18300B32842156C7
+            4A79DC4675DA4574D74572D31849B7092B7709142C999999FFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFF9B9B9B222223060C1C03112D03102C050B1B202021969696FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+        end
+      end
+      object Panel2: TPanel
+        Left = 496
+        Top = 0
+        Width = 127
+        Height = 284
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 2
+        object btnSalir: TBitBtn
+          Left = 9
+          Top = 116
+          Width = 110
+          Height = 37
+          Hint = 'Salir'
+          Caption = 'Salir'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ModalResult = 1
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Glyph.Data = {
+            EA040000424DE604000000000000360000002800000014000000140000000100
+            180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFBFBFBE8E8E8EBEBEBECEBECECEBEBEBEAEBEBEA
+            EBEBEAEBEBEAEBEBEAEBEBEAEBEBEAEBEBEAEBEEEEEEFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFA8A8A8000000000000000000000300000600000801000801
+            000800000700000700000700010B03000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFA9A9A94E504F9DA5A05C6D61314936425F48506F5856765E587A6059
+            7B62587A61597A6161866B060806FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            A9A8A8626263F6F8F8B7B9BA7B7F7D545C5520302431463640584646614D4865
+            504A675252725B040604FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1A1A1AAFAFAE67
+            6868F9FBFBDBDEDECDCECEA9ABAB7C7D7D353C371523193244363A5141425A48
+            4B6952040604FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000007B7C79FAFC
+            FCDADEDECDCECEC1C4C4B9BBBBB4B6B76A686A131F1628382D34493A425A4803
+            0504FBFBFBAAAAA9B2B2ADB4B4AEC9C9C100000000004D3F4043D4D6D2E0E3E3
+            CCCDCDBDC0C0B6B8B8C2C4C47372730E19112534283043343B5241030403E9E9
+            E800000000002400001B00001A000036000080000047323234D1D3D0D2D3D3BD
+            C0C0B6B8B8BFC2C271707114211727362B2E4033354B3B030402E9E9E70E0E1F
+            4444B600008F00009100009000009300009B0000461F1F1ADDDFDEC0C3C3B6B8
+            B8BFC2C271707116241928372B2B3C302F4234020403E9E9E61514254D4DC500
+            009600009900009900009800009900009E00003F21210FCBCFCFC2C4C4C8CBCB
+            727172111E132331262635292A392D020203E8E8E51414244F51C800009B0205
+            9E02059E02059E02059E00039F090CBB01014C36362E5251516D6E6E7676770A
+            120C1B261E1E2A21212D24010202E8E7E4171B2D6383FF153FE41C45E51C45E5
+            1D45E51D45E52D56F8374FAF43422FD7DADA8E8F8F333333646565080F09161F
+            1818221B1A251D010201E8E7E41C2032849FFF4263F64768F64A69F43B5BE330
+            54F3273B91484841E0E2E1C1C4C49B9D9DB9BBBB7778780006020F1612121914
+            131B16000101E7E7E6000000121831040B29040B262831536D8AFF20348E5E5D
+            5ADDDFDDCFD1D1BDC0C0B8BABAC1C3C37474740000000A0E0B0B100D0C120E00
+            0001FFFFFFE3E2E1E4E3DFE5E4E0FDFCF50000005368C85B5A55EAECE9DDE0E0
+            CBCCCCBDC0C0B6B8B8C0C2C2787979000000040604050806060906000000FFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFF000000000000787877FAFCFCD8DCDCCACCCCBD
+            BFBFB7B9B9C1C3C34C4C4C000000000000000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFF545454C9C8C8646565FAFCFCDBDFDFCFD0D0C2C4C4AAAB
+            AB9295952B2C2C000000000000000000000000000000FFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFA6A6A6666767F5F7F7CED2D2B6B9B9999D9C787A7B747777
+            292C2C000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFA7A7A7000000212121131414090A0A00000000000001020200000000
+            0000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FBFBFBE7E7E7E6E6E6E8E7E7E9E9E9EAEAEAEBEAEAEBEAEAEDEDEDEFEFEFEFEF
+            EFEFEFEFEFEFEFEFEFEF}
+        end
+        object btnEliminar: TBitBtn
+          Left = 9
+          Top = 38
+          Width = 110
+          Height = 37
+          Caption = 'Eliminar'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 1
+          OnClick = btnEliminarClick
+          Glyph.Data = {
+            EA040000424DE604000000000000360000002800000014000000140000000100
+            180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+            FFFFFFF5F5F5C3C2C26868680000000102020204040203030303030000003334
+            349B9A9AC3C2C2DADADAE7E7E7FFFFFFFFFFFFFFFFFFFFFFFFEAEAEA9C9B9B13
+            1616000706111717687979586868738988758A8A445252536464252F2F000202
+            0000007F7D7DBEBEBEDDDDDDFEFEFEFFFFFFFFFFFFA3A3A32428283644458DA4
+            A4607374BACECE7D90919CB1B2ABC3C33F4E4E7389894857574D5D5D44525211
+            1717656464CACACAF2F2F2FFFFFFFFFFFF8483831E29294F6262A4BABA586B6C
+            C2D8D97E929394A8A9A5BCBC3E4D4D7086864755554F60603B48484251512625
+            25CFCFCFF1F1F1FFFFFFFFFFFF8E8C8C27343454666694AAAA586B6CC0D6D77D
+            919295A8A9A5BCBC3E4D4D7086864755554F5F5F3844444A5B5B2F2D2DDCDCDC
+            F4F4F4FFFFFFFFFFFFB0AFAF243131536565A0B6B7596A6BC4D8D97E929396AA
+            ABA6BDBD3F4D4D7187874755554F5F5F384444495A5A434141FFFFFFFFFFFFFF
+            FFFFFFFFFFADACAC243131536565A5BBBB57696BBED1D27A8C8D8A9C9DA2B6B6
+            394747687E7E4655555060603945454A5B5B413F3FFFFFFFFFFFFFFFFFFFFFFF
+            FFADACAC24313154686899ABAD58696A9DAAA95B68696C78788292932F393951
+            63633F4D4D465353323D3D405050424040FFFFFFFFFFFFFFFFFFFFFFFFAEACAC
+            212C2C556868798A8A5668687C8C8C5160626977786B7F80394545596B6B3D4B
+            4B404D4D2A3434364343434141FFFFFFFFFFFFFFFFFFFFFFFFAFAEAE1C272752
+            65664F616226303045434311100F3B3A3A0200000000000000000B0E0E3E4C4C
+            333F3F263030454343FFFFFFFFFFFFFFFFFFFFFFFFAFAEAE0E1414494D4D2623
+            23C8C9C997B1B3A8C1C3A7BBBD9BB4B78197988095987B83842625250000002A
+            3333434242FFFFFFFFFFFFFFFFFFFCFBFB5455554B4F4F8B9FA0AEBFC2B2C4C5
+            C2D2D3C6D4D6BECACB9BB1B397B1B38AA1A374898A7084855A696A4A4C4C2B2D
+            2ECCCCCCFFFFFFFFFFFFE6E6E600030287A1A293A6A8AEBEC0CCD6D6E1EAEAE1
+            E9EADDE4E5D5DFE0CBD9DBB3C3C59DAEAF7F95956678795B6B6C2B3638706F6F
+            FFFFFFFFFFFFE8E7E70B13139AAFB1D2D9D9F2F7F8EFF7F8E4EFF0E1EDEEDFEE
+            F0DDEDF0C2D7D9BDD4D6C8DBDEBBCCCE9BABAD5E6F71313C3C787676FFFFFFFF
+            FFFFE4E3E3191F1FF2FFFFE3EEEFD4E2E5E5F5F5CCDADBD1E0E1B5C9CBABC6C9
+            9AB4B591AAACA3C0C0A0B9BBB2CCCE8EA7A93E4A4C767574FFFFFFFFFFFFF1F0
+            F064696BC7DFE1C2D9DCDDEEF0B5C4C68A96986271734754552830314954555C
+            6D6E879B9DA1B8BB99B4B5A0BBBD506162716F6FFFFFFFFFFFFFEDECEC1C2121
+            83999BBFD8DBCCE5E78EA1A45B6D6E232B2B1C22241A1F21242C2B7E8F91869D
+            9E9DB2B4A2BCBE849C9E313A3B969595FFFFFFFFFFFFFFFFFFB7B5B56166664E
+            5C5D3846476A7F8093A6A7A7B2B3919A9B949D9EB2C1C3B3C4C6647778424F50
+            2D3939616A6A7C7A7AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFECEBEBBCBBBB6F6D
+            6D5054546B7071EFF0F1FFFFFFFFFFFFDADDDE525656262A2A666566A09F9FDA
+            D9D9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3F3F3
+            6867670000001010100D0D0D0303032A2929D5D4D4FFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFF}
+        end
+        object btnInsertar: TBitBtn
+          Left = 9
+          Top = 0
+          Width = 110
+          Height = 37
+          Caption = 'Insertar'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 2
+          OnClick = btnInsertarClick
+          Glyph.Data = {
+            EA040000424DE604000000000000360000002800000014000000140000000100
+            180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+            F3F3F3E7E6E6E8E8E8E8E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8
+            E8E9E8E8E9E8E8E9E8E8E8E8E7F3F2F2FFFFFFFFFFFFFFFFFFD6D6D62E2F2F07
+            0B0C0B0F110B0F110B0F110B0F100A0E100A0E100A0E100A0E100A0E10090E10
+            090D0F0A0E100105071C1D1DD2D1D1FFFFFFFFFFFFA4A4A4414243CBD2D6C2CB
+            D0C2CACEC1CACEC1CACDC0C9CDC0C9CCC1CACEBFC8CCBEC7CBBDC6CABBC3C7BC
+            C4C9ABB6BB1C2225A9A8A8FFFFFFFFFFFFA6A6A65F5F5FF0F2F3DFE2E4DFE3E3
+            DFE3E3DFE3E4DFE3E4DEE2E2E0E3E4DDE1E2DCE0E2DADDDFD7DADCD7DCDDC8CE
+            D22C3336ABABAAFFFFFFFFFFFFA5A5A5696969F5F7F8DDE0E1DDE1E2DEE1E3DD
+            E1E2DDE1E2DCE0E1DDE1E2DBDFE0DADEE0D7DBDCD5D9DBD5D9DAC6CCD12C3134
+            ABABAAFFFFFFFFFFFFA4A4A46D6D6DFBFDFEE1E4E5E2E5E6E2E5E6E1E4E6E0E4
+            E5E1E4E6E0E4E5DEE2E3DCE0E1DADEDFD7DBDBD8DCDDC7CED22C3236ABAAAAFF
+            FFFFFFFFFFA4A4A46C6C6CFFFFFFE6E8E9E7E8EAE6E8E9E5E8E9E3E6E7E5E8E9
+            E3E6E7E2E4E6DFE3E4DDE1E2D9DDDEDBDFDFCBD2D42C3337ABAAAAFFFFFFFFFF
+            FFA4A4A46C6C6CFFFFFFEAECEDEBEDEDEAECEDEAECEDE7EAEBE9EBECE7E9EAE5
+            E8E9E2E5E7DFE3E4DBDFE0DDE1E2CCD3D62C3336ABAAAAFFFFFFFFFFFFA4A4A4
+            6C6B6BFFFFFFEFF0F1EFF1F1EDEFEFEDEFEFECEEEFEDEFF0ECEEEFEAECEDE6E8
+            E9E1E4E5DFE2E3E0E3E4CFD5D92E3437ABAAAAFFFFFFFFFFFFA4A4A46C6B6BFF
+            FFFFF0F1F2EFF2F1EDEFEFEDEFEFECEEEFEEF0F1ECEEF0EBEDEEE6E8E9E0E4E5
+            DFE2E3E1E4E5CDD3D6292E32ABABAAFFFFFFFFFFFFA4A4A46B6B6BFFFFFFF2F5
+            F5F2F3F4F2F3F4F1F3F3EEF0F0F0F2F2EFF1F1EDEFF0EAECEDE9EBECE4E6E7E0
+            E2E3BAC1C222282BACACABFFFFFFFFFFFFA4A4A46B6B6BFFFFFFF6F7F8F5F6F7
+            F4F5F6F3F4F5F1F3F3F2F4F4F1F3F3EFF2F1EBEDEEE5E7E8E6E8E9D0D1D2B1B6
+            B8272B2EACACABFFFFFFFFFFFFA4A4A46B6B6BFFFFFFF9F9F9F7F9F8F7F8F8F6
+            F7F7F3F5F5F5F6F7F4F4F6F5F7F7F5F6F7E7EAEAD6D9D9BABBBC8D91931B2022
+            AAA9A9FFFFFFFFFFFFA4A4A46B6B6BFFFFFFFCFCFCFAFBFBF9FAFAF8F9F9F5F6
+            F7F7F8F8F8F9FAE9EAEB69696A1D1D1E1A1B1B1414140809091F2021CDCDCDFF
+            FFFFFFFFFFA4A4A46A6A6AFFFFFFFFFFFFFDFDFDFBFCFCFAFBFBF9F9F9FAFAFA
+            FCFDFDDADBDCB0B0B0E0E0E0E1E1E1BDBDBD6C6C6C8A8989FFFFFFFFFFFFFFFF
+            FFA4A4A46B6B6BFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFCFCFCFDFDFDFEFFFFE1
+            E2E2C7C7C7FFFFFFF2F2F25353534F4F4FFFFFFFFFFFFFFFFFFFFFFFFFA4A4A4
+            6A6A6AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFFFFFFFFFFEBEBEBCDCD
+            CDFBFBFB6464644D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA1A1A15C5C5CFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB6B6B67C7C7C
+            626262FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6D6D63939392626263030
+            302F2F2F2F2F2F2F2F2F2F2F2F2F2F2F3030302929293A3A3A9C9C9CFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2E3E3E3E4E4E4E4E4E4
+            E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E3E3E3EDEDEDFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFF}
+        end
+        object btnSeleccionar: TBitBtn
+          Left = 9
+          Top = 77
+          Width = 110
+          Height = 37
+          Caption = '&Seleccionar'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 3
+          OnClick = btnSeleccionarClick
+          Glyph.Data = {
+            EA040000424DE604000000000000360000002800000014000000140000000100
+            180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFF3F3F3B2ABA76F68636159565D5652958E8AE7
+            E7E7FCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF464646
+            FFFFFFFFFFFFE3E3E33B2C240E547A0840711C5D6E0637600F567A2F2018B1B1
+            B1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000534D51C6
+            C5C521150E15547D3FB7DF47BAE64DC8EE44B3DC369CC3134E76190B02B4B3B3
+            FDFDFDFFFFFFFFFFFFDAD9DABDBBBCB9B7B8CCC8CA0000002058350000001141
+            5F399DBC53D4FF53DCFF52DAFF4ED1F64CC8EF43B0D70C4C793A3937E9E8E7FF
+            FFFFE9E8E8000000000A000007000005001126194A8D65224B2F0D252C2F7591
+            4FCCF752DDFF54E2FF53DFFF51D9FF49BCE3258ABF16435FA7A29FFFFFFFEAE8
+            E90312095795703D7C563F7E58407E594B8664498B64214A2B0E1A2148A9CA4E
+            D1F658EAFF57E9FF53E0FF4CCAF03FA7D10020398B8683FFFFFFE9E7E80D1711
+            6FA18447805F4A84634A85634A84634C88654F936C28593209192B45BBE753E1
+            FE5AF0FF55E4FF4FD1FA48BBE00C39478E8886FFFFFFE9E7E809140D6296783B
+            76543F7B59417D5A417E5C417E5B468660539B7128633510243660E6FF57EDFF
+            54E2FF50D4FB3FAFE200173FAAA5A1FFFFFFE6E5E5242A26C9F5DBA3DBBAABE3
+            C3B4EFCCBBF6D3B9F2D1BBF8D496D2A900020F74E7FF6FEEFF5AE5FF52DBFF4E
+            CCF5227FA42E515FE0DCDAFFFFFFE6E4E5272E2ADAFFEAB7E8CCC1F0D5C7F9DC
+            B1EFCBB5F5CE73A6870004127BE1FD80E3F981E5FE67DFFA51D1F93EADDA0B32
+            4D746A65FDFDFDFFFFFFE6E6E60000005C686157605B5A605D798680B9FCD467
+            9A7C31312D0622361F97CB49AFE65ED7FE42B1EB1D89B5022338595255EEEEED
+            FFFFFFFFFFFFFBFBFBA7A6A7A7A6A7A7A6A6B9B6B800000075AE8D4F5350E6E4
+            E598918D385464000010001B26000016344E5C918984F2F2F1FFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000343836FFFFFFFFFFFFFFFFFF
+            F6F2F0E5E2DFE6E2E0E5E1DFF5F2F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFF151515FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+            FFFFFFFFFFFFFFFFFFFF}
+        end
+        object txtRegistrosInv: TcurrEdit
+          Left = 10
+          Top = 204
+          Width = 67
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 4
+          Text = '0'
+          Mask = '#,##0'
+        end
+        object Label1: TLabel
+          Left = 10
+          Top = 186
+          Width = 61
+          Height = 16
+          Caption = 'Registros:'
+          Font.Color = clText
+          Font.Height = 13
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 578
+    Top = 210
+    object mnuInventarios: TMenuItem
+      Caption = '&Inventarios'
+      object mnuInsertar: TMenuItem
+        Caption = '&Insertar'
+        ShortCut = 4147
+        OnClick = btnInsertarClick
+      end
+      object mnuEliminar: TMenuItem
+        Caption = '&Eliminar'
+        ShortCut = 4148
+        OnClick = btnEliminarClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object mnuGuardar: TMenuItem
+        Caption = '&Guardar'
+        ShortCut = 4145
+        OnClick = btnGuardarClick
+      end
+      object mnuCancelar: TMenuItem
+        Caption = '&Cancelar'
+        ShortCut = 4096
+        OnClick = btnCancelarClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object mnuSeleccionar: TMenuItem
+        Caption = 'Seleccionar'
+        ShortCut = 16467
+        OnClick = btnSeleccionarClick
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Salir1: TMenuItem
+        Caption = 'Salir'
+        OnClick = Salir1Click
+      end
+    end
+    object mnuConsulta: TMenuItem
+      Caption = 'Cons&ulta'
+      object mnuBuscar: TMenuItem
+        Caption = '&Buscar'
+        ShortCut = 16450
+        OnClick = btnBuscarClick
+      end
+      object mnuLimpiar: TMenuItem
+        Caption = '&Limpiar'
+        ShortCut = 16460
+        OnClick = btnLimpiarClick
+      end
+    end
+    object mnuReportes: TMenuItem
+      Caption = '&Reportes'
+      object mnuAjustes: TMenuItem
+        Caption = '&Ajustes'
+        OnClick = mnuAjustesClick
+      end
+      object Conteofsico1: TMenuItem
+        Caption = '&Conteo f'#237'sico'
+        object mnuCodigo: TMenuItem
+          Caption = 'C'#243'digo'
+          OnClick = mnuCodigoClick
+        end
+        object mnuDescrip: TMenuItem
+          Caption = 'Descripci'#243'n'
+          OnClick = mnuCodigoClick
+        end
+        object mnuCateg: TMenuItem
+          Caption = 'Categor'#237'a'
+          OnClick = mnuCodigoClick
+        end
+        object mnuDepto: TMenuItem
+          Caption = 'Departamento'
+          OnClick = mnuCodigoClick
+        end
+        object mnuProveedor: TMenuItem
+          Caption = 'Proveedor'
+          OnClick = mnuCodigoClick
+        end
+      end
+      object Valordelinventario1: TMenuItem
+        Caption = '&Valor del inventario'
+        object mnuCodigoValor: TMenuItem
+          Caption = 'C'#243'digo'
+          OnClick = ValorInventario
+        end
+        object mnuDescripValor: TMenuItem
+          Caption = 'Descripci'#243'n'
+          OnClick = ValorInventario
+        end
+        object mnuCategValor: TMenuItem
+          Caption = 'Categor'#237'a'
+          OnClick = ValorInventario
+        end
+        object mnuDeptoValor: TMenuItem
+          Caption = 'Departamento'
+          OnClick = ValorInventario
+        end
+        object mnuProvValor: TMenuItem
+          Caption = 'Proveedor'
+          OnClick = ValorInventario
+        end
+      end
+    end
+    object Procesos1: TMenuItem
+      Caption = '&Procesos'
+      object mnuAfectar: TMenuItem
+        Caption = '&Afectar existencias'
+        OnClick = mnuAfectarClick
+      end
+      object Recalcularexistencias1: TMenuItem
+        Caption = '&Recalcular existencias'
+        OnClick = Recalcularexistencias1Click
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object Importar1: TMenuItem
+        Caption = '&Importar'
+        OnClick = Importar1Click
+      end
+    end
+  end
+end

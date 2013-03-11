@@ -1,0 +1,24 @@
+unit datoscfd;
+
+interface
+
+uses
+  SysUtils, Types, Classes, Variants, QTypes, QGraphics, QControls, QForms, 
+  QDialogs, QStdCtrls;
+
+type
+  Tdcfd = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dcfd: Tdcfd;
+
+implementation
+
+{$R *.xfm}
+
+end.

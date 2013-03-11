@@ -1,0 +1,88 @@
+// --------------------------------------------------------------------------
+// Archivo del Proyecto Ventas
+// Página del proyecto: http://sourceforge.net/projects/ventas
+// --------------------------------------------------------------------------
+// Este archivo puede ser distribuido y/o modificado bajo lo terminos de la
+// Licencia Pública General versión 2 como es publicada por la Free Software
+// Fundation, Inc.
+// --------------------------------------------------------------------------
+
+unit Cambio;
+
+interface
+
+uses
+  SysUtils, Types, Classes, QGraphics, QControls, QForms, QDialogs,
+  QStdCtrls, QButtons, QcurrEdit, IniFiles;
+
+type
+  TfrmCambio = class(TForm)
+    lblComprobante: TLabel;
+    txtComprobante: TcurrEdit;
+    btnAceptar: TBitBtn;
+    txtCambio: TcurrEdit;
+    Label1: TLabel;
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+  private
+    procedure RecuperaConfig;
+  public
+    rCambio : real;
+  end;
+
+var
+  frmCambio: TfrmCambio;
+
+implementation
+
+{$R *.xfm}
+
+procedure TfrmCambio.FormShow(Sender: TObject);
+begin
+    txtCambio.Value := rCambio;
+end;
+
+procedure TfrmCambio.RecuperaConfig;
+var
+    iniArchivo : TIniFile;
+    sIzq, sArriba : String;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+
+    with iniArchivo do begin
+        //Recupera la posición Y de la ventana
+        sArriba := ReadString('Cambio', 'Posy', '');
+
+        //Recupera la posición X de la ventana
+        sIzq := ReadString('Cambio', 'Posx', '');
+
+        if (Length(sIzq) > 0) and (Length(sArriba) > 0) then begin
+            Left := StrToInt(sIzq);
+            Top := StrToInt(sArriba);
+        end;
+        Free;
+    end;
+end;
+
+procedure TfrmCambio.FormClose(Sender: TObject; var Action: TCloseAction);
+var
+    iniArchivo : TIniFile;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+    with iniArchivo do begin
+        // Registra la posición y de la ventana
+        WriteString('Cambio', 'Posy', IntToStr(Top));
+
+        // Registra la posición X de la ventana
+        WriteString('Cambio', 'Posx', IntToStr(Left));
+        Free;
+    end;
+end;
+
+procedure TfrmCambio.FormCreate(Sender: TObject);
+begin
+    RecuperaConfig;
+end;
+
+end.

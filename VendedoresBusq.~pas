@@ -1,0 +1,149 @@
+unit VendedoresBusq;
+
+interface
+
+uses
+  SysUtils, Types, Classes, Variants, QTypes, QGraphics, QControls, QForms, 
+  QDialogs, QStdCtrls, ProveedBusq, QExtCtrls, QcurrEdit, QGrids, QDBGrids,
+  QButtons;
+
+type
+  TfrmVendedoresBusq = class(TfrmProveedBusq)
+    procedure btnBuscarClick(Sender: TObject);
+    procedure rdgBuscarClick(Sender: TObject);
+    procedure btnLimpiarClick(Sender: TObject);
+    procedure btnSalirClick(Sender: TObject);
+    procedure btnSeleccionarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmVendedoresBusq: TfrmVendedoresBusq;
+
+implementation
+
+uses dm;
+
+{$R *.xfm}
+
+procedure TfrmVendedoresBusq.btnBuscarClick(Sender: TObject);
+var
+    sBM : String;
+begin
+    inherited;
+    with dmDatos.qryListados1 do begin
+        sBM := dmDatos.cdsCliente1.Bookmark;
+        dmDatos.cdsCliente1.Active := false;
+
+        Close;
+        SQL.Clear;
+        SQL.Add('SELECT clave, nombre, rfc, calle, colonia, cp,');
+        SQL.Add('localidad, estado, telefono, fax, ecorreo, ');
+        SQL.Add('fecha_cap, fecha_umov FROM vendedores WHERE 1=1');
+
+        if(Length(txtClaveBusq.Text) > 0) then begin
+            SQL.Add('AND clave = ''' + txtClaveBusq.Text + '''');
+        end;
+        if(Length(txtNombreBusq.Text) > 0) then begin
+            SQL.Add('AND nombre LIKE ''%' + txtNombreBusq.Text + '%''');
+        end;
+        if(Length(txtRfcBusq.Text) > 0) then begin
+            SQL.Add('AND rfc STARTING ''' + txtRfcBusq.Text + '''');
+        end;
+        case rdgOrden.ItemIndex of
+            0:  SQL.Add('ORDER BY clave');
+            1:  SQL.Add('ORDER BY rfc');
+            2:  SQL.Add('ORDER BY nombre');
+        end;
+        Open;
+
+        dmDatos.cdsCliente1.Active := true;
+        dmDatos.cdsCliente1.FieldByName('calle').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('colonia').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('cp').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('localidad').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('estado').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('fax').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('fecha_cap').Visible := False;
+        dmDatos.cdsCliente1.FieldByName('clave').DisplayLabel := 'Clave';
+        dmDatos.cdsCliente1.FieldByName('clave').DisplayWidth := 5;
+        dmDatos.cdsCliente1.FieldByName('nombre').DisplayLabel := 'Nombre';
+        dmDatos.cdsCliente1.FieldByName('nombre').DisplayWidth := 30;
+        dmDatos.cdsCliente1.FieldByName('rfc').DisplayLabel := 'RFC';
+        dmDatos.cdsCliente1.FieldByName('telefono').DisplayLabel := 'Teléfono';
+        dmDatos.cdsCliente1.FieldByName('ecorreo').DisplayLabel := 'Correo';
+        dmDatos.cdsCliente1.FieldByName('fecha_umov').DisplayLabel := 'Ultimo movimiento';
+
+        txtRegistros.Value := dmDatos.cdsCliente1.RecordCount;
+        try
+            dmDatos.cdsCliente1.Bookmark := sBM;
+        except
+            txtRegistros.Value := txtRegistros.Value;
+        end;
+
+        grdProveedores.SetFocus;
+    end;
+end;
+
+procedure TfrmVendedoresBusq.rdgBuscarClick(Sender: TObject);
+begin
+    inherited;
+    case rdgBuscar.ItemIndex of
+        0: begin
+            pnlNombre.Visible := false;
+            pnlRfc.Visible := false;
+            pnlClave.Visible := true;
+            pnlNombre.Enabled := false;
+            pnlRfc.Enabled := false;
+            pnlClave.Enabled := true;
+            txtClaveBusq.SetFocus;
+           end;
+        1: begin
+            pnlRfc.Visible := false;
+            pnlClave.Visible := false;
+            pnlNombre.Visible := true;
+            pnlRfc.Enabled := false;
+            pnlClave.Enabled := false;
+            pnlNombre.Enabled := true;
+            txtNombreBusq.SetFocus;
+           end;
+        2: begin
+            pnlNombre.Visible := false;
+            pnlClave.Visible := false;
+            pnlRfc.Visible := true;
+            pnlNombre.Enabled := false;
+            pnlClave.Enabled := false;
+            pnlRfc.Enabled := true;
+            txtRfcBusq.SetFocus;
+           end;
+    end;
+end;
+
+procedure TfrmVendedoresBusq.btnLimpiarClick(Sender: TObject);
+begin
+    inherited;
+    txtClaveBusq.Clear;
+    txtNombreBusq.Clear;
+    txtRfcBusq.Clear;
+end;
+
+procedure TfrmVendedoresBusq.btnSalirClick(Sender: TObject);
+begin
+    inherited;
+    dmDatos.qryListados1.Close;
+end;
+
+procedure TfrmVendedoresBusq.btnSeleccionarClick(Sender: TObject);
+begin
+  inherited;
+    if(txtRegistros.Value > 0) then begin
+        sClave := dmDatos.cdsCliente1.FieldByName('clave').AsString;
+        sNombre := dmDatos.cdsCliente1.FieldByName('nombre').AsString;
+        ModalResult := mrOk;
+    end;
+end;
+
+end.

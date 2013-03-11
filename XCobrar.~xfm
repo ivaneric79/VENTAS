@@ -1,0 +1,1661 @@
+object frmXCobrar: TfrmXCobrar
+  Left = 48
+  Top = 38
+  Width = 708
+  Height = 502
+  VertScrollBar.Range = 475
+  HorzScrollBar.Range = 703
+  ActiveControl = pgeGeneral
+  BorderIcons = [biSystemMenu]
+  BorderStyle = fbsSingle
+  Caption = 'Cuentas por cobrar'
+  Color = clBackground
+  Font.Color = clBlack
+  Font.Height = 13
+  Font.Name = 'MS Shell Dlg'
+  Font.Pitch = fpVariable
+  Font.Style = []
+  Font.Weight = 40
+  Icon.Data = {
+    0000010001002020100001000400E80200001600000028000000200000004000
+    0000010004000000000000000000000000000000000000000000000000000000
+    0000000080000080000000808000800000008000800080800000C0C0C0008080
+    80000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000099999990999999999000000000000000000990000009999000000000000
+    0000000009900000999900000000000000000000009900009990000000000000
+    0000000000099009999000000000000000000000000099099990000000000000
+    0000000000000099990000000000000000000000000000999900000000000000
+    0000000000000099990000000000000000000000000009999990000000000000
+    0000000000000999909900000000000000000000000009990009900000000000
+    0000000000009999000099000000000000000000000099990000099000000000
+    0000000000999999990099999000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000FFFF
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0300
+    003FFF83803FFFF1F0FF0018F0FFFFFC61FFFFFE21FFC00301FFFFFFC3FFFFFF
+    C3FFF00081FFFFFF80FFFFFF847FC0030E3FFFFF0F1F00080207FFFC0307FFFF
+    FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+  Menu = MainMenu1
+  ParentFont = False
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 16
+  TextWidth = 7
+  object pgeGeneral: TPageControl
+    Left = 4
+    Top = 4
+    Width = 699
+    Height = 471
+    ActivePage = tabDatos
+    TabOrder = 0
+    object tabDatos: TTabSheet
+      Caption = 'Cuenta'
+      object grpCliente: TGroupBox
+        Left = 6
+        Top = 0
+        Width = 547
+        Height = 67
+        Caption = 'Cliente'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object Label4: TLabel
+          Left = 9
+          Top = 34
+          Width = 52
+          Height = 16
+          Caption = 'Nombre:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtCliente: TEdit
+          Left = 63
+          Top = 28
+          Width = 472
+          Height = 24
+          TabStop = False
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+      end
+      object GroupBox1: TGroupBox
+        Left = 6
+        Top = 198
+        Width = 679
+        Height = 235
+        Caption = 'Pagos'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        object grdCuentas: TStringGrid
+          Left = 12
+          Top = 24
+          Width = 655
+          Height = 157
+          DefaultRowHeight = 20
+          FixedCols = 0
+          RowCount = 2
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+          ParentFont = False
+          TabOrder = 0
+          OnClick = grdCuentasClick
+          OnDrawCell = grdCuentasDrawCell
+        end
+        object btnAbono: TBitBtn
+          Left = 468
+          Top = 186
+          Width = 93
+          Height = 37
+          Caption = 'Ab&ono'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          OnClick = btnAbonoClick
+        end
+        object btnCancelar: TBitBtn
+          Left = 576
+          Top = 186
+          Width = 93
+          Height = 37
+          Caption = 'Cancelar'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          OnClick = btnCancelarClick
+        end
+      end
+      object grpCredito: TGroupBox
+        Left = 6
+        Top = 68
+        Width = 679
+        Height = 127
+        Caption = 'Cr'#233'dito'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object Label11: TLabel
+          Left = 408
+          Top = 22
+          Width = 37
+          Height = 16
+          Caption = 'Plazo:'
+          FocusControl = txtPlazo
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtPlazo: TcurrEdit
+          Left = 408
+          Top = 38
+          Width = 37
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 3
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+          Text = '0'
+          Mask = '#,##0'
+        end
+        object Label12: TLabel
+          Left = 498
+          Top = 22
+          Width = 43
+          Height = 16
+          Caption = 'Inter'#233's:'
+          FocusControl = txtInteres
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtInteres: TcurrEdit
+          Left = 498
+          Top = 38
+          Width = 55
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+          Text = '0.00%'
+          Sufix = '%'
+          Mask = '#,##0.00'
+        end
+        object Label13: TLabel
+          Left = 564
+          Top = 22
+          Width = 103
+          Height = 16
+          Caption = 'Inter'#233's moratorio:'
+          FocusControl = txtIntMorat
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          WordWrap = True
+        end
+        object txtIntMorat: TcurrEdit
+          Left = 588
+          Top = 38
+          Width = 55
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+          Text = '0.00%'
+          Sufix = '%'
+          Mask = '#,##0.00'
+        end
+        object Label16: TLabel
+          Left = 450
+          Top = 44
+          Width = 26
+          Height = 16
+          Caption = 'd'#237'as'
+          FocusControl = txtPlazo
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object Label17: TLabel
+          Left = 9
+          Top = 68
+          Width = 105
+          Height = 16
+          Caption = 'Monto financiado:'
+          FocusControl = txtMonto
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtMonto: TcurrEdit
+          Left = 21
+          Top = 86
+          Width = 79
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 8
+          Text = '$0.00'
+          Prefix = '$'
+          Mask = '#,##0.00'
+        end
+        object Label15: TLabel
+          Left = 467
+          Top = 68
+          Width = 84
+          Height = 16
+          Caption = 'Total a pagar:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtApagar: TcurrEdit
+          Left = 467
+          Top = 86
+          Width = 80
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 15
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = [fsBold]
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 10
+          Text = '$ 0.00'
+          Prefix = '$ '
+          Mask = '#,##0.00'
+        end
+        object Label9: TLabel
+          Left = 131
+          Top = 68
+          Width = 58
+          Height = 16
+          Caption = 'Intereses:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtCantInteres: TcurrEdit
+          Left = 131
+          Top = 86
+          Width = 80
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 12
+          Text = '$ 0.00'
+          Prefix = '$ '
+          Mask = '#,##0.00'
+        end
+        object Label14: TLabel
+          Left = 227
+          Top = 68
+          Width = 103
+          Height = 16
+          Caption = 'Inter'#233's moratorio:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtCantIntMorat: TcurrEdit
+          Left = 237
+          Top = 86
+          Width = 80
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 14
+          Text = '$ 0.00'
+          Prefix = '$ '
+          Mask = '#,##0.00'
+        end
+        object Label28: TLabel
+          Left = 9
+          Top = 22
+          Width = 85
+          Height = 16
+          Caption = 'Comprobante:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtComprobante: TEdit
+          Left = 9
+          Top = 38
+          Width = 124
+          Height = 24
+          TabStop = False
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 16
+        end
+        object Label29: TLabel
+          Left = 153
+          Top = 22
+          Width = 48
+          Height = 16
+          Caption = 'N'#250'mero'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtPagos: TEdit
+          Left = 331
+          Top = 38
+          Width = 56
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 18
+          Text = '0'
+        end
+        object Label2: TLabel
+          Left = 331
+          Top = 22
+          Width = 43
+          Height = 16
+          Caption = 'Pagos:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object Label8: TLabel
+          Left = 570
+          Top = 68
+          Width = 95
+          Height = 16
+          Caption = 'Fecha de pago:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtProximoPago: TEdit
+          Left = 579
+          Top = 86
+          Width = 76
+          Height = 24
+          TabStop = False
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 21
+        end
+        object Label3: TLabel
+          Left = 232
+          Top = 20
+          Width = 41
+          Height = 16
+          Caption = 'Fecha:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtFecha: TEdit
+          Left = 231
+          Top = 38
+          Width = 76
+          Height = 24
+          TabStop = False
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 23
+        end
+        object Label5: TLabel
+          Left = 353
+          Top = 68
+          Width = 52
+          Height = 16
+          Caption = 'Pagado:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+        end
+        object txtPagado: TcurrEdit
+          Left = 353
+          Top = 86
+          Width = 80
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 15
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 25
+          Text = '$ 0.00'
+          Prefix = '$ '
+          Mask = '#,##0.00'
+        end
+        object txtNumero: TcurrEdit
+          Left = 150
+          Top = 38
+          Width = 67
+          Height = 24
+          TabStop = False
+          Alignment = taRightJustify
+          Font.Color = clBlue
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 26
+          Text = '0'
+          Mask = '#,##0'
+        end
+      end
+      object pnlEstatus: TPanel
+        Left = 576
+        Top = 22
+        Width = 91
+        Height = 34
+        Font.Color = clWhite
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+      end
+    end
+    object tabBusqueda: TTabSheet
+      Caption = 'B'#250'squeda'
+      ImageIndex = 1
+      object grdListado: TDBGrid
+        Left = 6
+        Top = 6
+        Width = 565
+        Height = 283
+        DataSource = dmDatos.dtsFuente1
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 0
+        TitleFont.Color = clBlack
+        TitleFont.Height = 13
+        TitleFont.Name = 'MS Shell Dlg'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Style = []
+        TitleFont.Weight = 40
+        OnDrawColumnCell = grdListadoDrawColumnCell
+        OnDblClick = btnSeleccionarClick
+      end
+      object grpBuscar: TGroupBox
+        Left = -2
+        Top = 286
+        Width = 590
+        Height = 145
+        Caption = 'Buscar'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        object chkEstatus: TCheckBox
+          Left = 330
+          Top = 26
+          Width = 73
+          Height = 19
+          Caption = 'Estatus:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 19
+          OnClick = chkEstatusClick
+        end
+        object chkCliente: TCheckBox
+          Left = 13
+          Top = 25
+          Width = 67
+          Height = 19
+          Caption = 'Cliente:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 0
+          OnClick = chkClienteClick
+        end
+        object chkNoComp: TCheckBox
+          Left = 13
+          Top = 114
+          Width = 115
+          Height = 19
+          Caption = 'No. Comprob.:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 16
+          OnClick = chkNoCompClick
+        end
+        object chkFecha: TCheckBox
+          Left = 13
+          Top = 56
+          Width = 60
+          Height = 19
+          Caption = 'Fecha:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 2
+          OnClick = chkFechaClick
+        end
+        object txtClienteBusq: TEdit
+          Left = 83
+          Top = 24
+          Width = 237
+          Height = 21
+          CharCase = ecUpperCase
+          Font.Color = clBlack
+          Font.Height = 12
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 1
+          Visible = False
+        end
+        object cmbEstatus: TComboBox
+          Left = 404
+          Top = 25
+          Width = 140
+          Height = 21
+          Style = csDropDownList
+          Font.Color = clBlack
+          Font.Height = 12
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ItemHeight = 15
+          Items.Strings = (
+            'ACTIVA'
+            'CANCELADA'
+            'PAGADA')
+          ParentFont = False
+          TabOrder = 20
+          Visible = False
+        end
+        object lblDesdeComp: TLabel
+          Left = 123
+          Top = 114
+          Width = 41
+          Height = 16
+          Caption = 'Desde'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object lblHastaComp: TLabel
+          Left = 228
+          Top = 114
+          Width = 39
+          Height = 16
+          Caption = 'Hasta:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtCompFin: TcurrEdit
+          Left = 269
+          Top = 111
+          Width = 53
+          Height = 21
+          Alignment = taRightJustify
+          Font.Color = clBlack
+          Font.Height = 12
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 18
+          Text = '0'
+          Visible = False
+          Mask = '#,##0'
+        end
+        object txtCompIni: TcurrEdit
+          Left = 169
+          Top = 111
+          Width = 52
+          Height = 21
+          Alignment = taRightJustify
+          Font.Color = clBlack
+          Font.Height = 12
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 17
+          Text = '0'
+          Visible = False
+          Mask = '#,##0'
+        end
+        object chkComprobante: TCheckBox
+          Left = 330
+          Top = 56
+          Width = 107
+          Height = 19
+          Caption = 'Comprobante:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 21
+          OnClick = chkComprobanteClick
+        end
+        object cmbComprobante: TComboBox
+          Left = 437
+          Top = 54
+          Width = 147
+          Height = 21
+          Style = csDropDownList
+          Font.Color = clBlack
+          Font.Height = 12
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ItemHeight = 15
+          Items.Strings = (
+            'FACTURA'
+            'NOTA'
+            'TICKET')
+          ParentFont = False
+          TabOrder = 22
+          Visible = False
+        end
+        object chkVencim: TCheckBox
+          Left = 13
+          Top = 86
+          Width = 69
+          Height = 19
+          Caption = 'Vencim.:'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          TabOrder = 9
+          OnClick = chkVencimClick
+        end
+        object txtDiaVenIni: TEdit
+          Left = 82
+          Top = 82
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 10
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object txtMesVenIni: TEdit
+          Left = 112
+          Top = 82
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 11
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object txtAnioVenIni: TEdit
+          Left = 146
+          Top = 82
+          Width = 45
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 4
+          ParentFont = False
+          TabOrder = 12
+          Visible = False
+          OnExit = txtAnioVenIniExit
+          OnKeyUp = Salta
+        end
+        object lblDiagVenMes1: TLabel
+          Left = 140
+          Top = 83
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object lblDiagVenDia1: TLabel
+          Left = 107
+          Top = 83
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtDiaVenFin: TEdit
+          Left = 211
+          Top = 82
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 13
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object txtMesVenFin: TEdit
+          Left = 243
+          Top = 82
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 14
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object txtAnioVenFin: TEdit
+          Left = 275
+          Top = 82
+          Width = 45
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          MaxLength = 4
+          ParentFont = False
+          TabOrder = 15
+          Visible = False
+          OnExit = txtAnioVenFinExit
+          OnKeyUp = Salta
+        end
+        object lblDiagVenMes2: TLabel
+          Left = 269
+          Top = 83
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object lblDiagVenDia2: TLabel
+          Left = 237
+          Top = 83
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object lblAlVen: TLabel
+          Left = 196
+          Top = 85
+          Width = 11
+          Height = 16
+          Caption = 'al'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtAnioFin: TEdit
+          Left = 275
+          Top = 51
+          Width = 45
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          MaxLength = 4
+          ParentFont = False
+          TabOrder = 8
+          Visible = False
+          OnExit = txtAnioFinExit
+          OnKeyUp = Salta
+        end
+        object lblDiagMes2: TLabel
+          Left = 270
+          Top = 55
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtMesFin: TEdit
+          Left = 244
+          Top = 51
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 7
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object lblDiagDia2: TLabel
+          Left = 239
+          Top = 55
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtDiaFin: TEdit
+          Left = 212
+          Top = 51
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 6
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object lblAl: TLabel
+          Left = 194
+          Top = 59
+          Width = 11
+          Height = 16
+          Caption = 'al'
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          ParentFont = False
+          Visible = False
+        end
+        object txtAnioIni: TEdit
+          Left = 143
+          Top = 51
+          Width = 45
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          MaxLength = 4
+          ParentFont = False
+          TabOrder = 5
+          Visible = False
+          OnExit = txtAnioIniExit
+          OnKeyUp = Salta
+        end
+        object lblDiagMes1: TLabel
+          Left = 138
+          Top = 55
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtMesIni: TEdit
+          Left = 112
+          Top = 51
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 4
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+        object lblDiagDia1: TLabel
+          Left = 107
+          Top = 55
+          Width = 4
+          Height = 20
+          Caption = '/'
+          Font.Color = clText
+          Font.Height = 16
+          Font.Name = 'MS Sans Serif'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          Font.Weight = 40
+          ParentFont = False
+          Visible = False
+        end
+        object txtDiaIni: TEdit
+          Left = 82
+          Top = 51
+          Width = 25
+          Height = 24
+          Font.Color = clBlack
+          Font.Height = 13
+          Font.Name = 'MS Shell Dlg'
+          Font.Pitch = fpVariable
+          Font.Style = []
+          MaxLength = 2
+          ParentFont = False
+          TabOrder = 3
+          Visible = False
+          OnExit = txtDiaIniExit
+          OnKeyUp = Salta
+        end
+      end
+      object rdgOrden: TRadioGroup
+        Left = 599
+        Top = 299
+        Width = 88
+        Height = 138
+        Items.Strings = (
+          'Cliente'
+          'Vencim.'
+          'Estatus')
+        Font.Color = clText
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ItemIndex = 0
+        ParentFont = False
+        TabOrder = 2
+        OnClick = btnBuscarClick
+      end
+      object Label1: TLabel
+        Left = 609
+        Top = 291
+        Width = 42
+        Height = 16
+        Caption = 'Orden'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+        Visible = False
+      end
+      object pnlJuego: TPanel
+        Left = 580
+        Top = 239
+        Width = 17
+        Height = 15
+        Color = 10070007
+        TabOrder = 4
+      end
+      object pnlNoInventariable: TPanel
+        Left = 580
+        Top = 256
+        Width = 17
+        Height = 15
+        Color = 14466981
+        TabOrder = 5
+      end
+      object pnlNormal: TPanel
+        Left = 580
+        Top = 222
+        Width = 17
+        Height = 15
+        Color = 12569271
+        TabOrder = 6
+      end
+      object Label25: TLabel
+        Left = 605
+        Top = 223
+        Width = 30
+        Height = 13
+        Caption = 'Activa'
+        Font.Color = clText
+        Font.Height = 12
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+      end
+      object Label24: TLabel
+        Left = 604
+        Top = 256
+        Width = 37
+        Height = 13
+        Caption = 'Pagada'
+        Font.Color = clText
+        Font.Height = 12
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+      end
+      object Label23: TLabel
+        Left = 604
+        Top = 239
+        Width = 51
+        Height = 13
+        Caption = 'Cancelada'
+        Font.Color = clText
+        Font.Height = 12
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+      end
+      object btnBuscar: TBitBtn
+        Left = 577
+        Top = 5
+        Width = 109
+        Height = 37
+        Caption = 'Buscar'
+        Default = True
+        TabOrder = 10
+        OnClick = btnBuscarClick
+        Glyph.Data = {
+          EA040000424DE604000000000000360000002800000014000000140000000100
+          180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+          F3F3F3E7E6E6E8E8E8E8E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8E8E9E8
+          E8E9E8E8E9E9E8E9E9E8E8E8E7F3F2F2FFFFFFFFFFFFFFFFFFD6D6D62E2F2F07
+          0B0C0B0F110B0F110B0F110B0F100A0E100A0E100A0E100A0E100B0E10090D0F
+          080C0D090D0F0105061B1D1DD2D1D1FFFFFFFFFFFFA4A4A4414243CBD2D6C2CB
+          D0C2CACEC1CACEC1CACDC0C9CDC0C9CCC1CACEBFC8CDBBC4C8AFB8BDA1A8ABA6
+          AEB2A6B0B51C2225A9A9A8FFFFFFFFFFFFA6A6A65F5F5FF0F2F3DFE2E4DFE3E3
+          DFE3E3DFE3E4E0E3E4DEE2E3E0E3E5DADEDFCDD1D2BDC0C2ADB0B2B0B2B3BEC5
+          C72C3236ACABAAFFFFFFFFFFFFA5A5A5696969F5F7F8DDE0E1DDE1E2DFE2E4DE
+          E2E3DDE1E2DCE0E1DCE0E1D3D7D8B1B5B62F2F31000000C9CDCFC0C6CA2B3235
+          ABABAAFFFFFFFFFFFFA4A4A46D6D6DFBFDFEE1E4E5E2E5E6DBDEDFD1D4D5C8CB
+          CCC8CBCDCDD1D2A4A7A81B1B1B000000000000E5EAEAC7CDD22C3336ABAAAAFF
+          FFFFFFFFFFA4A4A46C6C6CFFFFFFE6E9EAE1E3E4D0D1D3BBBDBDADB0B0ACAEAF
+          A4A6A7252626000000111212AAADAEE1E5E6CBD2D52C3337ABAAAAFFFFFFFFFF
+          FFA4A4A46C6C6CFFFFFFEBEDEEDDDFE0999B9B5A5C5D3F3F405F5F6084868600
+          0000161617AAADADE3E6E8DEE2E3CCD3D62C3336ABAAAAFFFFFFFFFFFFA4A4A4
+          6C6B6BFFFFFFF7F8F99B9B9B3C42425F6C6C656E6EA2A6A6000000171717AAAC
+          ADDFE1E3E1E4E6E0E3E4CFD5D92E3437ABAAAAFFFFFFFFFFFFA4A4A46C6B6BFF
+          FFFFFFFFFF374040839393A3B7B794A7A7AAB6B6ADAEAE595F5FCDCDCEDADEDF
+          E0E4E5E1E4E5CDD3D6292E32ABABAAFFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFF
+          FF000000DCF1F1C3D1D19AADAD899A9A8D9898252524D7D9DAE4E6E7E4E6E7E0
+          E2E3BAC1C222282BACACABFFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFFFF030808
+          DCEDEDE4EDEDADC0C09EB1B17380803F4141EAECECE4E6E7E5E8E8D0D1D2B1B6
+          B8272B2EACACABFFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFFFF595D5D677474D4
+          E5E5CDE1E19EB0B03C45459EA3A3FBFCFDE8EAEAD6D9D9BABBBC8D91931B2022
+          AAA9A9FFFFFFFFFFFFA4A4A46B6B6BFFFFFFFFFFFFDDDEDE666A6A2B36361C23
+          23333E3E929393E6E7E76C6C6C1D1D1E1A1B1B1414140809091F2021CDCDCDFF
+          FFFFFFFFFFA4A4A46A6A6AFFFFFFFFFFFFFFFFFFF5F6F6E1E2E2DCDBDBE5E6E6
+          FDFEFEDEDFDFB1B0B0E0E0E0E1E1E1BDBDBD6C6C6C8A8989FFFFFFFFFFFFFFFF
+          FFA4A4A46B6B6BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE1
+          E2E2C7C7C7FFFFFFF2F2F25353534F4F4FFFFFFFFFFFFFFFFFFFFFFFFFA4A4A4
+          6A6A6AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFFFFFFFFFFEBEBEBCDCD
+          CDFBFBFB6464644D4D4DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA1A1A15C5C5CFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB6B6B67C7C7C
+          626262FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD6D6D63939392626263030
+          302F2F2F2F2F2F2F2F2F2F2F2F2F2F2F3030302929293A3A3A9C9C9CFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F2F2E3E3E3E4E4E4E4E4E4
+          E4E4E4E4E4E4E4E4E4E4E4E4E4E4E4E3E3E3EDEDEDFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF}
+      end
+      object btnSeleccionar: TBitBtn
+        Left = 577
+        Top = 42
+        Width = 109
+        Height = 37
+        Caption = 'Seleccionar'
+        TabOrder = 11
+        OnClick = btnSeleccionarClick
+        Glyph.Data = {
+          EA040000424DE604000000000000360000002800000014000000140000000100
+          180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFF3F3F3B2ABA76F68636159565D5652958E8AE7
+          E7E7FCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF464646
+          FFFFFFFFFFFFE3E3E33B2C240E547A0840711C5D6E0637600F567A2F2018B1B1
+          B1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000534D51C6
+          C5C521150E15547D3FB7DF47BAE64DC8EE44B3DC369CC3134E76190B02B4B3B3
+          FDFDFDFFFFFFFFFFFFDAD9DABDBBBCB9B7B8CCC8CA0000002058350000001141
+          5F399DBC53D4FF53DCFF52DAFF4ED1F64CC8EF43B0D70C4C793A3937E9E8E7FF
+          FFFFE9E8E8000000000A000007000005001126194A8D65224B2F0D252C2F7591
+          4FCCF752DDFF54E2FF53DFFF51D9FF49BCE3258ABF16435FA7A29FFFFFFFEAE8
+          E90312095795703D7C563F7E58407E594B8664498B64214A2B0E1A2148A9CA4E
+          D1F658EAFF57E9FF53E0FF4CCAF03FA7D10020398B8683FFFFFFE9E7E80D1711
+          6FA18447805F4A84634A85634A84634C88654F936C28593209192B45BBE753E1
+          FE5AF0FF55E4FF4FD1FA48BBE00C39478E8886FFFFFFE9E7E809140D6296783B
+          76543F7B59417D5A417E5C417E5B468660539B7128633510243660E6FF57EDFF
+          54E2FF50D4FB3FAFE200173FAAA5A1FFFFFFE6E5E5242A26C9F5DBA3DBBAABE3
+          C3B4EFCCBBF6D3B9F2D1BBF8D496D2A900020F74E7FF6FEEFF5AE5FF52DBFF4E
+          CCF5227FA42E515FE0DCDAFFFFFFE6E4E5272E2ADAFFEAB7E8CCC1F0D5C7F9DC
+          B1EFCBB5F5CE73A6870004127BE1FD80E3F981E5FE67DFFA51D1F93EADDA0B32
+          4D746A65FDFDFDFFFFFFE6E6E60000005C686157605B5A605D798680B9FCD467
+          9A7C31312D0622361F97CB49AFE65ED7FE42B1EB1D89B5022338595255EEEEED
+          FFFFFFFFFFFFFBFBFBA7A6A7A7A6A7A7A6A6B9B6B800000075AE8D4F5350E6E4
+          E598918D385464000010001B26000016344E5C918984F2F2F1FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000343836FFFFFFFFFFFFFFFFFF
+          F6F2F0E5E2DFE6E2E0E5E1DFF5F2F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFF151515FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF}
+      end
+      object btnLimpiar: TBitBtn
+        Left = 577
+        Top = 80
+        Width = 109
+        Height = 37
+        Caption = 'Limpiar'
+        TabOrder = 12
+        OnClick = btnLimpiarClick
+        Glyph.Data = {
+          EA040000424DE604000000000000360000002800000014000000140000000100
+          180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFEDEDF0A3A3B3C2C3CEF2F2F3FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFF3F3F90F0E1730312B2E2E2A1F1F2B69697BCBCBCDF9F9F9FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFF3131
+          3D64645FFFFFFFEFEFEFADADA95353511F1F244F4F4EA6A6A6FFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8080851F1F1EFFFFFF
+          E3E3E3D4D4D4E2E2E3D8D8D9BDBDBD7373732D2D2D333333878787FFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFF2F3FC5A5B66000000CFCFD0F9F9F9CBCBCBD7
+          D7D6D0D0D0DADADAF4F4F4F5F5F5E7E7E78F8F8F171717000000808080FFFFFF
+          FFFFFFFFFFFFFFFFFF61615E0000006C6C81D7D6CFD1D1CFD7D7D7D7D7D7DADA
+          DAE1E1E1DCDCDCDADADAD9D9D9FFFFFFFFFFFFC9C9C93A3A3A020202636363ED
+          EDEDDADAD800000B22226827267D47467994959AC7C7C2DADAD8DDDDDEDFDFDF
+          E2E2E2E2E2E2EBEBEBF6F6F6D2D2D29B9B9B9292925656560000003939399898
+          950002253536A11F1E6E17166A2B2A72666686AAAAAAD2D2CDE2E2E2E8E8E9E6
+          E6E6F6F6F6D8D8D8252525454545595959636363515151A3A3A3C9C9C7000013
+          3239B23739BC2625791E1D6B1D1C6E3B3B78828295C1C2B9DEDEDCF1F1F3F6F6
+          F6393939696969FFFFFFFFFFFFFBFBFBF1F1F1FFFFFFFFFFFF74747300000022
+          28803C43D92A2A8D2423721E1D6C1B1A6D4F4E80B2B2AAE2E2D9787878404040
+          F4F4F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD7D7D51A19081417
+          372B2C8C27267F29298523236E111168242474545470050505C7C7C7FFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFFFFFCDCDCC2222241E1E59232273
+          2323713237A43132A029287B201F7211105F030210C1C2C0FFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFF5F5F55353500F103527267A2423760A092008
+          0B1C212573373AAD2F2F890807275E5D5BF7F7F7FFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFA4A4A207081522236A27267F1010462A2926AFAFA93E3F
+          4100001C0000142A2A2ADADAD9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFCFCFC29292714144125247728277E0000009C9C9AFFFFFFFAFAF9BAB9B6
+          AFAFACF8F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA5A6
+          A200001D373AB32C2A8F0000204D4D47FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBDBDB900021F
+          3741CF222484000000ECECEBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7272721C1F3223
+          242F9C9C9AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFCC8C8C5D2D2D0FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF}
+      end
+      object btnSalir: TBitBtn
+        Left = 577
+        Top = 117
+        Width = 109
+        Height = 37
+        Hint = 'Salir'
+        Caption = 'Salir'
+        Font.Color = clBlack
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ModalResult = 1
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 13
+        OnClick = btnSalirClick
+        Glyph.Data = {
+          EA040000424DE604000000000000360000002800000014000000140000000100
+          180000000000B0040000120B0000120B00000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFBFBFBE8E8E8EBEBEBECEBECECEBEBEBEAEBEBEA
+          EBEBEAEBEBEAEBEBEAEBEBEAEBEBEAEBEBEAEBEEEEEEFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFA8A8A8000000000000000000000300000600000801000801
+          000800000700000700000700010B03000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFA9A9A94E504F9DA5A05C6D61314936425F48506F5856765E587A6059
+          7B62587A61597A6161866B060806FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          A9A8A8626263F6F8F8B7B9BA7B7F7D545C5520302431463640584646614D4865
+          504A675252725B040604FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1A1A1AAFAFAE67
+          6868F9FBFBDBDEDECDCECEA9ABAB7C7D7D353C371523193244363A5141425A48
+          4B6952040604FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000007B7C79FAFC
+          FCDADEDECDCECEC1C4C4B9BBBBB4B6B76A686A131F1628382D34493A425A4803
+          0504FBFBFBAAAAA9B2B2ADB4B4AEC9C9C100000000004D3F4043D4D6D2E0E3E3
+          CCCDCDBDC0C0B6B8B8C2C4C47372730E19112534283043343B5241030403E9E9
+          E800000000002400001B00001A000036000080000047323234D1D3D0D2D3D3BD
+          C0C0B6B8B8BFC2C271707114211727362B2E4033354B3B030402E9E9E70E0E1F
+          4444B600008F00009100009000009300009B0000461F1F1ADDDFDEC0C3C3B6B8
+          B8BFC2C271707116241928372B2B3C302F4234020403E9E9E61514254D4DC500
+          009600009900009900009800009900009E00003F21210FCBCFCFC2C4C4C8CBCB
+          727172111E132331262635292A392D020203E8E8E51414244F51C800009B0205
+          9E02059E02059E02059E00039F090CBB01014C36362E5251516D6E6E7676770A
+          120C1B261E1E2A21212D24010202E8E7E4171B2D6383FF153FE41C45E51C45E5
+          1D45E51D45E52D56F8374FAF43422FD7DADA8E8F8F333333646565080F09161F
+          1818221B1A251D010201E8E7E41C2032849FFF4263F64768F64A69F43B5BE330
+          54F3273B91484841E0E2E1C1C4C49B9D9DB9BBBB7778780006020F1612121914
+          131B16000101E7E7E6000000121831040B29040B262831536D8AFF20348E5E5D
+          5ADDDFDDCFD1D1BDC0C0B8BABAC1C3C37474740000000A0E0B0B100D0C120E00
+          0001FFFFFFE3E2E1E4E3DFE5E4E0FDFCF50000005368C85B5A55EAECE9DDE0E0
+          CBCCCCBDC0C0B6B8B8C0C2C2787979000000040604050806060906000000FFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFF000000000000787877FAFCFCD8DCDCCACCCCBD
+          BFBFB7B9B9C1C3C34C4C4C000000000000000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFF545454C9C8C8646565FAFCFCDBDFDFCFD0D0C2C4C4AAAB
+          AB9295952B2C2C000000000000000000000000000000FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFA6A6A6666767F5F7F7CED2D2B6B9B9999D9C787A7B747777
+          292C2C000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFA7A7A7000000212121131414090A0A00000000000001020200000000
+          0000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FBFBFBE7E7E7E6E6E6E8E7E7E9E9E9EAEAEAEBEAEAEBEAEAEDEDEDEFEFEFEFEF
+          EFEFEFEFEFEFEFEFEFEF}
+      end
+      object Label26: TLabel
+        Left = 581
+        Top = 173
+        Width = 61
+        Height = 16
+        Caption = 'Registros:'
+        Font.Color = clText
+        Font.Height = 13
+        Font.Name = 'MS Sans Serif'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+      end
+      object txtRegistros: TcurrEdit
+        Left = 580
+        Top = 193
+        Width = 79
+        Height = 24
+        Alignment = taRightJustify
+        Font.Color = clBlue
+        Font.Height = 13
+        Font.Name = 'MS Shell Dlg'
+        Font.Pitch = fpVariable
+        Font.Style = []
+        Font.Weight = 40
+        ParentFont = False
+        TabOrder = 15
+        Text = '0'
+        Mask = '#,##0'
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 628
+    Top = 2
+    object Archivo1: TMenuItem
+      Caption = '&Archivo'
+      object Pagos1: TMenuItem
+        Caption = '&Abono'
+        ShortCut = 16463
+        OnClick = btnAbonoClick
+      end
+    end
+    object Bsqueda1: TMenuItem
+      Caption = 'Cons&ulta'
+      object Avanzaregistro1: TMenuItem
+        Caption = 'Avanza registro'
+        ShortCut = 43
+        OnClick = Avanzaregistro1Click
+      end
+      object Retrocederegistro1: TMenuItem
+        Caption = 'Retrocede registro'
+        ShortCut = 45
+        OnClick = Retrocederegistro1Click
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Buscar1: TMenuItem
+        Caption = '&Buscar'
+        ShortCut = 16450
+        OnClick = btnBuscarClick
+      end
+      object Limpiar1: TMenuItem
+        Caption = 'Limpiar'
+        ShortCut = 16460
+        OnClick = btnLimpiarClick
+      end
+      object Seleccionar1: TMenuItem
+        Caption = 'Seleccionar'
+        ShortCut = 16467
+        OnClick = btnSeleccionarClick
+      end
+    end
+    object Fichas1: TMenuItem
+      Caption = '&Fichas'
+      object Cuentasporcobrar1: TMenuItem
+        Caption = 'Cuentas por cobrar'
+        ShortCut = 16449
+        OnClick = Cuentasporcobrar1Click
+      end
+      object Bsqueda2: TMenuItem
+        Caption = 'B'#250'squeda'
+        ShortCut = 16465
+        OnClick = Bsqueda2Click
+      end
+    end
+    object Reportes1: TMenuItem
+      Caption = '&Reportes'
+      object CobranzaGeneral1: TMenuItem
+        Caption = '&Cobranza General'
+        OnClick = CobranzaGeneral1Click
+      end
+    end
+  end
+end

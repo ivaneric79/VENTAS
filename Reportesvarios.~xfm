@@ -1,0 +1,17 @@
+object frmReportesVarios: TfrmReportesVarios
+  Left = 376
+  Top = 218
+  Width = 271
+  Height = 176
+  Caption = 'frmReportesVarios'
+  Color = clBackground
+  Scaled = False
+  PixelsPerInch = 96
+  object rptReportes: TCLXReport
+    AsyncExecution = False
+    Title = 'Sin t'#237'tulo'
+    Driver = rpDriverQt
+    Left = 78
+    Top = 42
+  end
+end

@@ -1,0 +1,615 @@
+ventas 1.0.2
+(03/08/2006) Consulta de Ventas. Se corrigió la desviación que no cambiaba el color del panel de estatus.
+	     (Andrés Velasco Gordillo)
+(03/08/2006) Actualizador. Se corrigió la desviación que permitía salir sin guardar cambios.
+	     (Andrés Velasco Gordillo)
+(27/07/2006) Ventas.DPR. Se revisaron las variables que asignan la resolución del monitor y se eliminó la restrición mínima de 800X600. Ahora és solo por la información.
+             (Alexandre Oliveira Campioni)
+(23/05/2006) ReportesComprob. Se comentó la modificación del directorio de reportes y se cambio el tipo de letra de los radioboton del tipo de reporte
+             se puso en el config.ini la ruta de los reportes: C:\Archivos de programa\Ventas\Reportes\
+             (Julio Ramírez Cabrera)
+
+ventas 1.0.1
+(21/05/2006) Acceso. Se corrigió la verificación de datos y caracteres especiales en el usuario.
+	     (Andrés Velasco Gordillo)
+(21/05/2006) Funciones. Se corrigió la función para remover caracteres especiales (no devolvía resultado).
+	     (Andrés Velasco Gordillo)
+(15/05/2006) Menu. Se guarda el último estado de la ventana para utilizarlo al iniciar el programa.
+	     (Andrés Velasco Gordillo)
+(15/05/2006) Acceso. Se agregó una función para verificar los datos de entrada y evitar inyecciones de SQL.
+	     (Andrés Velasco Gordillo)
+(15/05/2006) Acerca De. Se modificó la versión del sistema.
+	     (Andrés Velasco Gordillo)
+(15/05/2006) Ventas, Config. Se agregó la opción para agrupar artículos en la venta.
+	     (Andrés Velasco Gordillo)
+
+Ventas 1.0
+(08/05/2006) XCobrar, XPagar y Abono. Se agregó la funcionalidad del interes compuesto.
+             (Alexandre Oliveira Campioni)
+(08/05/2006) Abono. Se agregó la funcionalidad del interes compuesto.
+             (Alexandre Oliveira Campioni)
+(03/05/2006) Articulos. Se corrigió el problema del foco de las busquedas
+             (Julio Ramírez Cabrera)
+(02/05/2006) Actualizador. Se corrigió la consulta SQL para evitar recuperar gastos y se cambió una referencia ambigua al dataset que recupera los artículos.
+	     (Andrés Velasco Gordillo)	
+(28/04/2006) Cuentas por cobrar. Se corrigió la forma de recuperar los valores en los parámetros de búsqueda.
+	     (Andrés Velasco Gordillo)
+(28/04/2006) Ventas. Se corrigió la condición para almacenar el interés en ventas a crédito.
+	     (Andrés Velasco Gordillo)
+(24/04/2006) Pago.- Implementación del interes compuesto en el pagos
+             (Alexandre Oliveira Campioni)
+(24/04/2006) Tipos Pago.- Implementación del combo para la funcionalidad interes compuesto
+             (Alexandre Oliveira Campioni)
+(18/04/2006) Reportes.- Implementación del Directorio de Reportes en el ventana frmReimprimir
+             (Alexandre Oliveira Campioni)
+(17/04/2006) Permisos.-Se corrigió el POSICION del checkboxes chkVendedor y chkUnidad para el correcto funcionamiento de la función MENUS en frmMenu
+	     (Andrés Velasco Gordillo y Alexandre Oliveira Campioni)
+(17/04/2006) Ventas.-Se corrigió un error al calcular el importe de la última parcialidad en las ventas a crédito
+	     (Andrés Velasco Gordillo y Alexandre Oliveira Campioni)
+(13/04/2006) Base de datos.- Se agregó el campo 'cantidad_cnt' en la tabla VENTASDET para el controle del almacén.
+             (Alexandre Oliveira Campioni)
+(12/04/2006) Ventas.- Se corrigió el función recuperaventa, cuando recuperaba un pedido el vendedor no habia recuperado.
+             (Alexandre Oliveira Campioni)
+(12/04/2006) Ventas.- Se corrigió el funcionalidad del controle de cantidad hecho por el campo cantidad_cnt.
+             (Alexandre Oliveira Campioni)
+(12/04/2006) Iventario.- Se corrigió la ventana de inventarios físicos (en el recuperaconfig no llamava el método FREE para liberar el iniArchivo).
+             (Alexandre Oliveira Campioni)
+(12/04/2006) Pedidos.- Se corrigió la ventana de busqueda de pedidos.
+             (Alexandre Oliveira Campioni)
+(06/04/2006) Ventas.- Agregó la funcionalidad del verificación o no del limite de crédito
+             (Alexandre Oliveira Campioni)
+(06/04/2006) Pago.- Agregó la funcionalidad del verificación o no del limite de crédito
+             (Alexandre Oliveira Campioni)
+(06/04/2006) Config.- Verificar el limite de crédito del cliente ahora és posible
+             (Alexandre Oliveira Campioni)
+(06/04/2006) Base de Datos.- Se agregó el campo 'limitecred' en 'config' para dicer se hace o no el controle de limite de crédito del cliente
+             (Alexandre Oliveira Campioni)
+(06/04/2006) Funciones - Se implementó nuevas variables (consts) en el archivo funciones.pas
+             (Alexandre Oliveira Campioni) 
+(31/03/2006) CompraS - En la busqueda de Proveedores (F9) se modificó el SQL por el tipo de proveedor
+             (Julio Ramírez Cabrera)
+(30/03/2006) Reportes - Implementación del Directorio de Reportes en todos los reportes
+             (Julio Ramírez Cabrera)
+(30/03/2006) Configuracion - Se agregó el directorio de reportes
+             (Julio Ramírez Cabrera)
+(17/02/2006) Reportes.-Se optimizó la sentencia SQL del reporte
+             (Alexandre Oliveira Campioni)
+(08/02/2006) Config.- Se agregó un TEdit para aceptar la ruta del reporte de unidades
+             (Alexandre Oliveira Campioni) 
+(08/02/2006) Reportes.- Se agregó el reporte de unidades
+             (Alexandre Oliveira Campioni)
+(08/02/2006) Importar, Exportar.- Se agregó la función ImportaUnidades/ExportaUnidades
+             (Alexandre Oliveira Campioni)
+(08/02/2006) Compras.- Se hace ahora controle de cantidad para todos los articulos (y no solamente 'no inventariables')
+             (Alexandre Oliveira Campioni)
+(08/02/2006) Base de Datos.- Se agregó el campo 'cantidad_cnt' em comprasdet para el controle de cantidad de articulos en el almacén
+             (Alexandre Oliveira Campioni)  
+(08/02/2006) Ventas.- Se hace ahora controle de cantidad para todos los articulos (y no solamente 'no inventariables')
+             (Alexandre Oliveira Campioni)  
+(08/02/2006) Base de Datos.- Se agregó el campo 'cantidad_cnt' en 'ventasareas' para el controle de cantidad de articulos en el almacén
+             (Alexandre Oliveira Campioni)
+(03/02/2006) Config.- Permite cantidad negativa del articulo en el almacén (ventas sin existencia de articulos controlados)
+             (Alexandre Oliveira Campioni)
+(03/02/2006) Base de datos.- Se agregó el campo 'cantidadnegativa' en la tabla CONFIG.
+             (Alexandre Oliveira Campioni)
+(02/02/2006) Permisos.- Se agregó el checkbox chkunidades en el permisos al opción catalogos
+             (Alexandre Oliveira Campioni)
+(02/02/2006) Articulos.- Se reemplazó el combo TIPO por el combo UNIDADES y cambió las funcionalidades del controle de existências en el almacén. 
+             (Alexandre Oliveira Campioni)
+(02/02/2006) Base de datos.- Se agregó el campo 'cantidad_cnt' y 'unidade' en la tabla ARTICULOS para el controle del almacén.
+             (Alexandre Oliveira Campioni)
+(02/02/2006) Unidades.- Se agregó el ventana de Unidades.
+             (Alexandre Oliveira Campioni) 
+(31/01/2006) Vendedores.- Se agregó la busqueda del ultimo movimiento de venta.
+             (Alexandre Oliveira Campioni)
+(31/01/2006) Reportes.- Se cambió la conexión del reporte de Notas (IBCONNECTION ==> VENTAS).
+             (Alexandre Oliveira Campioni)
+(31/01/2006) Busqueda de Vendedores. Se corrigió esta ventana.
+             (Alexandre Oliveira Campioni)
+(31/01/2006) Permisos.- Se agregó la autorización V15 en el listado de privilegios.
+             (Alexandre Oliveira Campioni)  
+(31/01/2006) Ventas.- Se corrigió la asignación del vendedor en ventasareas.
+             (Alexandre Oliveira Campioni)
+(25/01/2006) Consulta de Ventas.- Se agregó la opción de búsqueda por vendedor.
+	     (Andrés Velasco Gordillo)
+(25/01/2006) Ventas.- Se agregó la opción para asignar vendedor a las ventas.
+	     (Andrés Velasco Gordillo)
+(25/01/2006) Base de Datos.- Se agregó el campo 'vendedor' a la tabla VENTASAREAS.
+	     (Andrés Velasco Gordillo)
+(13/01/2006) Gastos.- cambiado el tipo 'A' para el tipo 'G' en la función 'verificacategs' 
+             (Alexandre Oliveira Campioni) 
+(12/01/2006) Ventas.- Se agregó la información sobre las existências del artículo en el almacén cuando se vende.
+             (Alexandre Oliveira Campioni)
+(12/01/2006) Ventas.- Se agregó la restricción para que no cancele una venta que tienes nota de crédito sin antes cancelarla.
+             (Alexandre Oliveira Campioni)
+(12/01/2006) Articulos.- Se agregó el campo 'utilidad'.
+             (Alexandre Oliveira Campioni)
+(12/01/2006) Base de Datos.- Se agregó el campo 'utilidad' en la tabla ARTICULOS.
+             (Alexandre Oliveira Campioni)
+(12/01/2006) Pedidos.- Se optimizaron sentecias SQL del busqueda de pedidos.
+             (Alexandre Oliveira Campioni) 
+(12/01/2006) Base de Datos.- Se corrigió el script para crear trigger INVENTARIO.
+             (Alexandre Oliveira Campioni) 
+(12/01/2006) Revisiones generales en el archivos fuentes y posiciones de la ventanas, botones, orden de los TABs y otros controles.
+             (Alexandre Oliveira Campioni)  
+(08/12/2005) Reporte de Comprobantes.- Se agregó el reporte de Devoluciones.
+	     (Andrés Velasco Gordillo)	
+(28/11/2005) Artículos.- Se agregó Costo Total a Juego.
+	     (Francisco González Cuba)	
+(13/11/2005) Artículos.- Se agregaron los botones: 'Articulos' y 'Quitar' a la sección Juego del formulario Artículos.
+	     (Francisco González Cuba)
+(08/11/2005) Ventas. Se corrigió el precio por default al recuperar el área de venta.
+	     (Andrés Velasco Gordillo)
+(08/11/2005) Ventas. Se optimizaron sentecias SQL tipo 'SELECT * FROM'.
+	     (Andrés Velasco Gordillo)
+(24/10/2005) Ventas. Se agregó la cancelación de Pedidos.
+	     (Andrés Velasco Gordillo)
+(18/10/2005) Reimprimir. Se agregó la reimpresión del comprobante Devolución.
+	     (Andrés Velasco Gordillo)
+(18/10/2005) Reportes. Se corrigieron los reportes de Nota de Crédito y Devolución.
+	     (Andrés Velasco Gordillo)
+(18/10/2005) Reimprimir. Se optimizó la función que Imprime el Ticket.
+	     (Andrés Velasco Gordillo)
+(17/10/2005) Compras. Se corrigieron errores al cancelar una compra anterior.
+	     (Andrés Velasco Gordillo)
+(04/09/2005) XCobrarReportes, XPagarReportes. Se corrigieron los listados de documentos vencidos.
+	     (Andrés Velasco Gordillo)	        	
+(04/09/2005) Pago. Se corrigió un error al intercambiar las opciones en el combo de tipo de pago.
+	     (Andrés Velasco Gordillo)	        	
+(04/09/2005) Ventas. Se corrigió un error que duplicaba artículos (con códigos alternos) al copiar una venta anterior.
+	     (Andrés Velasco Gordillo)	        	
+(01/09/2005) Acceso. Se corrigió el foco en este formulario.
+	     (Andrés Velasco Gordillo)	        	
+(31/08/2005) Actualizador. Se corrigieron los cálculos con referencia al costo.
+	     (Andrés Velasco Gordillo)
+(31/08/2005) Compras. Se agregaron las acciones adicionales y se corrigió el descuento general.
+	     (Andrés Velasco Gordillo)
+(21/07/2005) Ventas .- Se corrigió el error que duplicaba la venta cuando se facturaba un pedido
+	     (Bismarck Sierra Ibarra)
+(21/07/2005) Reportes .- Se corrigieron los reportes de comprobantes, comprobante fiscal
+	     (Bismarck Sierra Ibarra)
+
+
+Ventas 1rc5
+(18/07/2005) Ventas .- Se corrigió la función para calcular el descuento del artículo
+	     (Bismarck Sierra Ibarra)
+(17/07/2005) Calculadora .- Se corrigió error que cerraba la ventana de manera automática
+	     (Andrés Velasco Gordillo)
+(16/07/2005) Ventas .- Se agegó la busqueda de pedidos CTRL+B
+	     (Bismarck Sierra Ibarra)
+(16/07/2005) Ventas .- Se agregó el comrobante pedido
+	     (Bismarck Sierra Ibarra)
+(15/07/2005) Ventas .- Se puede agregar un comentario a cada artículo de la venta Ctrl+M
+	     (Bismarck Sierra Ibarra)
+(19/06/2005) Gastos .- Se corrigió un error al intentar agragar un registro a la tabla categorias
+	     (Bismarck Sierra Ibarra)
+(19/06/2005) Reimprimir .- Se corrigió un error al guardar o actualizar el cliente
+	     (Bismarck Sierra Ibarra)
+(19/06/2005) Comentario .- Se agregó esta ventana
+	     (Bismarck Sierra Ibarra)
+(18/06/2005) Base de datos .- Se agregó el campo comentario a la tabla ventasareas
+	     (Bismarck Sierra Ibarra)
+(18/06/2005) Base de datos .- Se agregó el procedimiento almacenado InsertaComent para agragar comentarios al detalle de la venta
+	     (Bismarck Sierra Ibarra)
+(18/06/2005) Importar .- Correción al importar los cliente
+	     (Bismarck Sierra Ibarra)Ac
+(18/06/2005) Base de datos .- Se agregó el campo comentario a la tabla ventasdet
+	     (Bismarck Sierra Ibarra)
+(18/06/2005) Base de datos .- Se agregó la tabla ventascoment
+	     (Bismarck Sierra Ibarra)
+(18/06/2005) Reimprimir tickets del día .- Se corrigió un error en la consulta
+	     (Bismarck Sierra Ibarra)
+
+
+Ventas 1rc4
+(08/06/2005) Ventas .- Se corrigió el precio por defecto
+	     (Bismarck Sierra Ibarra)
+(07/06/2005) Ventas .- Se corrigió el descuento individual
+	     (Bismarck Sierra Ibarra)
+(07/06/2005) Base de datos .- Se agregó el campo 'descusuario' a la tabla ventasareas 
+	     (Bismarck Sierra Ibarra)
+(06/06/2005) Menu.- Se agregó una barra de estado que muestra el usuario
+	     (Mario Ahumada)
+(06/06/2005) Ticket.- Se agregó el campo RFC en la impresión del ticket
+	     (Bismarck Sierra Ibarra)
+(01/06/2005) Importar.- Se implemento la importación de las compras
+	     (Bismarck Sierra Ibarra)
+(01/06/2005) Corte.- No marcaba error cuando no se establecía la ruta del archivo de reporte del corte
+	     (Bismarck Sierra Ibarra)
+(30/05/2005) Categorías.- No recuperaba la clave al momento de modificar
+	     (Bismarck Sierra Ibarra)
+(30/05/2005) Base de datos.- Se eliminió la restricción de NO NULO a los campos de categoria y departamento en la tabla ventasareas
+	     (Bismarck Sierra Ibarra)
+
+Ventas 1rc3
+(25/05/2005) Artículos.- Se reemplazaron los botones de radio de 'Buscar' por casillas de verificación
+	     (Bismarck Sierra Ibarra)
+(25/05/2005) Importar.- Se modificó la importación de artículos
+	     (Bismarck Sierra Ibarra)
+(25/05/2005) Reportes.- Se modificaron varios reportes
+	     (Bismarck Sierra Ibarra)
+(25/05/2005) Clientes.- El saldo se calcula de acuerdo a las cuentas por cobrar activas correspondientes al cliente seleccionado
+	     (Bismarck Sierra Ibarra)
+(25/05/2005) Base de datos.- Se eliminnó el campo 'saldo' de la tabla clientes
+	     (Bismarck Sierra Ibarra)
+
+
+Ventas 1rc2
+(04/05/2005) Config.- Permite personalizar varios detalles sobre la compra
+	     (Bismarck Sierra Ibarra)
+(04/05/2005) ArticulosBusq.- Permite hacer búsqueda con varios criterios
+	     (Bismarck Sierra Ibarra)
+(04/05/2005) Acceso.- Permite recordar el ultimo usuario que entró
+	     (Bismarck Sierra Ibarra)
+(04/05/2005) Reimprimir.- Substituye las variables del cliente para imprimir el ticket
+	     (Bismarck Sierra Ibarra)
+(04/05/2005) Ticket.- Despliega las variables que maneja del cliente
+	     (Bismarck Sierra Ibarra)
+(03/05/2005) Base de datos.- Se agregó el campo 'pagocompras' en la tabla config
+	     (Bismarck Sierra Ibarra)
+(03/05/2005) Base de datos.- Se agregó el campo 'comprobantecompras' en la tabla config
+	     (Bismarck Sierra Ibarra)
+(03/05/2005) Base de datos.- Se agregó el campo 'tipo' en la tabla compras
+	     (Bismarck Sierra Ibarra)
+(28/04/2005) Artículos.- Se corrigió el problema al seleccionar el último registro del grid
+	     (Bismarck Sierra Ibarra)
+
+Ventas 1rc1
+(05/04/2005) Se agregó el campo nonbrefiscal en la tabla proveedores
+	     (Bismarck Sierra Ibarra)
+(05/04/2005) Se creó la tabla notascredito
+	     (Bismarck Sierra Ibarra)
+(05/04/2005) Se agregaron los campos orden y notacredito a la tabla ventaspago
+	     (Bismarck Sierra Ibarra)
+(14/03/2005) Se agregó el campo ventaref en la tabla ventas para uso con devoluciones
+	     (Bismarck Sierra Ibarra)
+(14/03/2005) Se agregó el campo devolución en la tabla ventasdet
+	     (Bismarck Sierra Ibarra)
+(03/03/2005) Se reemplazó el campo 'credito' por el campo 'modo' en la tabla de tipopago
+	     (Bismarck Sierra Ibarra)
+(03/03/2005) Se agregó el campo VENDEDOR en la tabla  Ventas
+	     (Bismarck Sierra Ibarra)
+(03/03/2005) Se agregó el campo ORDEN en la tabla Xcobrar necesario para importar/exportar
+	     (Bismarck Sierra Ibarra)
+(28/02/2005) Calculadora.- Se reemplazó la calculadora por otra con más características
+	     (Bismarck Sierra Ibarra)
+(14/02/2005) Base de datos.- nuevos campos para la tabla 'inventdet': cantjuego, juego
+	     (Bismarck Sierra Ibarra)
+(12/02/2005) Artículos.- Se agregó la condición tipo <> 4 en la busqueda de artículos para no tomar en cuenta los gastos
+	     (Bismarck Sierra Ibarra)
+(12/02/2005) Base de datos.- Se agregó el indice al campo tipo 'tipoarticulo' a la tabla de articulos
+	     (Bismarck Sierra Ibarra)
+(12/02/2005) Base de datos.- Se agregó el campo cuenta a la tabla categorias
+	     (Bismarck Sierra Ibarra)
+(04/02/2005) Reportes.- Se corrigieron todos los reportes relacionados con la tabla 'codigos'.
+	     (Andrés Velasco Gordillo)
+(03/02/2005) Descuentos.- Se agregaron colores al grid de Listado.
+	     (Andrés Velasco Gordillo)
+(03/02/2005) Base de datos.- Se agregó como UNIQUE el campo desc_larga en la tabla 'articulos'
+	     (Bismarck Sierra Ibarra)
+(03/02/2005) Varios.- Se modificaron los módulos que se relacionan con articulos.
+	     (Andrés Velasco Gordillo y Bismarck Siera Ibarra)
+(02/02/2005) Base de datos.- Se agregó la tabla 'codigos' y se eliminó el campo 'codigo' de la tabla articulos.
+	     (Andrés Velasco Gordillo y Bismarck Sierra Ibarra)
+
+
+Ventas 0.99
+
+(02/02/2005) Ventas. Descuentos por Total de venta y por Volumen de venta.
+	     (Andrés Velasco Gordillo)
+(01/02/2005) Descuentos. Descuentos por Volumen.
+	     (Andrés Velasco Gordillo)
+(01/02/2005) Base de Datos. Se agregó el campo 'volumen' a la tabla Descuentos.
+	     (Andrés Velasco Gordillo)
+(01/02/2005) Base de Datos. Se agregaron los campos de 'categoria' y 'departamento' a la tabla VentasAreas.
+	     (Andrés Velasco Gordillo)
+(01/02/2005) Descuentos. Se agregó validación de Descuentos por cantidad.
+	     (Andrés Velasco Gordillo)
+(31/01/2005) Ventas. Se agregaron procedimentos para otorgar Descuentos con privilegios (Individual y General).
+	     (Andrés Velasco Gordillo)
+(31/01/2005) Ventas y Compras. Se agregó el uso de las teclas flecha arriba y abajo para seleccionar un reglón del grid sin perder el foco en el txtCodigo. 
+	     (Andrés Velasco Gordillo)
+(31/01/2005) Consulta de Ventas y Consulta de Compras. Se agregó la referencia en el grid de Pago.
+	     (Andrés Velasco Gordillo)
+(28/01/2005) Ventas. Se agregó el procedimiento 'VerificaPrecios'.
+	     (Andrés Velasco Gordillo)
+(28/01/2005) Empresa. Se agregaron las instrucciones para insertar/recuperar la imagen del 'logo' de la BD.
+	     (Andrés Velasco Gordillo)
+(28/01/2005) Base de Datos. Se agregó el campo 'logo' a la tabla Empresa
+	     (Andrés Velasco Gordillo)
+(27/01/2005) Inventario. Se desarrolló este módulo.
+	     (Bismarck Sierra Ibarra)		
+
+
+
+Ventas 0.98
+
+(26/01/2005) Actualizador. Se agregó validación al convertir cadenas a flotantes en el grdListado.
+	     (Andrés Velasco Gordillo)
+(26/01/2005) Actualizador. Se agregó la modificación para el último costo al Aplicar cambios.
+	     (Andrés Velasco Gordillo)
+(25/01/2005) Base de datos. Se agregó el campo fecha_cap a la tabla de compras.
+	     (Bismarck Sierra Ibarra)
+(19/01/2005) ConfigCalc. Se agregó este módulo para configuración de la calculadora.
+	     (Andrés Velasco Gordillo)
+(19/01/2005) Reportes de Cuentas por Cobrar y Por Pagar. Se desarrollaron estos módulos.
+	     (Andrés Velasco Gordillo)
+(19/01/2005) Artículos. Se corrigió la sentencia SQL de Búsqueda por Categoría.
+	     (Andrés Velasco Gordillo)
+(18/01/2005) Cuentas por Pagar. Se desarrolló este módulo.
+	     (Andrés Velasco Gordillo)
+(17/01/2005) Ventas. Se agregaron las instrucciones para registrar ventas a crédito.
+	     (Bismarck Sierra Ibarra)
+(17/01/2005) Cuentas por Cobrar. Se desarrolló este módulo.
+	     (Andrés Velasco Gordillo y Bismarck Sierra Ibarra)
+(15/01/2005) Consecutivos. Se desarrolló este módulo.
+	     (Andrés Velasco Gordillo)
+(14/01/2005) Abono. Se desarrolló este módulo.
+	     (Andrés Velasco Gordillo y Bismarck Sierra Ibarra)
+(12/01/2005) Ventas. Se modificó el procedimiento Cancelar para créditos y para devolver existencias.
+	     (Andrés Velasco Gordillo)
+(08/01/2005) Inicializar. Se agregaron las opciones de inicializar Cuentas por Cobrar y Por Pagar.
+	     (Andrés Velasco Gordillo)
+(08/01/2005) Config. Se reestructuró la ficha Reportes y se agregó el procedimiento BuscaReporte.
+	     (Andrés Velasco Gordillo)
+(07/01/2005) BaseDatos.- Se agregaron botones para agregar o quitar privilegios en un solo paso.
+             (Mario Ahumada Sandoval)
+(06/01/2005) BaseDatos.- Se agregó un botón para seleccionar la base de datos en caso de que la conexión sea local.
+             (Mario Ahumada Sandoval)
+(20/12/2004) Base de datos.- Se agregó el campo 'descuento' en la tabla ventas para uso futuro (hacer descuento sobre monto).
+             (Bismarck Sierra Ibarra)
+(20/12/2004) Permisos.- Se agregó el campo 'descuento' para permitirle a los usuarios otorgar descuentos.
+             (Bismarck Sierra Ibarra)
+(20/12/2004) Base de datos.- Se agregó el campo 'descuento' en la tabla usuarios.
+             (Bismarck Sierra Ibarra)
+(20/12/2004) Calculadora.- Se agregó este módulo para ser utilizado por los módulos de ventas y compras.
+             (Andrés Velasco Gordillo)
+(20/12/2004) Menu.- En la función ConectaBase se hace una verificación de la configuración del sistema para forzar al usuario a establecer los parámetros antes de utilizar el sistema.
+             (Bismarck Sierra Ibarra)
+(20/12/2004) Menu.- Se agregó el procedimiento CreaCaja, para cuando el programa se ejecute por primera vez insertè la un número de caja.
+             (Bismarck Sierra Ibarra)
+(13/12/2004) Ventas.- Correción en las listas de precios para los clientes, no guardaba el precio para el cliente actual.
+             (Bismarck Sierra Ibarra)
+(12/12/2004) Reporte de ventas por proveedor.- Se modificó para que muestre cuantos artículos por proveedor se vendieron.
+             (Bismarck Sierra Ibarra)
+(12/12/2004) Consulta de ventas.- Se modificó la busqueda de los detalles de la venta para que no muestre los articulos contenidos en juegos.
+             (Bismarck Sierra Ibarra)
+(12/12/2004) Ventas.- Se guardó los articulos contenidos en los juegos en la tabla ventasdet para que salgan reflejados en los reportes.
+             (Bismarck Sierra Ibarra)
+(12/12/2004) Base de datos.- Se agregó el campo juego para diferenciar entre un articulo contenido en juego
+             (Bismarck Sierra Ibarra)
+(09/12/2004) Base de datos.- Se cambió el tamaño del campo 'clave' a 3 caracteres en la tabla 'privilegios'
+             (Bismarck Sierra Ibarra)
+(09/12/2004) Ventas.- Se agregó la opción Abrir cajón con privilegio
+             (Bismarck Sierra Ibarra)
+(09/12/2004) Ventas.- Se reorganizó el menu contextual para reducirlo
+             (Bismarck Sierra Ibarra)
+(09/12/2004) Ventas.- Se cambio el campo Remisión por el del login del usuario
+             (Bismarck Sierra Ibarra)
+(09/12/2004) Ventas.- Se corrigíó el cambio de áreas de ventas para que recupere el cliente y el comprobante
+             (Bismarck Sierra Ibarra)
+(09/12/2004) Base de datos.- Se agregó el campo comprobante a la tabla ventasareas para poder recuperar el tipo dde comprobante entre los cambios de áreas
+             (Bismarck Sierra Ibarra)
+(06/12/2004) Base de datos.- Se agregarón los campos necesario para establecer crédito en la tabla 'tipopago'
+             (Bismarck Sierra Ibarra)
+(06/12/2004) TipoPago.- Se agregarón los campos necesario para establecer crédito
+             (Bismarck Sierra Ibarra)
+(06/12/2004) TipoPago.- Correción a la propiedad Maxlength del campo 'nombre' a 20 para que concuerde con la base de datos
+             (Bismarck Sierra Ibarra)
+(06/12/2004) Consulta de compras.- Se agregó el evento OnKeyUp (Salta) para los campos de fecha
+             (Bismarck Sierra Ibarra)
+(05/12/2004) Articulos.- Correción al evento grdJuegoKeyDown para que borre el renglón al momento de agregar un artículo al juego
+             (Bismarck Sierra Ibarra)
+(05/12/2004) Importar.- Se descomprimen los archivos generados por exportar
+             (Bismarck Sierra Ibarra)
+(05/12/2004) Exportar.- Se comprimieron los archivos generados y se guardaron las opciones utilizadas en config.ini
+             (Bismarck Sierra Ibarra)
+(05/12/2004) SciZipFile.- Se agregó esta unidad para comprimir archivos en formato Zip
+             (Bismarck Sierra Ibarra)
+
+Ventas 0.95
+
+(04/12/2004) Compras.- Se agregó la opción de dar precio con IVA o sin IVA incluido
+             (Bismarck Sierra Ibarra)
+(20/11/2004) ComprasDoc, Fecha.- Se agregó el evento Rellena en los campos de la fecha para que complete con ceros cuando es un solo digito
+             (Bismarck Sierra Ibarra)
+(29/11/2004) Reimprimir.- Se modificó la función ConvNumero que ocasionaba resultados de variación de 1 centavo en los decimales
+             (Andres Velasco Gordillo)
+(22/11/2004) Compras, actualizador.- Se agregó la advertencia de salir sin guardar
+             (Bismarck Sierra Ibarra)
+(22/11/2004) Compras, ventas.- Se corrigió el evento grdVentaMouseDown para que se pudiera seleccionar con el boton derecho el primer renglón del grid
+             (Bismarck Sierra Ibarra)
+(20/11/2004) Base de datos.- Nuevo campo 'descuento' en la tabla comrpasdet para poder agregar descuentos en el futuro
+             (Bismarck Sierra Ibarra)
+(20/11/2004) Compras.- se cambió la propiedad Fixelcols a 1 para el grid de compras
+             (Bismarck Sierra Ibarra)
+(20/11/2004) Compras.- Se eliminaron los Warnings Unsafe type 'PChar' provocados por la función MuestraAyuda
+             (Bismarck Sierra Ibarra)
+(20/11/2004) ComprasDoc.- Se agregó el campo "Costo con I.V.A. incluido"
+             (Bismarck Sierra Ibarra)
+(17/11/2004) Acerca de.- Se agregó este módulo.
+             (Andres Velasco Gordillo y Bismarck Sierra Ibarra)
+(10/11/2004) Fecha.- Guarda la última fecha capturada dependiendo del titulo que recibe como parámetro
+             (Bismarck Sierra Ibarra)
+(04/11/2004) Importar.- Se agregó como seguridad que las ventas se importen por fechas
+             (Bismarck Sierra Ibarra)
+(04/11/2004) Ventas.- Se agregó la función para copiar una venta anterior.
+             (Bismarck Sierra Ibarra)
+
+
+
+Ventas 0.94
+
+(27/10/2004) Actualizador. Se corrigieron las líneas repetidas "if(rdbPrecio4.Checked) " en el procedimiento btnAplicarClick.
+             (Andres Velasco Gordillo)
+(27/10/2004) ClientesBusq. Se corrigió la instrucción "dmDatos.cdsCliente1.Active := false;" que hacía referencia a otro dataset (cdsCliente)
+             (Andres Velasco Gordillo)
+(27/10/2004) RecuperaVenta. Se agregó la condición 'AND c.estatus="A"' para recuperar únicamente los comprobantes activos.
+             (Andres Velasco Gordillo)
+(27/10/2004) Pago. Se eliminó la instrucción para Recuperar el codigo de inicio de la impresora, puesto que no se utilizaba.
+             (Andres Velasco Gordillo)
+(27/10/2004) Artículos.- Se agregó la validación para que los precios no sean negativos.
+             (Bismarck Sierra Ibarra)
+(27/10/2004) Artículos.- Se agegó la validación para que el mínimo no pueda ser mayor que el máximo.
+             (Bismarck Sierra Ibarra)
+(27/10/2004) Artículos.- En la función RecuperaDatosBusq se cambió la asignación del IVA y último costo utilizando la propiedad Value en lugar de Text.
+             (Bismarck Sierra Ibarra)
+(03/10/2004) Reimprimir.- Se convirtió a estático por causar problemas siendo dinámico
+             (Bismarck Sierra Ibarra)
+(03/10/2004) Cancelar.- Se cambió de nombre a RecuperaVenta para utilizarlo con otros fines.
+             (Bismarck Sierra Ibarra)
+(03/10/2004) Todos.- Se ordenaron los componentes de todos los módulos.
+             (Bismarck Sierra Ibarra)
+(01/10/2004) Compras.- Se agregó la barra de acciones.
+             (Andres Velasco Gordillo)
+
+
+Ventas 0.93
+
+(25/09/2004) Exportar.- Se agregó la exportación de compras
+             (Bismarck Sierra Ibarra)
+(25/09/2004) Reportes.- Se cambiaron las fechas de varios reportes al formato dd/mm/aaaa
+             (Bismarck Sierra Ibarra)
+(25/09/2004) Acceso, Reimprimir, Permisos, Ventas, Compras.- Se volvieron dinámicos, se crean solamente cuando es necesario
+             (Bismarck Sierra Ibarra)
+(25/09/2004) Rrporte de inventario, config.- Se agregaron los reportes de inventario ajuste y pedidos
+             (Bismarck Sierra Ibarra)
+(25/09/2004) Reimprimir comprobantes.- Se agregó la función para convertir tickets y notas a facturas
+             (Bismarck Sierra Ibarra)
+(24/09/2004) Qcurredit.pas.- Se modificó el procedimiento SetValue por causar ciclo infinito
+             (Bismarck Sierra Ibarra)
+(24/09/2004) Qcurredit.pas.- En el procedimiento DoEnter se corrigió la selección del texto, no seleccionaba el último caracter 
+             (Bismarck Sierra Ibarra)
+(20/09/2004) Ventas.- Al mandar llamar el módulo de cliente (CTRL+L) se eliminaron las líneas que desactivan y activan la ventana de ventas
+             (Bismarck Sierra Ibarra)
+(18/09/2004) Ventas.- Se corrigió un error al mandar llamar el módulo de cliente (CTRL+L), no verificaba si se había dado clic en el bot{on aceptar
+             (Bismarck Sierra Ibarra)
+(12/09/2004) Reimprimir comprobantes.- Se agregarón restricciones con privilegios para cada tipo de comprobante
+             (Bismarck Sierra Ibarra)
+(11/09/2004) Actualizador, Clientes, Consulta de ventas.- Se cambio el evento OnClick de los botones de radio de orden para evitar que haga la busqueda al mostrar la ventana
+             (Bismarck Sierra Ibarra)
+(11/09/2004) Importar, Exportar.- Se cambio el tipo de dato de la variable sDir a WideString en la función btnDirClick para que funcione en Delphi 7
+             (Bismarck Sierra Ibarra)
+(11/09/2004) Inicializar.- Se agregó el borrado de ventas por fechas para posibles errores de importaciòn
+             (Bismarck Sierra Ibarra)
+(09/09/2004) Consulta de ventas - Se disminuyo el tamaño de la celda importe en la rejilla de tipos de pago, pues causaba problemas al hacer clic
+             (Sergio Gallardo Rodriguez)
+(08/09/2004) Descuentos - Se corrigió la opción salir del menu, no funcionaba
+             (Sergio Gallardo Rodriguez)
+(08/09/2004) Clientes - Se corrigió la opción salir del menu, no funcionaba
+             (Sergio Gallardo Rodriguez)
+(05/09/2004) Actualizador - Se agregó la búsqueda por proveedor
+             (Bismarck Sierra Ibarra)
+(05/09/2004) Busqueda de artículos - Se agregó la búsqueda por proveedor
+             (Bismarck Sierra Ibarra)
+(03/09/2004) Permisos - Se refrescó la lista de usuarios en el evento Click del botón cancelar
+             (Bismarck Sierra Ibarra)
+(03/09/2004) Tickets del día - Se omitieron los tickets cancelados en la reimpresión
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Reportes - Se agregó la condición (c.estatus='A') en el conjunto de datos COMPROBANTE de FACTURA, NOTA y AJUSTE 
+             (Andres Velasco Gordillo)
+
+Versión 0.92
+
+(27/08/2004) Inicializar.- Se agregó la inicialización de la tabla cajas y ticket
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Importar.- Se validó que existan los archivos a importar y la importación de cajas
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Consulta de compras.- Se asignó el evento doble click al grid de busqueda
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Compras.- Se limpia la pantalla al momento de insertar o modificar un documento
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Exportar.- Se agregó la exportación de la tabla cajas
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Config.- Se cambió el componente txtCaja con cmbCaja para poder elegir solamente las cajas existentes
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Reimprimir.- Se agregó la serie a la impresión del ticket
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Cajas.- Se agregó el modulo para establer las cajas activas con su serie para cada comprobante
+             (Bismarck Sierra Ibarra)
+(27/08/2004) Base de datos.- Se agregó la tabla cajas
+             (Bismarck Sierra Ibarra)
+(26/08/2004) Menu, Permisos.- Se agregó la opción de reimprimir tickets del día
+             (Bismarck Sierra Ibarra)
+(25/08/2004) Consulta de Ventas.- Se corrigíó el orden de los componentes
+             (Bismarck Sierra Ibarra)
+(25/08/2004) Ventas.- Se estableció la primera columna fija en la rejilla "venta"
+             (Bismarck Sierra Ibarra)
+(25/08/2004) Config - Se agregaron los reportes de compras
+             (Andres Velasco Gordillo)
+(25/08/2004) Reportes de compras - Se desarrollo el módulo
+             (Andres Velasco Gordillo)
+(25/08/2004) Consulta Ventas - Se eliminaron dos instrucciones que mostraban otros labels en el procedimiento chkCajaClick
+             (Andres Velasco Gordillo)
+(25/08/2004) Articulos - Se agregó una función genérica BuscaNombre para categorias y departamentos
+             (Andres Velasco Gordillo)
+(25/08/2004) Compras- En OnMouseDown se corrigió un error para evitar que el Encabezado del grid de Ventas se reimprima 
+             (Andres Velasco Gordillo)
+(25/08/2004) Ventas - Se cambió la posición de la instrucción txtCodigo.SetFocus al final de los procedimientos
+             (Andres Velasco Gordillo)
+(23/08/2004) Reimprimir.- Se quito el IVA de la impresión del ticket por no estar dentro de los lineamientos de SHCP
+             (Bismarck Sierra Ibarra)
+(19/08/2004) Ventas.- Se regresó el foco a la ventana ventas después de cambiar el precio de un artículo
+             (Bismarck Sierra Ibarra)
+(18/08/2004) Ventas.- Se asignó false a la propiedad TabStop en los botones en la barra de acciones
+             (Bismarck Sierra Ibarra)
+
+
+Versión 0.91
+
+(14/08/2004) Inicializar.- Se agregó la opción de inicializar la tabla empresa
+             (Bismarck Sierra Ibarra)
+(14/08/2004) Reporte de artículos.- Se desarrolló este módulo para que los usuarios escojan como se van a imprimir sus listas de precios
+             (Bismarck Sierra Ibarra)
+(13/08/2004) Base de datos, menu.- Se encriptó la contraseña que se guarda en config.ini para la conexión a la base de datos
+             (Luis Antonio Gutierrez)
+(13/08/2004) Ventas.- Se agregó una barra de botones para facilidad de uso
+             (Werner E. Goedecke R y Bismarck Sierra Ibarra)
+(10/08/2004) Articulos.- Se agregó la función para verificar que el código del artículo no se repitiera
+             (Bismarck Sierra Ibarra)
+(10/08/2004) TipoComprobante.- Se agregó la función RecuperaConfig y el evento OnClose para guardar la posición de la ventana
+             (Bismarck Sierra Ibarra)
+(10/08/2004) Proveedores.- Se corrigió un error en la función RecuperaConfig en la ruta del archivo config.ini que impedia recuperar los datos de la ventana
+             (Bismarck Sierra Ibarra)
+(10/08/2004) Todos.- Se movió El procedimiento RecuperaConfig al evento OnCreate
+             (Bismarck Sierra Ibarra)
+(10/08/2004) Ventas.- En el evento Mousedown del Grid de ventas se corrijió un error que ocasionaba que se repitieran los encabezados
+             (Andrés Velasco Gordillo)
+
+Versión 0.90
+
+- Reporte de ventas.- Se desarrollo este modulo con sus respectivos reportes
+- Reimprimir.- Busca el RFC en el evento OnExit del campo RFC
+- Config.- Se agregaron las opciones para establecer el nombre de los archivos de ventas
+- Reportes de ventas.- SE agregaron mpas reportes de ventas
+- Consulta de compras.- Se terminó de desarollar.
+- Consulta de ventas.- La busqueda por articulo ahora se hace por descipción larga en vez de la corta
+- Clientes.- Se agregó el procedimiento CargaMovimientos que mustra la ultima venta del cliente
+- Tipo de pago.- No guardaba la posición de la ventana
+- Ventas.- Se regresá al comprobante por defecto después al pagar una venta
+- Articulos.- Cambio de la propiedad Rowselect a false de la rejilla de busqueda
+- Artículos.- Cambio de búsqueda de la descripción corta por la descripción larga
+- Busqueda de artículos .- Cambio de búsqueda de la descripción corta por la descripción larga
+- Base de datos.- Se eliminó el campo cadena en la tabla cliente
+- Base de datos.- Creación de un indice para el campo desc_larga en la tabla articulos
+- Ventas.- Se corrigió una omisión que no afectaba la existencia cuando el comprobante era AJuste en el procedimiento GuardaDatos
+- Artículos.- Se eliminó el bookmark en la búsqueda por resultar confuso para los usuarios
+- Config.- No guardaba la moneda de menor denominación
+- Exportar.- Modificación en la sentencia de exportar proveedor, se agregó el alias al campo nombre en la sección de ORDER BY
+- Ventas.- Correción al guardar la referencia del pago, guardaba una 'N' en vez de guardar la que introduce el usuario
+- Reporte corte.- Se corrigió un error en la consulta, duplicaba los importes cuando había un comprobante cancelado y otro activo con el mismo número
+- Ventas.- Se agregó un mensaje al introducir un número de crendencial vencida (F8)
+- Reimprimir .- Se guardó en condig.ini el último comprobante que se reimprimió
+
+
+Versión 0.88
+
+- Reimprimir.- Se corrigió la impresión del ticket, no mostraba los tipos de pago
+- Todos.- Se corrigieron errores en varios modulos derivados del cambio del componente TSQLDataset por TQuerySQL
+- Base de datos.- Se agregó un generador con su respectivo disparador para la tabla usuarios que permite asignar una clave consecutiva a cada usuario.
+- Ventas, configuración.- Se agregó una opción para que muestre automáticamente la ventana de cantidad cuando se introduce el codigo de un artículo.
+- Ventas, Configuración.- Se agregó una opción para que al introducir el código de una artículo lo busque automáticamente o se utilice las tecla enter para ingresar el artículo a la rejilla de ventas.
+- Ventas .- Al cancelar una venta (F12) se agregó la autorización
+- Ventas.- Se agregó el nombre de usuario en la barra de titulo
+- Importar.- Se agregó la función al botón para seleccionar un directorio
+- Exportar.- Se agregó la función al botón para seleccionar un directorio

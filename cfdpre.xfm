@@ -1,0 +1,536 @@
+object cfdiFrom: TcfdiFrom
+  Left = 425
+  Top = 191
+  Width = 811
+  Height = 510
+  VertScrollBar.Range = 501
+  HorzScrollBar.Range = 811
+  ActiveControl = txtNombre
+  Caption = 'Generar CFDi'
+  Color = clBackground
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object Image1: TImage
+    Left = 424
+    Top = 376
+    Width = 57
+    Height = 49
+    Visible = False
+  end
+  object Image2: TImage
+    Left = 488
+    Top = 376
+    Width = 105
+    Height = 105
+    Visible = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Top = 8
+    Width = 809
+    Height = 153
+    Caption = 'Cliente'
+    TabOrder = 34
+    object ncliente: TEdit
+      Left = 696
+      Top = 16
+      Width = 101
+      Height = 21
+      TabOrder = 0
+      Visible = False
+    end
+  end
+  object txtRfc: TEdit
+    Left = 8
+    Top = 51
+    Width = 113
+    Height = 21
+    TabStop = False
+    MaxLength = 13
+    TabOrder = 0
+    Text = 'txtRfc'
+  end
+  object artgrid: TStringGrid
+    Left = 0
+    Top = 168
+    Width = 811
+    Height = 201
+    TabStop = False
+    ColCount = 7
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goEditing]
+    ScrollBars = ssAutoVertical
+    TabOrder = 13
+  end
+  object txtNombre: TEdit
+    Left = 128
+    Top = 51
+    Width = 377
+    Height = 21
+    MaxLength = 75
+    TabOrder = 1
+    Text = 'txtNombre'
+  end
+  object txtContacto: TEdit
+    Left = 512
+    Top = 51
+    Width = 289
+    Height = 21
+    MaxLength = 75
+    TabOrder = 2
+    Text = 'txtContacto'
+  end
+  object txtCalle: TEdit
+    Left = 8
+    Top = 91
+    Width = 313
+    Height = 21
+    MaxLength = 50
+    TabOrder = 3
+    Text = 'txtCalle'
+  end
+  object nexterior: TEdit
+    Left = 325
+    Top = 91
+    Width = 92
+    Height = 21
+    MaxLength = 50
+    TabOrder = 4
+    Text = 'nexterior'
+  end
+  object ninterior: TEdit
+    Left = 422
+    Top = 91
+    Width = 83
+    Height = 21
+    MaxLength = 50
+    TabOrder = 5
+    Text = 'ninterior'
+  end
+  object txtColonia: TEdit
+    Left = 512
+    Top = 91
+    Width = 289
+    Height = 21
+    MaxLength = 75
+    TabOrder = 6
+    Text = 'txtColonia'
+  end
+  object txtLocalidad: TEdit
+    Left = 8
+    Top = 131
+    Width = 233
+    Height = 21
+    MaxLength = 25
+    TabOrder = 7
+    Text = 'txtLocalidad'
+  end
+  object txtCp: TEdit
+    Left = 402
+    Top = 131
+    Width = 63
+    Height = 21
+    MaxLength = 5
+    TabOrder = 9
+    Text = 'txtCp'
+  end
+  object txtTelContacto: TEdit
+    Left = 468
+    Top = 131
+    Width = 77
+    Height = 21
+    MaxLength = 20
+    TabOrder = 10
+    Text = 'txtTelContacto'
+  end
+  object txtCorreoContacto: TEdit
+    Left = 548
+    Top = 131
+    Width = 157
+    Height = 21
+    MaxLength = 50
+    TabOrder = 11
+    Text = 'txtCorreoContacto'
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 35
+    Width = 21
+    Height = 13
+    Caption = 'RFC'
+  end
+  object Label2: TLabel
+    Left = 128
+    Top = 35
+    Width = 63
+    Height = 13
+    Caption = 'Raz'#243'n Social'
+  end
+  object Contacto: TLabel
+    Left = 512
+    Top = 35
+    Width = 37
+    Height = 13
+    Caption = 'Nombre'
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 75
+    Width = 23
+    Height = 13
+    Caption = 'Calle'
+  end
+  object Label5: TLabel
+    Left = 423
+    Top = 75
+    Width = 43
+    Height = 13
+    Caption = 'N.Interior'
+  end
+  object Label6: TLabel
+    Left = 328
+    Top = 75
+    Width = 46
+    Height = 13
+    Caption = 'N.Exterior'
+  end
+  object Label7: TLabel
+    Left = 512
+    Top = 75
+    Width = 35
+    Height = 13
+    Caption = 'Colonia'
+  end
+  object Label8: TLabel
+    Left = 8
+    Top = 115
+    Width = 45
+    Height = 13
+    Caption = 'Municipio'
+  end
+  object Label9: TLabel
+    Left = 248
+    Top = 115
+    Width = 33
+    Height = 13
+    Caption = 'Estado'
+  end
+  object Label10: TLabel
+    Left = 408
+    Top = 115
+    Width = 20
+    Height = 13
+    Caption = 'C.P.'
+  end
+  object Label11: TLabel
+    Left = 470
+    Top = 115
+    Width = 42
+    Height = 13
+    Caption = 'Tel'#233'fono'
+  end
+  object Label12: TLabel
+    Left = 552
+    Top = 115
+    Width = 29
+    Height = 13
+    Caption = 'E-Mail'
+  end
+  object slestado: TComboBox
+    Left = 245
+    Top = 131
+    Width = 156
+    Height = 21
+    ItemHeight = 15
+    Items.Strings = (
+      'Aguascalientes'
+      'Baja California'
+      'Baja California Sur'
+      'Campeche'
+      'Chiapas'
+      'Chihuahua'
+      'Coahuila de Zaragoza'
+      'Colima'
+      'Distrito Federal'
+      'Durango'
+      'Estado de M'#233'xico'
+      'Guanajuato'
+      'Guerrero'
+      'Hidalgo'
+      'Jalisco'
+      'Michoac'#225'n'
+      'Morelos'
+      'Nayarit'
+      'Nuevo Le'#243'n'
+      'Oaxaca'
+      'Puebla'
+      'Quer'#233'taro'
+      'Quintana Roo'
+      'San Luis Potos'#237
+      'Sinaloa'
+      'Sonora'
+      'Tabasco'
+      'Tamaulipas'
+      'Tlaxcala'
+      'Veracruz'
+      'Yucat'#225'n'
+      'Zacatecas'
+      'Estado Extranjero')
+    MaxLength = 50
+    TabOrder = 8
+    Text = 'slestado'
+  end
+  object Button1: TButton
+    Left = 712
+    Top = 131
+    Width = 89
+    Height = 25
+    Caption = 'Actualiza Cliente'
+    TabOrder = 12
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 728
+    Top = 475
+    Width = 75
+    Height = 25
+    Caption = 'Generar CFDi'
+    TabOrder = 18
+    OnClick = Button2Click
+  end
+  object total: TcurrEdit
+    Left = 688
+    Top = 435
+    Width = 113
+    Height = 33
+    Alignment = taRightJustify
+    Font.Color = clRed
+    Font.Height = 20
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 17
+    Text = '0.00'
+    Mask = '#,##0.00'
+  end
+  object Label13: TLabel
+    Left = 608
+    Top = 435
+    Width = 79
+    Height = 25
+    Caption = 'TOTAL:'
+    Font.Color = clBlack
+    Font.Height = 20
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Button4: TButton
+    Left = 8
+    Top = 379
+    Width = 75
+    Height = 25
+    Caption = 'Recalcular'
+    TabOrder = 14
+    OnClick = Button4Click
+  end
+  object iva: TcurrEdit
+    Left = 688
+    Top = 407
+    Width = 113
+    Height = 24
+    Alignment = taRightJustify
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 16
+    Text = '0.00'
+    Mask = '#,##0.00'
+  end
+  object subtotal: TcurrEdit
+    Left = 688
+    Top = 379
+    Width = 113
+    Height = 24
+    Alignment = taRightJustify
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 15
+    Text = '0.00'
+    Mask = '#,##0.00'
+  end
+  object Label14: TLabel
+    Left = 634
+    Top = 411
+    Width = 50
+    Height = 20
+    Caption = 'I.V.A.:'
+    Font.Color = clBlack
+    Font.Height = 16
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 604
+    Top = 380
+    Width = 80
+    Height = 24
+    Caption = 'SubTotal:'
+    Font.Color = clBlack
+    Font.Height = 19
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 648
+    Top = 476
+    Width = 75
+    Height = 25
+    Cancel = True
+    Caption = 'Cancelar'
+    ModalResult = 2
+    TabOrder = 35
+  end
+  object nfac: TEdit
+    Left = 8
+    Top = 424
+    Width = 101
+    Height = 21
+    TabOrder = 36
+    Text = 'nfac'
+  end
+  object cargar: TButton
+    Left = 112
+    Top = 422
+    Width = 75
+    Height = 25
+    Caption = 'cargar'
+    TabOrder = 37
+    OnClick = cargarClick
+  end
+  object lfac: TLabel
+    Left = 8
+    Top = 408
+    Width = 36
+    Height = 13
+    Caption = 'Factura'
+  end
+  object result: TLabel
+    Left = 8
+    Top = 456
+    Width = 84
+    Height = 24
+    Caption = 'Resultado'
+    Font.Color = clBlack
+    Font.Height = 19
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    Visible = False
+  end
+  object ncf: TLabel
+    Left = 8
+    Top = 488
+    Width = 20
+    Height = 16
+    Caption = 'ncf'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object Memo1: TMemo
+    Left = 272
+    Top = 376
+    Width = 145
+    Height = 65
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 41
+    Visible = False
+  end
+  object Memo2: TMemo
+    Left = 200
+    Top = 392
+    Width = 185
+    Height = 89
+    Lines.Strings = (
+      'Env'#237'o Electr'#243'nico de Comprobante Fiscal Digital.'
+      ''
+      'Se anexa el comprobante en formato PDF y XML.'
+      ''
+      'Gracias por su compra.'
+      ''
+      ''
+      'JARCIERIAS ZUTAM S.A. DE C.V.'
+      'JZU001019DC3'
+      '(222) 288.0919'
+      ''
+      ''
+      ''
+      ''
+      'Proveedor Autorizado de Certificaci'#243'n:'
+      ''
+      'Facturar en L'#237'nea S. de R.L. de C.V.'
+      'No. de Autorizaci'#243'n: 55029'
+      ''
+      'Venta Facturas Digitales:'
+      'Tel: 01 (222) 413-3635')
+    TabOrder = 42
+    Visible = False
+  end
+  object xmldoc: TXMLDocument
+    Left = 456
+    Top = 24
+    DOMVendorDesc = 'MSXML'
+  end
+  object rptComprobante: TCLXReport
+    AsyncExecution = True
+    Title = 'Untitled'
+    Driver = rpDriverQt
+    Left = 232
+    Top = 392
+  end
+  object IdSMTP1: TIdSMTP
+    MaxLineAction = maException
+    ReadTimeout = 0
+    Port = 25
+    AuthenticationType = atNone
+    Left = 264
+    Top = 480
+  end
+  object IdMessage1: TIdMessage
+    AttachmentEncoding = 'MIME'
+    BccList = <>
+    CCList = <>
+    Encoding = meMIME
+    Recipients = <>
+    ReplyTo = <>
+    Left = 296
+    Top = 480
+  end
+end

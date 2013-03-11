@@ -1,0 +1,250 @@
+// --------------------------------------------------------------------------
+// Archivo del Proyecto Ventas
+// Página del proyecto: http://sourceforge.net/projects/ventas
+// --------------------------------------------------------------------------
+// Este archivo puede ser distribuido y/o modificado bajo lo terminos de la
+// Licencia Pública General versión 2 como es publicada por la Free Software
+// Fundation, Inc.
+// --------------------------------------------------------------------------
+
+unit Cantidad;
+
+interface
+
+uses
+  SysUtils, Types, Classes, QGraphics, QControls, QForms, QDialogs,
+  QStdCtrls, QButtons, QcurrEdit, IniFiles, QTypes, QMenus;
+
+type
+  TfrmCantidad = class(TForm)
+    grpCantidad: TGroupBox;
+    lblTexto: TLabel;
+    txtCantidad: TcurrEdit;
+    btnAceptar: TBitBtn;
+    btnCancelar: TBitBtn;
+    btnCalc: TBitBtn;
+    cbfiscal: TCheckBox;
+    clabel: TLabel;
+    concepto: TEdit;
+    r1: TLabel;
+    v1: TLabel;
+    r2: TLabel;
+    v2: TLabel;
+    r3: TLabel;
+    v3: TLabel;
+    r4: TLabel;
+    v4: TLabel;
+    r5: TLabel;
+    v5: TLabel;
+    pre: TLabel;
+    ra1: TLabel;
+    ra2: TLabel;
+    ra3: TLabel;
+    ra4: TLabel;
+    ra5: TLabel;
+    rango: TLabel;
+    cajas: TcurrEdit;
+    cajch: TCheckBox;
+    fast: TPopupMenu;
+    fasfc: TMenuItem;
+    procedure btnAceptarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnCalcClick(Sender: TObject);
+    procedure cajasChange(Sender: TObject);
+     procedure cajchClick(Sender: TObject);
+    procedure fasfcClick(Sender: TObject);
+
+
+
+    
+
+
+  private
+    procedure RecuperaConfig;
+
+  public
+    rCantidad : real;
+    rmotivo: string; // modificacion 21/07/09
+    bDecimales : boolean;
+    retiro: boolean; /// modificacion 21/07/2009
+    sTitulo : String;
+    fac:real;
+    rkg: real;
+  end;
+
+var
+  frmCantidad: TfrmCantidad;
+
+implementation
+
+uses Calc, Compras;
+
+{$R *.xfm}
+
+procedure TfrmCantidad.btnAceptarClick(Sender: TObject);
+begin
+    btnAceptar.SetFocus;
+    if(Length(txtCantidad.Text) > 0) then
+     begin
+      //if(not bDecimales) then
+       //rCantidad := Int(txtCantidad.Value)
+      //else
+       rCantidad := txtCantidad.Value;
+       rmotivo := concepto.Text;// modificacion 21/07/09
+
+       rkg := 0;
+
+
+    end
+end;
+
+procedure TfrmCantidad.RecuperaConfig;
+var
+    iniArchivo : TIniFile;
+    sIzq, sArriba : String;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'config.ini');
+
+    with iniArchivo do begin
+        //Recupera la posición Y de la ventana
+        sArriba := ReadString('Cantidad', 'Posy', '');
+
+        //Recupera la posición X de la ventana
+        sIzq := ReadString('Cantidad', 'Posx', '');
+
+        if (Length(sIzq) > 0) and (Length(sArriba) > 0) then begin
+            Left := StrToInt(sIzq);
+            Top := StrToInt(sArriba);
+        end;
+        Free;
+    end;
+end;
+
+procedure TfrmCantidad.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+var
+    iniArchivo : TIniFile;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+    with iniArchivo do begin
+        // Registra la posición y de la ventana
+        WriteString('Cantidad', 'Posy', IntToStr(Top));
+
+        // Registra la posición X de la ventana
+        WriteString('Cantidad', 'Posx', IntToStr(Left));
+        Free;
+    end;
+end;
+
+procedure TfrmCantidad.FormShow(Sender: TObject);
+begin
+    Caption := sTitulo;
+    if (retiro) then begin
+    concepto.Visible:= true;
+    clabel.Visible:= true;
+    end;
+
+    if(bDecimales) then
+        txtCantidad.Mask := '#,##0.000'
+    else
+        txtCantidad.Mask := '#,##0';
+
+    txtCantidad.Value := rCantidad;
+    txtCantidad.SetFocus;
+    txtCantidad.SelectAll;
+end;
+
+procedure TfrmCantidad.btnCancelarClick(Sender: TObject);
+begin
+    rCantidad := -1;
+end;
+
+procedure TfrmCantidad.FormCreate(Sender: TObject);
+begin
+    RecuperaConfig;
+end;
+
+procedure TfrmCantidad.btnCalcClick(Sender: TObject);
+begin
+    with TFrmCalculadora.Create(Self) do
+    try
+        ShowModal;
+        if(bUtilizar) then
+            txtCantidad.Value := eResultado;
+    finally
+        Free;
+    end;
+    btnAceptar.SetFocus;
+end;
+
+procedure TfrmCantidad.cajasChange(Sender: TObject);
+begin
+
+if (cajas.Value <> 0) then
+begin
+
+ txtCantidad.Value := (cajas.Value * fac) + txtCantidad.Value ;
+ end;
+end;
+
+procedure TfrmCantidad.cajchClick(Sender: TObject);
+begin
+
+ if  cajch.Checked then
+ begin
+  txtcantidad.Enabled:= false;
+ cajas.Enabled:= true;
+ cajas.Value := 0;
+ txtcantidad.Value := 0;
+ end
+ else
+ begin
+
+txtcantidad.Enabled:= true;
+cajas.Value:=0;
+cajas.Enabled:= false;
+txtcantidad.Value := 1;
+
+ end;
+
+end;
+
+
+
+
+
+
+
+
+procedure TfrmCantidad.fasfcClick(Sender: TObject);
+begin
+if  cajch.Checked then
+ begin
+
+
+   cajch.Checked:= false;
+
+ txtcantidad.Enabled:= true;
+cajas.Value:=0;
+cajas.Enabled:= false;
+txtcantidad.Value := 1;
+txtcantidad.SetFocus;
+ end
+ else
+ begin
+ cajch.Checked:= true;
+ txtcantidad.Enabled:= false;
+ cajas.Enabled:= true;
+ cajas.Value := 0;
+ txtcantidad.Value := 0;
+ cajas.SetFocus;
+
+
+ end;
+
+end;
+
+end.

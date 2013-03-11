@@ -1,0 +1,113 @@
+Fecha: 12/01/2008 18:34:16, Autorización: Retirar efectivo (Ventas), Detalle: (Caja 1), Usuario: FABIAN TREJO BUENROSTRO, Comentario: PAGO COMIDA
+Fecha: 15/01/2008 16:49:56, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 15/01/2008 20:37:16, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FABIAN TREJO BUENROSTRO, Comentario: 
+Fecha: 08/08/2008 19:21:17, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 12:56:10, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:09:57, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:10:39, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:19:24, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:20:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:26:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:33:07, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:37:24, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:45:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:46:55, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:52:16, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 13:59:20, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 07/10/2008 14:00:22, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 11:20:25, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 13:28:45, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 13:30:34, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 13:31:04, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 13:41:12, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 13:59:32, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:00:24, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:06:05, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:10:34, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:17:14, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:18:10, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:18:53, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 13/10/2008 14:19:35, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 14/10/2008 14:11:31, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 14/10/2008 14:15:42, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 14/10/2008 15:00:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 16/10/2008 16:33:40, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 16/10/2008 16:34:51, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 17/10/2008 14:51:50, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 17/10/2008 15:19:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2008 10:48:47, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2008 10:51:17, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2008 10:53:23, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 30/10/2008 16:59:01, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 30/10/2008 17:15:50, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 30/10/2008 17:24:13, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 30/10/2008 17:38:26, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 30/10/2008 23:40:05, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 06/11/2008 12:57:06, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 27/04/2009 13:45:51, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/07/2009 18:45:09, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 24/07/2009 17:35:20, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 24/07/2009 17:56:26, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:01:36, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:06:43, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:06:53, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:14:43, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:23:29, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:26:19, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:30:34, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:31:47, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:32:11, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:38:02, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:38:19, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:39:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:40:53, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:41:09, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:42:14, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:44:43, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:45:03, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:45:18, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:46:26, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:47:11, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:47:32, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:47:55, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 22/10/2010 03:48:43, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 29/12/2010 09:04:12, Autorización: Corte del día (Corte), Detalle: (Caja 1), Usuario: FJ TREJO BUENROSTRO, Comentario: 
+Fecha: 09/01/2011 21:12:29, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 09/01/2011 21:17:49, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 09/01/2011 21:22:18, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 09/01/2011 21:25:53, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 09/01/2011 22:10:41, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 31/01/2011 03:41:49, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 31/01/2011 03:42:14, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 01/09/2011 11:15:17, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 01/09/2011 11:34:51, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 01/09/2011 11:41:04, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 01/09/2011 11:45:21, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 01/09/2011 11:47:11, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 06/09/2011 10:04:43, Autorización: Reimpresión de cortes (Corte), Detalle: , Usuario: ERIC, Comentario: 
+Fecha: 06/09/2011 10:19:53, Autorización: Reimpresión de cortes (Corte), Detalle: , Usuario: ERIC, Comentario: 
+Fecha: 06/09/2011 10:54:00, Autorización: Reimpresión de cortes (Corte), Detalle: , Usuario: ERIC, Comentario: 
+Fecha: 06/09/2011 11:38:49, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 06/09/2011 11:43:58, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 06/09/2011 11:53:03, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 19:07:44, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 19:08:32, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 19:08:55, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 1), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 19:11:58, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 19:13:05, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 19:15:30, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 23:49:24, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 08/09/2011 23:51:42, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 30/09/2011 16:17:34, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 30/09/2011 16:20:27, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 30/09/2011 16:25:43, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 03/10/2011 08:39:27, Autorización: Modificar Existencia, Detalle: , Usuario: ERIC, Comentario: 
+Fecha: 03/10/2011 08:39:50, Autorización: Modificar Existencia, Detalle: , Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 06:24:02, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 06:25:57, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 19:40:10, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 19:46:21, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 19:48:15, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 19:49:31, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 19:51:18, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 
+Fecha: 13/10/2011 19:54:31, Autorización: Reimpresión de cortes (Corte), Detalle: (Caja 2), Usuario: ERIC, Comentario: 

@@ -1,0 +1,880 @@
+object frmPago: TfrmPago
+  Left = 226
+  Top = 137
+  Width = 524
+  Height = 355
+  VertScrollBar.Range = 178
+  VertScrollBar.Visible = False
+  HorzScrollBar.Range = 319
+  HorzScrollBar.Visible = False
+  ActiveControl = cmbTipo
+  BorderIcons = [biSystemMenu]
+  BorderStyle = fbsSingle
+  Caption = 'Pago'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100000000000E80200001600000028000000200000004000
+    0000010004000000000080020000000000000000000000000000000000000000
+    000000008000008000000080800080000000800080008080000080808000C0C0
+    C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000B3B3B3B33330000BB3B3000000000B3B3B3B3333333030BB3303300000003
+    3330000000000030BB0B3B3330000003333B8B8383333033BBBB333330000000
+    3333333333330B3B3BB33B3B3B0000000B3B3B3333330B3B33B3BBB3330000B3
+    B3B3B3B333330B3B333BBB333B0003333000000000000B3B33BBBBB3B3000300
+    000B3B3B33330B3B333BB0B33B000030B3B3B3B3B3330B3B333BBBB3B3000303
+    3333333333330B33333BBB3B3B000003000B888383830BB33333333BB0000000
+    33330000000000B33B3333BB300000033000B3B3B3B3B0BB33330BBB00000000
+    0B3B3B3B3B3B3B0BB33B3BB00000000033333333333333300B33330000000000
+    3000BBB838383830003000000000000003333380000000000000000000000000
+    3338000B3B3B3B3B3B000000000000000330B3B3B3B3B3B3B3B3300000000000
+    0003333FFFFFF33333333300000000000003088BBBB3B3B3B300030000000000
+    000033333BBBBB3B3B33300000000000000333B3B3BBBBB3B3B3330000000000
+    0000333B3BBBBBBB333330000000000000000003B3B3BFFFFB00000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000FFFF
+    FFFFFE003C1FF000000FE0000007C0000003C0000003C0000001C00000018000
+    00010000000100000001000000010000000180000003C0000003C0000007E000
+    000FE000001FE00000FFE00000FFE000007FF000003FF800001FFC00001FFC00
+    001FFC00001FFE00003FFF00007FFFE003FFFFFFFFFFFFFFFFFFFFFFFFFF}
+  PopupMenu = PopupMenu1
+  Scaled = False
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  object grpPagos: TGroupBox
+    Left = 6
+    Top = 198
+    Width = 511
+    Height = 104
+    Caption = 'Pagos'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    Visible = False
+    object Label11: TLabel
+      Left = 12
+      Top = 20
+      Width = 104
+      Height = 16
+      Caption = 'Monto a financiar:'
+      FocusControl = txtMonto
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtMonto: TcurrEdit
+      Left = 12
+      Top = 38
+      Width = 91
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+      Text = '$0.00'
+      Prefix = '$'
+      Mask = '#,##0.00'
+    end
+    object Label12: TLabel
+      Left = 288
+      Top = 20
+      Width = 87
+      Height = 16
+      Caption = 'Parcialidades:'
+      FocusControl = txtParcialidades
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtParcialidades: TcurrEdit
+      Left = 294
+      Top = 38
+      Width = 73
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+      Text = '$0.00'
+      Prefix = '$'
+      Mask = '#,##0.00'
+    end
+    object Label13: TLabel
+      Left = 420
+      Top = 20
+      Width = 76
+      Height = 16
+      Caption = #218'ltimo pago:'
+      FocusControl = txtUltimoPago
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtUltimoPago: TcurrEdit
+      Left = 420
+      Top = 38
+      Width = 73
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+      Text = '$0.00'
+      Prefix = '$'
+      Mask = '#,##0.00'
+    end
+    object Label14: TLabel
+      Left = 162
+      Top = 20
+      Width = 58
+      Height = 16
+      Caption = 'Intereses:'
+      FocusControl = txtIntereses
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtIntereses: TcurrEdit
+      Left = 162
+      Top = 38
+      Width = 73
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 7
+      Text = '$0.00'
+      Prefix = '$'
+      Mask = '#,##0.00'
+    end
+    object Label15: TLabel
+      Left = 12
+      Top = 74
+      Width = 136
+      Height = 16
+      Caption = 'Fecha de primer pago:'
+      FocusControl = txtIntereses
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 276
+      Top = 74
+      Width = 133
+      Height = 16
+      Caption = 'Fecha de '#250'ltimo pago:'
+      FocusControl = txtIntereses
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtFPrimerPago: TEdit
+      Left = 162
+      Top = 69
+      Width = 79
+      Height = 24
+      TabStop = False
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 10
+    end
+    object txtFUltimoPago: TEdit
+      Left = 414
+      Top = 69
+      Width = 79
+      Height = 24
+      TabStop = False
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 11
+    end
+  end
+  object grpCredito: TGroupBox
+    Left = 6
+    Top = 132
+    Width = 511
+    Height = 61
+    Caption = 'Cr'#233'dito'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    Visible = False
+    object Label4: TLabel
+      Left = 12
+      Top = 32
+      Width = 43
+      Height = 16
+      Caption = 'Pagos:'
+      FocusControl = txtPagos
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtPagos: TcurrEdit
+      Left = 60
+      Top = 26
+      Width = 37
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 2
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+      Text = '0'
+      Mask = '#,##0'
+    end
+    object Label5: TLabel
+      Left = 114
+      Top = 32
+      Width = 37
+      Height = 16
+      Caption = 'Plazo:'
+      FocusControl = txtPlazo
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtPlazo: TcurrEdit
+      Left = 156
+      Top = 26
+      Width = 37
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 3
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+      Text = '0'
+      Mask = '#,##0'
+    end
+    object Label6: TLabel
+      Left = 252
+      Top = 32
+      Width = 43
+      Height = 16
+      Caption = 'Inter'#233's:'
+      FocusControl = txtInteres
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtInteres: TcurrEdit
+      Left = 306
+      Top = 26
+      Width = 55
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+      Text = '0.00%'
+      Sufix = '%'
+      Mask = '#,##0.00'
+    end
+    object Label7: TLabel
+      Left = 378
+      Top = 26
+      Width = 40
+      Height = 16
+      Caption = 'Inter'#233's'
+      FocusControl = txtIntMorat
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      WordWrap = True
+    end
+    object txtIntMorat: TcurrEdit
+      Left = 444
+      Top = 26
+      Width = 55
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 7
+      Text = '0.00%'
+      Sufix = '%'
+      Mask = '#,##0.00'
+    end
+    object Label8: TLabel
+      Left = 378
+      Top = 37
+      Width = 60
+      Height = 16
+      Caption = 'moratorio:'
+      FocusControl = txtIntMorat
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      Masked = True
+      ParentFont = False
+      Transparent = True
+    end
+    object Label10: TLabel
+      Left = 198
+      Top = 32
+      Width = 26
+      Height = 16
+      Caption = 'd'#237'as'
+      FocusControl = txtPlazo
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+  end
+  object grpNotaCredito: TGroupBox
+    Left = 6
+    Top = 132
+    Width = 313
+    Height = 79
+    Caption = 'Nota de cr'#233'dito'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+    object Label9: TLabel
+      Left = 12
+      Top = 24
+      Width = 51
+      Height = 16
+      Caption = '&N'#250'mero:'
+      FocusControl = txtNumeroNota
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtNumeroNota: TcurrEdit
+      Left = 12
+      Top = 44
+      Width = 79
+      Height = 24
+      Alignment = taRightJustify
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = '0'
+      OnExit = txtNumeroNotaExit
+      Mask = '0'
+    end
+    object Label17: TLabel
+      Left = 216
+      Top = 24
+      Width = 48
+      Height = 16
+      Caption = 'Importe:'
+      FocusControl = txtMonto
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtImporteNota: TcurrEdit
+      Left = 216
+      Top = 44
+      Width = 85
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 6
+      Text = '0.00'
+      OnExit = txtImporteExit
+      Mask = '#,##0.00'
+    end
+    object lblCaja: TLabel
+      Left = 144
+      Top = 24
+      Width = 31
+      Height = 16
+      Caption = 'Ca&ja:'
+      FocusControl = txtCaja
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtCaja: TcurrEdit
+      Left = 144
+      Top = 44
+      Width = 43
+      Height = 24
+      Alignment = taRightJustify
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      Text = '0'
+      OnExit = txtNumeroNotaExit
+      Mask = '0'
+    end
+    object btnNotaCredito: TBitBtn
+      Left = 90
+      Top = 42
+      Width = 28
+      Height = 27
+      TabOrder = 2
+      OnClick = btnNotaCreditoClick
+      Glyph.Data = {
+        F2000000424DEE000000000000007600000028000000100000000F0000000100
+        04000000000078000000120B0000120B00001000000010000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+        77777777777777777777700000777700000770B00077770B000770F00088770F
+        00077000000000000007700F00000B000007700F00000F000007700F00000000
+        000777000008700000777770F077770B07777770F077770F0777777000777700
+        077777777777777777777777777777777777}
+    end
+  end
+  object grpPago: TGroupBox
+    Left = 6
+    Top = 6
+    Width = 313
+    Height = 121
+    Caption = 'Pago'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 204
+      Top = 20
+      Width = 99
+      Height = 16
+      Caption = 'I&mporte pagado:'
+      FocusControl = txtImporte
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+    end
+    object txtImporte: TcurrEdit
+      Left = 210
+      Top = 38
+      Width = 85
+      Height = 24
+      Alignment = taRightJustify
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      PopupMenu = PopupMenu1
+      TabOrder = 1
+      Text = '0.00'
+      OnExit = txtImporteExit
+      Mask = '#,##0.00'
+    end
+    object cmbTipo: TComboBox
+      Left = 12
+      Top = 38
+      Width = 181
+      Height = 24
+      Style = csDropDownList
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ItemHeight = 18
+      ParentFont = False
+      TabOrder = 0
+      OnSelect = cmbTipoSelect
+    end
+    object Label2: TLabel
+      Left = 12
+      Top = 20
+      Width = 85
+      Height = 16
+      Caption = '&Tipo de pago:'
+      FocusControl = cmbTipo
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+    end
+    object txtTotal: TcurrEdit
+      Left = 210
+      Top = 90
+      Width = 85
+      Height = 24
+      TabStop = False
+      Alignment = taRightJustify
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      PopupMenu = PopupMenu1
+      ReadOnly = True
+      TabOrder = 3
+      Text = '0.00'
+      Mask = '#,##0.00'
+    end
+    object lblReferencia: TLabel
+      Left = 12
+      Top = 72
+      Width = 88
+      Height = 16
+      Caption = '&No. de Cuenta:'
+      FocusControl = txtReferencia
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object txtReferencia: TEdit
+      Left = 12
+      Top = 90
+      Width = 163
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      MaxLength = 20
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+    end
+    object Label3: TLabel
+      Left = 211
+      Top = 70
+      Width = 81
+      Height = 16
+      Caption = 'Total a pagar'
+      FocusControl = txtImporte
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 304
+    Width = 524
+    Height = 51
+    Align = alBottom
+    BevelOuter = bvNone
+    PopupMenu = PopupMenu1
+    TabOrder = 5
+    object btnAceptar: TBitBtn
+      Left = 328
+      Top = 6
+      Width = 91
+      Height = 37
+      Anchors = [akTop, akRight]
+      Caption = 'Aceptar'
+      Default = True
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+      PopupMenu = PopupMenu1
+      TabOrder = 0
+      OnClick = btnAceptarClick
+      Glyph.Data = {
+        E2010000424DDE01000000000000760000002800000024000000120000000100
+        04000000000068010000120B0000120B00001000000010000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333330000333333333333333333333333F33333333333
+        00003333344333333333333333388F3333333333000033334224333333333333
+        338338F3333333330000333422224333333333333833338F3333333300003342
+        222224333333333383333338F3333333000034222A22224333333338F338F333
+        8F33333300003222A3A2224333333338F3838F338F33333300003A2A333A2224
+        33333338F83338F338F33333000033A33333A222433333338333338F338F3333
+        0000333333333A222433333333333338F338F33300003333333333A222433333
+        333333338F338F33000033333333333A222433333333333338F338F300003333
+        33333333A222433333333333338F338F00003333333333333A22433333333333
+        3338F38F000033333333333333A223333333333333338F830000333333333333
+        333A333333333333333338330000333333333333333333333333333333333333
+        0000}
+      NumGlyphs = 2
+    end
+    object btnCancelar: TBitBtn
+      Left = 424
+      Top = 6
+      Width = 91
+      Height = 37
+      Anchors = [akTop, akRight]
+      Cancel = True
+      Caption = 'Cancelar'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ModalResult = 2
+      ParentFont = False
+      PopupMenu = PopupMenu1
+      TabOrder = 1
+      Glyph.Data = {
+        E2010000424DDE01000000000000760000002800000024000000120000000100
+        04000000000068010000120B0000120B00001000000010000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        333333333333333333333333000033338833333333333333333F333333333333
+        0000333911833333983333333388F333333F3333000033391118333911833333
+        38F38F333F88F33300003339111183911118333338F338F3F8338F3300003333
+        911118111118333338F3338F833338F3000033333911111111833333338F3338
+        3333F8330000333333911111183333333338F333333F83330000333333311111
+        8333333333338F3333383333000033333339111183333333333338F333833333
+        00003333339111118333333333333833338F3333000033333911181118333333
+        33338333338F333300003333911183911183333333383338F338F33300003333
+        9118333911183333338F33838F338F33000033333913333391113333338FF833
+        38F338F300003333333333333919333333388333338FFF830000333333333333
+        3333333333333333333888330000333333333333333333333333333333333333
+        0000}
+      NumGlyphs = 2
+    end
+    object grdTipo: TStringGrid
+      Left = 126
+      Top = 20
+      Width = 88
+      Height = 25
+      ColCount = 14
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      FixedCols = 0
+      RowCount = 1
+      FixedRows = 0
+      ScrollBars = ssNone
+      TabOrder = 2
+      Visible = False
+    end
+    object grdPagos: TStringGrid
+      Left = 16
+      Top = 18
+      Width = 89
+      Height = 23
+      ColCount = 14
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      FixedCols = 0
+      RowCount = 1
+      FixedRows = 0
+      ScrollBars = ssNone
+      TabOrder = 3
+      Visible = False
+    end
+    object CheckBox1: TCheckBox
+      Left = 8
+      Top = 8
+      Width = 101
+      Height = 31
+      Checked = True
+      PopupMenu = PopupMenu1
+      State = cbChecked
+      TabOrder = 4
+      Visible = False
+    end
+  end
+  object grdListaPagos: TStringGrid
+    Left = 330
+    Top = 12
+    Width = 187
+    Height = 115
+    TabStop = False
+    ColCount = 2
+    DefaultRowHeight = 20
+    FixedCols = 0
+    RowCount = 2
+    Font.Color = clBlue
+    Font.Height = 11
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+    ParentFont = False
+    ScrollBars = ssAutoVertical
+    TabOrder = 1
+    Visible = False
+    OnDrawCell = grdListaPagosDrawCell
+  end
+  object PopupMenu1: TPopupMenu
+    AutoPopup = False
+    Left = 238
+    Top = 6
+    object O11: TMenuItem
+      Caption = 'O1'
+      ShortCut = 4144
+      OnClick = O11Click
+    end
+  end
+end

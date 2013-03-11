@@ -1,0 +1,271 @@
+// --------------------------------------------------------------------------
+// Archivo del Proyecto Ventas    
+// Página del proyecto: http://sourceforge.net/projects/ventas
+// --------------------------------------------------------------------------
+// Este archivo puede ser distribuido y/o modificado bajo lo terminos de la
+// Licencia Pública General versión 2 como es publicada por la Free Software
+// Fundation, Inc.
+// --------------------------------------------------------------------------
+
+unit Funciones;
+
+interface
+
+uses
+  SysUtils, Classes,{$IFDEF MSWINDOWS} Windows, {$ENDIF} Math, Messages;
+
+const
+  FECHA_DBMS         = 'mm/dd/yyyy';
+  FECHA_HORA_DBMS    = 'mm/dd/yyyy hh:nn:ss.zzz';
+  HORA_DBMS          = 'hh:nn:ss';
+  OBTENER_FECHA_HORA = 'CAST(''NOW'' AS TIMESTAMP)';
+  OBTENER_FECHA      = 'CAST(''NOW'' AS DATE)';
+  OBTENER_HORA       = 'CAST(''NOW'' AS TIME)';
+
+  // Constantes para formato de valores
+  FLOTANTE_2DEC      = '#,###,##0.00';
+  FLOTANTE_3DEC      = '#,###,##0.000';
+  FLOTANTE_4DEC      = '#,###,##0.0000';
+
+  ENTERO             = '#,##0';
+  PORCENTAJE         = '#,##0.00%';
+
+type
+  TMensajes = class
+      procedure ControlarMensaje(var Mensaje: TMsg; var Controlado: Boolean);
+  end;
+
+
+//--
+  function NumFloat(sNumeroTexto :string; wDecimales :Word) :string;
+  function StrZero(rNumero: Extended; iTamanio, iDecimales: integer): string;
+  function QuitarAcentos(sString :String): String;
+  function RemoverCaracteresEsp(sString : String) : String;
+  function StrTran(sString, sBusqueda, sNuevaString : String) : String;
+//--
+  function Iif(BooleanExpr:Boolean; IfTrue, IfFalse:Variant):Variant;
+
+{$IFDEF MSWINDOWS}
+  function NombreEquipo: string;
+{$ENDIF}
+
+implementation
+
+{ procedimientos y funciones }
+
+function StrZero(rNumero: Extended; iTamanio, iDecimales: integer): string;
+var
+    TempStr: string;
+begin
+    Str(rNumero:0:iDecimales,TempStr);
+    while length(TempStr) < iTamanio do
+        Insert('0',TempStr,1);
+    Result := TempStr;
+end;
+
+function NumFloat(sNumeroTexto :string; wDecimales :Word) :string;
+var
+    i   : Word;
+    sString, sDecimales : string;
+begin
+    sString := '';
+    for i := 1 to Length(sNumeroTexto) do begin
+        if sNumeroTexto[i] = DecimalSeparator then sString := sString+sNumeroTexto[i]
+        else
+        if (sNumeroTexto[i] in ['0'..'9']) then sString := sString+sNumeroTexto[i];
+    end;
+
+    if Pos(DecimalSeparator,sString) = 0 then
+        sString := sString+','+StringOfChar('0',wDecimales)
+    else
+    begin
+        sDecimales := Copy(sString,Pos(',',sString)+1,wDecimales);
+        sDecimales := sDecimales+StringOfChar('0',wDecimales-Length(sDecimales));
+        sString := Copy(sString,1,Pos(',',sString)-1)+','+sDecimales;
+    end;
+    Result := StringReplace(sString,',','.',[rfReplaceAll]);
+end;
+
+function Iif(BooleanExpr:Boolean; IfTrue, IfFalse:Variant):Variant;
+begin
+  if BooleanExpr Then Result := IfTrue Else Result := IFFalse;
+end;
+
+function QuitarAcentos(sString :String): String;
+const
+    ConAcento = 'àâêôûãõáéíóúçüÀÂÊÔÛÃÕÁÉÍÓÚÇÜ';
+    SinAcento = 'aaeouaoaeioucuAAEOUAOAEIOUCU';
+var
+    i : Integer;
+begin
+    for i := 1 to Length(sString) do
+    begin
+        if Pos(sString[i],ConAcento)<>0 then
+            sString[i] := SinAcento[Pos(sString[i],ConAcento)];
+    end;
+    Result := sString;
+end;
+
+{$IFDEF MSWINDOWS}
+// Retorna el nombre del computadora
+function NombreEquipo: string;
+var
+    wI: DWord;
+begin
+    wI := MAX_COMPUTERNAME_LENGTH + 1;
+    SetLength(Result, wI);
+    Windows.GetComputerName(PChar(Result), wI);
+    Result := string(PChar(Result));
+end;
+{$ENDIF}
+
+function RemoverCaracteresEsp(sString : String) : String;
+begin
+    sString := StrTran(sString,' ','');
+    sString := StrTran(sString,'.','');
+    sString := StrTran(sString,',','');
+    sString := StrTran(sString,'/','');
+    sString := StrTran(sString,'\','');
+    sString := StrTran(sString,'|','');
+    sString := StrTran(sString,':','');
+    sString := StrTran(sString,'(','');
+    sString := StrTran(sString,')','');
+    sString := StrTran(sString,'-','');
+    sString := StrTran(sString,'=','');
+    sString := StrTran(sString,';','');
+    sString := StrTran(sString,':','');
+    sString := StrTran(sString,'''','');
+    sString := StrTran(sString,'"','');        
+    Result := sString;
+end;
+
+function StrTran(sString, sBusqueda, sNuevaString : String) : String;
+var
+    i : integer;
+begin
+    for i := 1 to Length(sString) do begin
+        if Copy(sString,i,1) = sBusqueda then begin
+            Delete(sString,i,1);
+            Insert(sNuevaString,sString,i);
+        end;
+    end;
+    Result := sString;
+end;
+
+procedure TMensajes.ControlarMensaje(var Mensaje: TMsg; var Controlado: Boolean);
+var
+   i: SmallInt;
+begin
+   if Mensaje.message = WM_MOUSEWHEEL then
+   begin
+     Mensaje.message := WM_KEYDOWN;
+     Mensaje.lParam := 0;
+     i := HiWord(Mensaje.wParam) ;
+     if i > 0 then
+       Mensaje.wParam := VK_UP
+     else
+       Mensaje.wParam := VK_DOWN;
+
+     Controlado := False;
+   end;
+end;
+
+function ValidaCorreo(sCorreo: string): boolean;
+const
+    // Caracteres válidos en un "átomo"
+    ATOM_CHARS = [#33..#255] - ['(', ')', '<', '>', '@', ',', ';', ':',
+                                '\', '/', '"', '.', '[', ']', #127];
+    // Caracteres válidos en una "cadena-entrecomillada"
+    QUOTED_STRING_CHARS = [#0..#255] - ['"', #13, '\'];
+    // Caracteres válidos en un subdominio
+    LETTERS = ['A'..'Z', 'a'..'z'];
+    LETTERS_DIGITS = ['0'..'9', 'A'..'Z', 'a'..'z'];
+    SUBDOMAIN_CHARS = ['-', '0'..'9', 'A'..'Z', 'a'..'z'];
+type
+    States = (STATE_BEGIN, STATE_ATOM, STATE_QTEXT, STATE_QCHAR,
+      STATE_QUOTE, STATE_LOCAL_PERIOD, STATE_EXPECTING_SUBDOMAIN,
+      STATE_SUBDOMAIN, STATE_HYPHEN);
+var
+    State: States;
+    i, n, iSubdomains: integer;
+    c: char;
+begin
+    State := STATE_BEGIN;
+    n := Length(sCorreo);
+    i := 1;
+    iSubdomains := 1;
+    while (i <= n) do begin
+        c := sCorreo[i];
+        case State of
+            STATE_BEGIN:
+                if c in atom_chars then
+                    State := STATE_ATOM
+                else if c = '"' then
+                    State := STATE_QTEXT
+                else
+                    break;
+            STATE_ATOM:
+                if c = '@' then
+                    State := STATE_EXPECTING_SUBDOMAIN
+                else if c = '.' then
+                    State := STATE_LOCAL_PERIOD
+                else if not (c in atom_chars) then
+                    break;
+            STATE_QTEXT:
+                if c = '\' then
+                    State := STATE_QCHAR
+                else if c = '"' then
+                    State := STATE_QUOTE
+                else if not (c in quoted_string_chars) then
+                    break;
+            STATE_QCHAR:
+                State := STATE_QTEXT;
+            STATE_QUOTE:
+                if c = '@' then
+                    State := STATE_EXPECTING_SUBDOMAIN
+                else if c = '.' then
+                    State := STATE_LOCAL_PERIOD
+                else
+                    break;
+            STATE_LOCAL_PERIOD:
+                if c in atom_chars then
+                    State := STATE_ATOM
+                else if c = '"' then
+                    State := STATE_QTEXT
+                else
+                    break;
+            STATE_EXPECTING_SUBDOMAIN:
+                if c in letters then
+                    State := STATE_SUBDOMAIN
+                else
+                    break;
+            STATE_SUBDOMAIN:
+                if c = '.' then begin
+                    Inc(iSubdomains);
+                    State := STATE_EXPECTING_SUBDOMAIN
+                end
+                else if c = '-' then
+                    State := STATE_HYPHEN
+                else if not (c in letters_digits) then
+                    break;
+            STATE_HYPHEN:
+                if c in letters_digits then
+                    State := STATE_SUBDOMAIN
+                else if c <> '-' then
+                    break;
+        end;
+        Inc(i);
+    end;
+    if i <= n then
+        Result := False
+    else
+        Result := (State = STATE_SUBDOMAIN) and (iSubdomains >= 2);
+
+    //si sCorreo esta vacio regresa true
+    if sCorreo = '' then
+        Result := true;
+end;
+
+
+end.
+

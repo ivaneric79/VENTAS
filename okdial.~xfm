@@ -1,0 +1,42 @@
+object okdial: Tokdial
+  Left = 568
+  Top = 207
+  Width = 353
+  Height = 217
+  VertScrollBar.Range = 209
+  HorzScrollBar.Range = 277
+  Color = clBackground
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object oktxt: TLabel
+    Left = 0
+    Top = 0
+    Width = 353
+    Height = 161
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'label'
+    Layout = tlCenter
+    WordWrap = True
+  end
+  object BitBtn1: TBitBtn
+    Left = 92
+    Top = 184
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 202
+    Top = 184
+    Width = 75
+    Height = 25
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 2
+  end
+end

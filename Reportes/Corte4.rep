@@ -1,0 +1,2306 @@
+object TRpReport
+  PageHeight = 8120
+  PageWidth = 5742
+  PageBackColor = 2147483647
+  LeftMargin = 0
+  RightMargin = 0
+  SubReports = <
+    item
+      SubReport = TRpSubReport0
+    end>
+  DataInfo = <
+    item
+      Alias = 'RETIROS'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'SELECT COUNT(*) AS cantidad, SUM(importe) AS importe '#13#10'FROM reti' +
+        'ros WHERE fecha = :Fecha AND  hora > :HoraIni  AND hora < :Horaf' +
+        'in'
+    end
+    item
+      Alias = 'CAJA1P'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and comprobantes.TIPO='#39'P'#39' and ventas.e' +
+        'status = '#39'A'#39' AND ventas.caja ='#39'1'#39')'
+    end
+    item
+      Alias = 'CAJA2P'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and comprobantes.TIPO='#39'P'#39' and ventas.e' +
+        'status = '#39'A'#39' AND ventas.caja ='#39'2'#39')'
+    end
+    item
+      Alias = 'CAJA3P'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and comprobantes.TIPO='#39'P'#39' and ventas.e' +
+        'status = '#39'A'#39' AND ventas.caja ='#39'3'#39')'
+    end
+    item
+      Alias = 'CAJA1F'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select COUNT(*) AS numero, sum(ventas.REDONDEO) as REDONDEO, sum' +
+        '(ventas.TOTAL) as SUMA, sum(ventas.IVA) as IVATOTAL from COMPROB' +
+        'ANTES inner join ventas on ventas.CLAVE=comprobantes.VENTA where' +
+        ' '#13#10'((ventas.fecha = :Fecha AND ventas.hora > :HoraIni AND ventas' +
+        '.hora < :Horafin'#13#10'AND COMPROBANTES.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and c' +
+        'omprobantes.TIPO='#39'F'#39'  AND ventas.estatus = '#39'A'#39'  AND ventas.caja ' +
+        '='#39'1'#39')'#13#10#13#10#13#10
+    end
+    item
+      Alias = 'CAJA2F'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select COUNT(*) AS numero, sum(ventas.REDONDEO) as REDONDEO, sum' +
+        '(ventas.TOTAL) as SUMA, sum(ventas.IVA) as IVATOTAL from COMPROB' +
+        'ANTES inner join ventas on ventas.CLAVE=comprobantes.VENTA where' +
+        ' '#13#10'((ventas.fecha = :Fecha AND ventas.hora > :HoraIni AND ventas' +
+        '.hora < :Horafin'#13#10'AND COMPROBANTES.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and c' +
+        'omprobantes.TIPO='#39'F'#39'  AND ventas.estatus = '#39'A'#39'  AND ventas.caja ' +
+        '='#39'2'#39')'
+    end
+    item
+      Alias = 'CAJA3F'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select COUNT(*) AS numero, sum(ventas.REDONDEO) as REDONDEO, sum' +
+        '(ventas.TOTAL) as SUMA, sum(ventas.IVA) as IVATOTAL from COMPROB' +
+        'ANTES inner join ventas on ventas.CLAVE=comprobantes.VENTA where' +
+        ' '#13#10'((ventas.fecha = :Fecha AND ventas.hora > :HoraIni AND ventas' +
+        '.hora < :Horafin'#13#10'AND COMPROBANTES.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and c' +
+        'omprobantes.TIPO='#39'F'#39'  AND ventas.estatus = '#39'A'#39'  AND ventas.caja ' +
+        '='#39'3'#39')'
+    end
+    item
+      Alias = 'CAJA1T'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39','#39'C'#39')) and comprobantes.TIPO='#39'T'#39' and ventas.es' +
+        'tatus = '#39'A'#39' AND ventas.caja ='#39'1'#39')'
+    end
+    item
+      Alias = 'CAJA2T'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39','#39'C'#39')) and comprobantes.TIPO='#39'T'#39' and ventas.es' +
+        'tatus = '#39'A'#39' AND ventas.caja ='#39'2'#39')'
+    end
+    item
+      Alias = 'CAJA3T'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39','#39'C'#39')) and comprobantes.TIPO='#39'T'#39' and ventas.es' +
+        'tatus = '#39'A'#39' AND ventas.caja ='#39'3'#39')'
+    end
+    item
+      Alias = 'RETIROSC1'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'SELECT COUNT(*) AS cantidad, SUM(importe) AS importe '#13#10'FROM reti' +
+        'ros WHERE fecha = :Fecha AND  hora > :HoraIni  AND hora < :Horaf' +
+        'in AND caja = '#39'1'#39
+    end
+    item
+      Alias = 'RETIROSC2'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'SELECT COUNT(*) AS cantidad, SUM(importe) AS importe '#13#10'FROM reti' +
+        'ros WHERE fecha = :Fecha AND  hora > :HoraIni  AND hora < :Horaf' +
+        'in AND caja = '#39'2'#39
+    end
+    item
+      Alias = 'RETIROSC3'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'SELECT COUNT(*) AS cantidad, SUM(importe) AS importe '#13#10'FROM reti' +
+        'ros WHERE fecha = :Fecha AND  hora > :HoraIni  AND hora < :Horaf' +
+        'in AND caja = '#39'3'#39
+    end
+    item
+      Alias = 'EMPRESA'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 'SELECT nombre FROM empresa'
+    end
+    item
+      Alias = 'CAJA1D'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and comprobantes.TIPO='#39'D'#39' and ventas.e' +
+        'status = '#39'A'#39' AND ventas.caja ='#39'1'#39')'
+    end
+    item
+      Alias = 'CAJA2D'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and comprobantes.TIPO='#39'D'#39' and ventas.e' +
+        'status = '#39'A'#39' AND ventas.caja ='#39'2'#39')'
+    end
+    item
+      Alias = 'CAJA3D'
+      DatabaseAlias = 'IBCONNECTION'
+      SQL = 
+        'select  COUNT(*) AS numero, sum(ventas.TOTAL) as SUMA, sum(venta' +
+        's.IVA) as IVATOTAL from COMPROBANTES inner join ventas on ventas' +
+        '.CLAVE=comprobantes.VENTA where '#13#10'((ventas.fecha = :Fecha AND ve' +
+        'ntas.hora > :HoraIni AND ventas.hora < :Horafin'#13#10'AND COMPROBANTE' +
+        'S.tipo NOT IN ('#39'A'#39', '#39'C'#39')) and comprobantes.TIPO='#39'D'#39' and ventas.e' +
+        'status = '#39'A'#39' AND ventas.caja ='#39'3'#39')'
+    end>
+  DatabaseInfo = <
+    item
+      Alias = 'IBCONNECTION'
+      LoadParams = True
+      LoadDriverParams = True
+      LoginPrompt = False
+      ReportTable = 'REPMAN_REPORTS'
+      ReportSearchField = 'REPORT_NAME'
+      ReportField = 'REPORT'
+      ReportGroupsTable = 'REPMAN_GROUPS'
+      ADOConnectionString = ''
+    end>
+  Params = <
+    item
+      Name = 'FECHA'
+      AllowNulls = False
+      Value = '02/03/2005'
+      Datasets.Strings = (
+        'VENTAS'
+        'RETIROS'
+        'COTIZAAJUSTE'
+        'CANCELACIONES'
+        'FACTURAS'
+        'TICKETS'
+        'PEDIDOS'
+        'CAJA1P'
+        'CAJA2P'
+        'CAJA3P'
+        'CAJA1F'
+        'CAJA2F'
+        'CAJA3F'
+        'CAJA1T'
+        'CAJA2T'
+        'CAJA3T'
+        'RETIROSC1'
+        'RETIROSC2'
+        'RETIROSC3'
+        'CAJA1D'
+        'CAJA2D'
+        'CAJA3D')
+      SearchDataset = 'VENTAS'
+      SearchParam = 'FECHA'
+      Description = ''
+      Hint = ''
+      Search = ''
+      ErrorMessage = ''
+      Validation = ''
+    end
+    item
+      Name = 'CAJA'
+      AllowNulls = False
+      Value = '1'
+      Datasets.Strings = (
+        'VENTAS'
+        'COTIZAAJUSTE'
+        'CANCELACIONES')
+      Description = ''
+      Hint = ''
+      Search = ''
+      ErrorMessage = ''
+      Validation = ''
+    end
+    item
+      Name = 'HORAINI'
+      AllowNulls = False
+      Value = '00:00:00'
+      Datasets.Strings = (
+        'VENTAS'
+        'RETIROS'
+        'COTIZAAJUSTE'
+        'CANCELACIONES'
+        'FACTURAS'
+        'TICKETS'
+        'PEDIDOS'
+        'CAJA1P'
+        'CAJA2P'
+        'CAJA3P'
+        'CAJA1F'
+        'CAJA2F'
+        'CAJA3F'
+        'CAJA1T'
+        'CAJA2T'
+        'CAJA3T'
+        'RETIROSC1'
+        'RETIROSC2'
+        'RETIROSC3'
+        'CAJA1D'
+        'CAJA2D'
+        'CAJA3D')
+      SearchDataset = 'VENTAS'
+      SearchParam = 'HORAINI'
+      Description = ''
+      Hint = ''
+      Search = ''
+      ErrorMessage = ''
+      Validation = ''
+    end
+    item
+      Name = 'HORAFIN'
+      AllowNulls = False
+      Value = '23:59:59'
+      Datasets.Strings = (
+        'VENTAS'
+        'RETIROS'
+        'COTIZAAJUSTE'
+        'CANCELACIONES'
+        'FACTURAS'
+        'TICKETS'
+        'PEDIDOS'
+        'CAJA1P'
+        'CAJA2P'
+        'CAJA3P'
+        'CAJA1F'
+        'CAJA2F'
+        'CAJA3F'
+        'CAJA1T'
+        'CAJA2T'
+        'CAJA3T'
+        'RETIROSC1'
+        'RETIROSC2'
+        'RETIROSC3'
+        'CAJA1D'
+        'CAJA2D'
+        'CAJA3D')
+      SearchDataset = 'VENTAS'
+      SearchParam = 'HORAFIN'
+      Description = ''
+      Hint = ''
+      Search = ''
+      ErrorMessage = ''
+      Validation = ''
+    end
+    item
+      Name = 'USUARIO'
+      AllowNulls = False
+      Value = 'ADMIN'
+      Description = ''
+      Hint = ''
+      Search = ''
+      ErrorMessage = ''
+      Validation = ''
+    end>
+  StreamFormat = rpStreamText
+  ReportAction = []
+  Type1Font = poHelvetica
+  WFontName = 'Arial'
+  LFontName = 'Helvetica'
+  object TRpSubReport0: TRpSubReport
+    Sections = <
+      item
+        Section = TRpSection1
+      end>
+    PrintOnlyIfDataAvailable = False
+  end
+  object TRpSection1: TRpSection
+    Width = 10772
+    Height = 6435
+    SubReport = TRpSubReport0
+    ChangeBool = False
+    PageRepeat = False
+    SkipPage = False
+    AlignBottom = False
+    SectionType = rpsecdetail
+    Components = <
+      item
+        Component = TRpLabel6
+      end
+      item
+        Component = TRpLabel7
+      end
+      item
+        Component = TRpExpression11
+      end
+      item
+        Component = TRpExpression14
+      end
+      item
+        Component = TRpLabel8
+      end
+      item
+        Component = TRpExpression12
+      end
+      item
+        Component = TRpExpression1
+      end
+      item
+        Component = TRpExpression2
+      end
+      item
+        Component = TRpExpression15
+      end
+      item
+        Component = TRpExpression16
+      end
+      item
+        Component = TRpExpression17
+      end
+      item
+        Component = TRpExpression18
+      end
+      item
+        Component = TRpExpression13
+      end
+      item
+        Component = TRpExpression19
+      end
+      item
+        Component = TRpExpression20
+      end
+      item
+        Component = TRpExpression4
+      end
+      item
+        Component = TRpExpression5
+      end
+      item
+        Component = TRpExpression6
+      end
+      item
+        Component = TRpExpression7
+      end
+      item
+        Component = TRpExpression26
+      end
+      item
+        Component = TRpExpression27
+      end
+      item
+        Component = TRpExpression28
+      end
+      item
+        Component = TRpExpression29
+      end
+      item
+        Component = TRpExpression30
+      end
+      item
+        Component = TRpExpression31
+      end
+      item
+        Component = TRpExpression32
+      end
+      item
+        Component = TRpExpression33
+      end
+      item
+        Component = TRpLabel17
+      end
+      item
+        Component = TRpLabel18
+      end
+      item
+        Component = TRpExpression57
+      end
+      item
+        Component = TRpExpression58
+      end
+      item
+        Component = TRpExpression59
+      end
+      item
+        Component = TRpExpression60
+      end
+      item
+        Component = TRpExpression61
+      end
+      item
+        Component = TRpExpression62
+      end
+      item
+        Component = TRpExpression63
+      end
+      item
+        Component = TRpExpression64
+      end
+      item
+        Component = TRpExpression65
+      end
+      item
+        Component = TRpExpression66
+      end
+      item
+        Component = TRpExpression67
+      end
+      item
+        Component = TRpExpression68
+      end
+      item
+        Component = TRpExpression69
+      end
+      item
+        Component = TRpExpression70
+      end
+      item
+        Component = TRpExpression71
+      end
+      item
+        Component = TRpExpression72
+      end
+      item
+        Component = TRpExpression73
+      end
+      item
+        Component = TRpExpression74
+      end
+      item
+        Component = TRpExpression75
+      end
+      item
+        Component = TRpExpression76
+      end
+      item
+        Component = TRpExpression77
+      end
+      item
+        Component = TRpExpression78
+      end
+      item
+        Component = TRpExpression79
+      end
+      item
+        Component = TRpExpression80
+      end
+      item
+        Component = TRpExpression81
+      end
+      item
+        Component = TRpLabel19
+      end
+      item
+        Component = TRpExpression82
+      end
+      item
+        Component = TRpExpression83
+      end
+      item
+        Component = TRpExpression84
+      end
+      item
+        Component = TRpExpression85
+      end
+      item
+        Component = TRpLabel20
+      end
+      item
+        Component = TRpLabel4
+      end
+      item
+        Component = TRpLabel9
+      end
+      item
+        Component = TRpExpression0
+      end
+      item
+        Component = TRpShape1
+      end
+      item
+        Component = TRpExpression8
+      end
+      item
+        Component = TRpLabel12
+      end
+      item
+        Component = TRpLabel16
+      end
+      item
+        Component = TRpLabel21
+      end
+      item
+        Component = TRpLabel22
+      end
+      item
+        Component = TRpLabel23
+      end
+      item
+        Component = TRpLabel24
+      end
+      item
+        Component = TRpLabel25
+      end
+      item
+        Component = TRpExpression10
+      end
+      item
+        Component = TRpLabel26
+      end
+      item
+        Component = TRpExpression3
+      end>
+    ExternalTable = 'REPMAN_REPORTS'
+    ExternalField = 'REPORT'
+    ExternalSearchField = 'REPORT_NAME'
+    StreamFormat = rpStreamText
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    ChangeExpression = ''
+    BeginPageExpression = ''
+    ChangeExpression = ''
+    SkipExpreV = ''
+    SkipExpreH = ''
+    SkipToPageExpre = ''
+    BackExpression = ''
+    Stream = {0000000000000000}
+  end
+  object TRpLabel6: TRpLabel
+    Width = 1500
+    Height = 225
+    PosX = 225
+    PosY = 3225
+    Type1Font = poHelvetica
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'TICKETS'
+  end
+  object TRpLabel7: TRpLabel
+    Width = 1500
+    Height = 225
+    PosX = 225
+    PosY = 3570
+    Type1Font = poHelvetica
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'FACTURAS'
+  end
+  object TRpLabel8: TRpLabel
+    Width = 1500
+    Height = 225
+    PosX = 225
+    PosY = 2880
+    Type1Font = poHelvetica
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'PEDIDOS'
+  end
+  object TRpExpression1: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 2880
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C2P'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2P.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression11: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 3570
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C1F'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = '(CAJA1F.SUMA)*1.16'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression15: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 3570
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C2F'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = '(CAJA2F.SUMA)*1.16'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression16: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 3570
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C3F'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = '(CAJA3F.SUMA)*1.16'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression12: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 3225
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C1T'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1T.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression17: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 3225
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C2T'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2T.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression18: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 3225
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C3T'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3T.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression2: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 2880
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C3P'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3P.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression13: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 9435
+    PosY = 2880
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.C1P + M.C2P + M.C3P'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression19: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 9435
+    PosY = 3225
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.C1T + M.C2T+ M.C3T'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression26: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 1950
+    PosY = 3225
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1T.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression27: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 1950
+    PosY = 3570
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression5: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 4260
+    PosY = 2880
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2P.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression28: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 4260
+    PosY = 3225
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2T.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression29: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 4260
+    PosY = 3570
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression6: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 6435
+    PosY = 2880
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3P.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression30: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 6435
+    PosY = 3225
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3T.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression31: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 6435
+    PosY = 3570
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression7: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 8625
+    PosY = 2880
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    Identifier = 'V1T'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1P.NUMERO + CAJA2P.NUMERO + CAJA3P.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression32: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 8625
+    PosY = 3225
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    Identifier = 'V2T'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1T.NUMERO + CAJA2T.NUMERO + CAJA3T.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression4: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 1950
+    PosY = 2880
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1P.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression14: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 2880
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'C1P'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1P.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression20: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 9435
+    PosY = 3570
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.C1F + M.C2F + M.C3F'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpLabel17: TRpLabel
+    Width = 8850
+    Height = 225
+    PosX = 1730
+    PosY = 3910
+    Type1Font = poHelvetica
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 
+      '----------------------------------------------------------------' +
+      '----------------------------------------------------------------' +
+      '------------------'
+  end
+  object TRpLabel18: TRpLabel
+    Width = 810
+    Height = 240
+    PosX = 225
+    PosY = 4250
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'SUMA :'
+  end
+  object TRpExpression57: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 1950
+    PosY = 4260
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1P.NUMERO + CAJA1T.NUMERO + CAJA1F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression58: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 4260
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'SUMAPAGOS1'
+    Aggregate = rpAgGroup
+    GroupName = ' '
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.C1F + M.C1P + M.C1T'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression59: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 4260
+    PosY = 4260
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2P.NUMERO + CAJA2T.NUMERO + CAJA2F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression60: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 4260
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'SUMAPAGOS2'
+    Aggregate = rpAgGroup
+    GroupName = ' '
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.C2F + M.C2P + M.C2T'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression61: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 6435
+    PosY = 4260
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3P.NUMERO + CAJA3T.NUMERO + CAJA3F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression62: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 4260
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'SUMAPAGOS3'
+    Aggregate = rpAgGroup
+    GroupName = ' '
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.C3F + M.C3P + M.C3T'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression63: TRpExpression
+    Width = 1140
+    Height = 225
+    PosX = 9435
+    PosY = 4260
+    Type1Font = poHelvetica
+    FontStyle = 1
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'SUMAPAGOS'
+    Aggregate = rpAgGroup
+    GroupName = ' '
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.SUMAPAGOS1 + M.SUMAPAGOS2+ M.SUMAPAGOS3'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression64: TRpExpression
+    Width = 810
+    Height = 240
+    PosX = 225
+    PosY = 4595
+    Type1Font = poHelvetica
+    FontSize = 8
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = #39'RETIROS'#39
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression65: TRpExpression
+    Width = 690
+    Height = 240
+    PosX = 1950
+    PosY = 4605
+    Type1Font = poHelvetica
+    FontSize = 8
+    Alignment = 4
+    DataType = rpParamInteger
+    DisplayFormat = '0'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROSC1.CANTIDAD'
+    DisplayFormat = '0'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression66: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 4605
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'R1'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROSC1.IMPORTE'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression67: TRpExpression
+    Width = 690
+    Height = 240
+    PosX = 4260
+    PosY = 4605
+    Type1Font = poHelvetica
+    FontSize = 8
+    Alignment = 4
+    DataType = rpParamInteger
+    DisplayFormat = '0'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROSC2.CANTIDAD'
+    DisplayFormat = '0'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression68: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 4605
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'R2'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROSC2.IMPORTE'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression69: TRpExpression
+    Width = 690
+    Height = 240
+    PosX = 6435
+    PosY = 4605
+    Type1Font = poHelvetica
+    FontSize = 8
+    Alignment = 4
+    DataType = rpParamString
+    DisplayFormat = '0'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROSC3.CANTIDAD'
+    DisplayFormat = '0'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression70: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 4605
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'R3'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROSC3.IMPORTE'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression71: TRpExpression
+    Width = 570
+    Height = 240
+    PosX = 8625
+    PosY = 4605
+    Type1Font = poHelvetica
+    FontSize = 8
+    Alignment = 4
+    DisplayFormat = '0'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROS.CANTIDAD'
+    DisplayFormat = '0'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression72: TRpExpression
+    Width = 1140
+    Height = 225
+    PosX = 9435
+    PosY = 4605
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$#,##0.00'
+    Identifier = 'RETIROS'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'RETIROS.IMPORTE'
+    DisplayFormat = '$#,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression73: TRpExpression
+    Width = 810
+    Height = 240
+    PosX = 225
+    PosY = 4940
+    Type1Font = poHelvetica
+    FontSize = 8
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = #39'DEVOLUCION'#39
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression74: TRpExpression
+    Width = 690
+    Height = 240
+    PosX = 1950
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 4
+    DataType = rpParamCurrency
+    Identifier = 'DC1'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1D.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression75: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'D1'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1D.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression76: TRpExpression
+    Width = 690
+    Height = 240
+    PosX = 4260
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 4
+    DataType = rpParamCurrency
+    Identifier = 'DC2'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2D.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression77: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'D2'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA2D.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression78: TRpExpression
+    Width = 690
+    Height = 240
+    PosX = 6435
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 4
+    DataType = rpParamCurrency
+    Identifier = 'DC3'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3D.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression79: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'D3'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA3D.SUMA'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression80: TRpExpression
+    Width = 570
+    Height = 240
+    PosX = 8625
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 4
+    DataType = rpParamCurrency
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.DC1+ M.DC2 + M.DC3'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression81: TRpExpression
+    Width = 1140
+    Height = 225
+    PosX = 9435
+    PosY = 4950
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamCurrency
+    DisplayFormat = '$ #,##0.00'
+    Identifier = 'SD'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.D1 + M.D2 + M.D3'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpLabel19: TRpLabel
+    Width = 8850
+    Height = 225
+    PosX = 1500
+    PosY = 5295
+    Type1Font = poHelvetica
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 
+      '----------------------------------------------------------------' +
+      '----------------------------------------------------------------' +
+      '------------------'
+  end
+  object TRpExpression82: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 2760
+    PosY = 5520
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.SUMAPAGOS1 - RETIROSC1.IMPORTE - M.D1'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression83: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 5055
+    PosY = 5520
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.SUMAPAGOS2 - RETIROSC2.IMPORTE - M.D2'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression84: TRpExpression
+    Width = 1155
+    Height = 225
+    PosX = 7245
+    PosY = 5520
+    Type1Font = poHelvetica
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.SUMAPAGOS3 - RETIROSC3.IMPORTE - M.D3'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression85: TRpExpression
+    Width = 1140
+    Height = 225
+    PosX = 9435
+    PosY = 5520
+    Type1Font = poHelvetica
+    FontStyle = 1
+    Alignment = 2
+    DataType = rpParamDouble
+    DisplayFormat = '$ #,##0.00'
+    Aggregate = rpAgGroup
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.SUMAPAGOS - M.RETIROS - M.SD'
+    DisplayFormat = '$ #,##0.00'
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpLabel20: TRpLabel
+    Width = 2070
+    Height = 240
+    PosX = 225
+    PosY = 5520
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'TOTAL'
+  end
+  object TRpLabel4: TRpLabel
+    Width = 795
+    Height = 240
+    PosX = 2985
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    Alignment = 4
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Courier'
+    LFontName = 'Helvetica'
+    WideText = 'CAJA 1'
+  end
+  object TRpLabel9: TRpLabel
+    Width = 3570
+    Height = 225
+    PosX = 3795
+    PosY = 810
+    Type1Font = poHelvetica
+    FontSize = 12
+    FontStyle = 1
+    Alignment = 4
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'CORTE DE CAJA PARCIAL'
+  end
+  object TRpExpression0: TRpExpression
+    Width = 3570
+    Height = 465
+    PosX = 3795
+    PosY = 1605
+    Type1Font = poHelvetica
+    Alignment = 4
+    WordWrap = True
+    DataType = rpParamString
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 
+      #39'CORTE DEL '#39'+ SUBSTR(M.FECHA,4,3) + SUBSTR(M.FECHA,1,3) + '#13#10'SUBS' +
+      'TR(M.FECHA,7,4) + '#39' '#39' + M.HORAINI + '#39' HASTA '#39' + M.HORAFIN'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpShape1: TRpShape
+    Width = 10230
+    Height = 75
+    PosX = 345
+    PosY = 2535
+    Shape = rpsHorzLine
+    PenWidth = 0
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+  end
+  object TRpExpression8: TRpExpression
+    Width = 3570
+    Height = 240
+    PosX = 3795
+    PosY = 1260
+    Type1Font = poHelvetica
+    Alignment = 4
+    DataType = rpParamString
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = #39'CAJA: '#39' + M.CAJA + '#39'  USUARIO: '#39' + M.USUARIO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpLabel12: TRpLabel
+    Width = 795
+    Height = 240
+    PosX = 5295
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    Alignment = 4
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Courier'
+    LFontName = 'Helvetica'
+    WideText = 'CAJA 2'
+  end
+  object TRpLabel16: TRpLabel
+    Width = 795
+    Height = 240
+    PosX = 7470
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    Alignment = 4
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Courier'
+    LFontName = 'Helvetica'
+    WideText = 'CAJA 3'
+  end
+  object TRpLabel21: TRpLabel
+    Width = 795
+    Height = 240
+    PosX = 9660
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    Alignment = 4
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Courier'
+    LFontName = 'Helvetica'
+    WideText = 'TOTAL'
+  end
+  object TRpLabel22: TRpLabel
+    Width = 810
+    Height = 240
+    PosX = 1950
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'Ventas'
+  end
+  object TRpLabel23: TRpLabel
+    Width = 810
+    Height = 240
+    PosX = 4260
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'Ventas'
+  end
+  object TRpLabel24: TRpLabel
+    Width = 810
+    Height = 240
+    PosX = 6435
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'Ventas'
+  end
+  object TRpLabel25: TRpLabel
+    Width = 810
+    Height = 240
+    PosX = 8625
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    WideText = 'Ventas'
+  end
+  object TRpExpression10: TRpExpression
+    Width = 10455
+    Height = 570
+    PosX = 120
+    PosY = 120
+    Type1Font = poHelvetica
+    FontSize = 14
+    FontStyle = 1
+    Alignment = 4
+    VAlignment = 32
+    SingleLine = True
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'TRIM(EMPRESA.NOMBRE)'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpLabel26: TRpLabel
+    Width = 690
+    Height = 240
+    PosX = 570
+    PosY = 2295
+    Type1Font = poHelvetica
+    FontStyle = 1
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Courier'
+    LFontName = 'Helvetica'
+    WideText = 'TIPOS '
+  end
+  object TRpExpression33: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 8625
+    PosY = 3570
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    Identifier = 'V3T'
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'CAJA1F.NUMERO + CAJA2F.NUMERO + CAJA3F.NUMERO'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+  object TRpExpression3: TRpExpression
+    Width = 690
+    Height = 225
+    PosX = 8625
+    PosY = 4260
+    Type1Font = poHelvetica
+    FontSize = 9
+    Alignment = 4
+    DataType = rpParamInteger
+    AutoExpand = False
+    AutoContract = False
+    ExportPosition = 0
+    ExportSize = 1
+    ExportDoNewLine = False
+    PrintCondition = ''
+    DoBeforePrint = ''
+    DoAfterPrint = ''
+    WFontName = 'Arial'
+    LFontName = 'Helvetica'
+    Expression = 'M.V1T + M.V2T + M.V3T'
+    DisplayFormat = ''
+    ExportDisplayFormat = ''
+    AgIniValue = '0'
+    ExportExpression = ''
+  end
+end

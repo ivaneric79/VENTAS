@@ -1,0 +1,4 @@
+inherited frmVendedoresBusq: TfrmVendedoresBusq
+  Caption = 'B'#250'squeda de Vendedores'
+  PixelsPerInch = 96
+end

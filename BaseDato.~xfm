@@ -1,0 +1,271 @@
+object frmBaseDatos: TfrmBaseDatos
+  Left = 195
+  Top = 215
+  Width = 409
+  Height = 205
+  VertScrollBar.Range = 199
+  HorzScrollBar.Range = 403
+  ActiveControl = txtServidor
+  BorderIcons = [biSystemMenu]
+  BorderStyle = fbsSingle
+  Caption = 'Base de datos'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100001000400E80200001600000028000000200000004000
+    0000010004000000000000000000000000000000000000000000000000000000
+    0000000080000080000000808000800000008000800080800000C0C0C0008080
+    80000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF000000
+    000000000000000000000000000000000000000000000000C000000000000877
+    777777800000000CC00000000000087777779788000000CCC000000000000877
+    7777778800000CCCCCCC000000000877777777880000CCCCCCCCCC0000000877
+    7777778800000CCCCCCCCCC00000087777777788000000CCC0000CCC000008FF
+    FFFFFF780000000CC000000CC00008888888880700000000C0000000C0000877
+    777777800000000000000000C0000877777777880000000000000000C00008FF
+    FFFFFF7800000000000000000000088888888807000000000000000000000877
+    77777780000000000000000000000877777777880000000000B3F3B0000008FF
+    FFFFFFF800000083BFFF3F3B330000877777777F000000833FB3F3B333000008
+    8888888800000083BFFF3F3B3300000000000000000000833FB3F3B33300000C
+    0000000000000083BFFF3F3B3300000C00000000000000833FB3F3B33300000C
+    0000000C00000083BFFF3F3B3300000CC000000CC00000833FB3F3B333000000
+    CCC0000CCC000083BFFF3F3B330000000CCCCCCCCCC000833FB3F3B333000000
+    00CCCCCCCCCC0083BFFF3F3B330000000000CCCCCCC000833FB3F3B333000000
+    0000000CCC000083BFBFBFBF330000000000000CC0000083FBFBFBFBF3000000
+    0000000C000000088FBFBFBF880000000000000000000000088888880000FFFF
+    FFFFC01FF7FF800FE7FF8007C7FF800780FF8007003F8007801F8007C78F8007
+    E7E78007F7F78007FFF78007FFF78007FFFF8007FFFF8007FC1F8007E0038007
+    C001C007C001E00FC001FFFFC001EFFFC001EFFFC001EFEFC001E7E7C001F1E3
+    C001F801C001FC00C001FF01C001FFE3C001FFE7C001FFEFE003FFFFF80F}
+  Scaled = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  object grpConexion: TGroupBox
+    Left = 6
+    Top = 0
+    Width = 397
+    Height = 157
+    Caption = 'Conexi'#243'n'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    object lblServidor: TLabel
+      Left = 12
+      Top = 48
+      Width = 54
+      Height = 16
+      Caption = '&Servidor:'
+      FocusControl = txtServidor
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 11
+      Top = 101
+      Width = 91
+      Height = 16
+      Caption = '&Base de datos:'
+      FocusControl = txtBase
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 138
+      Top = 48
+      Width = 50
+      Height = 16
+      Caption = '&Usuario:'
+      FocusControl = txtUsuario
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 264
+      Top = 48
+      Width = 72
+      Height = 16
+      Caption = 'C&ontrase'#241'a:'
+      FocusControl = txtContra
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      ParentFont = False
+    end
+    object txtServidor: TEdit
+      Left = 12
+      Top = 66
+      Width = 121
+      Height = 24
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 20
+      ParentFont = False
+      TabOrder = 2
+    end
+    object txtUsuario: TEdit
+      Left = 138
+      Top = 66
+      Width = 121
+      Height = 24
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 15
+      ParentFont = False
+      TabOrder = 3
+    end
+    object txtBase: TEdit
+      Left = 12
+      Top = 120
+      Width = 337
+      Height = 24
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 80
+      ParentFont = False
+      TabOrder = 5
+    end
+    object txtContra: TEdit
+      Left = 264
+      Top = 66
+      Width = 121
+      Height = 24
+      EchoMode = emPassword
+      Font.Color = clText
+      Font.Height = 13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      Font.Weight = 40
+      MaxLength = 20
+      ParentFont = False
+      TabOrder = 4
+    end
+    object rdbRemota: TRadioButton
+      Left = 132
+      Top = 24
+      Width = 127
+      Height = 17
+      Caption = 'Servidor &remoto'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = LocalRemoto
+    end
+    object rdbLocal: TRadioButton
+      Left = 12
+      Top = 24
+      Width = 115
+      Height = 17
+      Caption = 'Servidor &local'
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = LocalRemoto
+    end
+    object btnBase: TBitBtn
+      Left = 355
+      Top = 117
+      Width = 28
+      Height = 27
+      TabOrder = 6
+      OnClick = btnBaseClick
+      Glyph.Data = {
+        7A010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000010000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+        5555555555555555555555555555555555555555555555555555555555555555
+        555555555555555555555555555555555555555FFFFFFFFFF555550000000000
+        55555577777777775F55500B8B8B8B8B05555775F555555575F550F0B8B8B8B8
+        B05557F75F555555575F50BF0B8B8B8B8B0557F575FFFFFFFF7F50FBF0000000
+        000557F557777777777550BFBFBFBFB0555557F555555557F55550FBFBFBFBF0
+        555557F555555FF7555550BFBFBF00055555575F555577755555550BFBF05555
+        55555575FFF75555555555700007555555555557777555555555555555555555
+        5555555555555555555555555555555555555555555555555555}
+      NumGlyphs = 2
+    end
+  end
+  object btnAceptar: TBitBtn
+    Left = 222
+    Top = 162
+    Width = 89
+    Height = 37
+    Caption = 'Aceptar'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnAceptarClick
+    Kind = bkOK
+  end
+  object btnCancelar: TBitBtn
+    Left = 312
+    Top = 162
+    Width = 89
+    Height = 37
+    Caption = 'Cancelar'
+    Font.Color = clBlack
+    Font.Height = 13
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+    TabOrder = 2
+    Kind = bkCancel
+  end
+  object dlgAbrir: TOpenDialog
+    Filter = 'Base de datos de Interbase/Firebird|*.gdb;*.fdb'
+    FilterIndex = 0
+    Height = 0
+    Width = 0
+    Left = 24
+    Top = 168
+  end
+end

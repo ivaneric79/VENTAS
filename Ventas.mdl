@@ -1,0 +1,25 @@
+[Model]
+Color=clSilver
+Database=servidor:d:\programas\ventas\base\ventas.gdb
+Username=
+Password=.JuMbLe.01.
+CurrentScale=100
+Title=
+LinkColorDefault=clBlack
+LinkColorSelected=clRed
+LinkColorFocused=clBlue
+LinkColorCustom=clGreen
+AddTablesFilter=RDB$RELATION_NAME NOT CONTAINING '$'
+SnapToGrid=1
+SnapRelToGrid=1
+GridX=8
+GridY=8
+[DefaultShowOptions]
+soType=1
+soDomain=1
+soComputedBy=1
+soRequired=1
+soIcons=1
+soKeysOnly=0
+soHeader=0
+DefColCount=1

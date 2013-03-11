@@ -1,0 +1,210 @@
+unit BaseDato;
+
+interface
+
+uses
+  SysUtils, Types, Classes, QGraphics, QControls, QForms, QDialogs,
+  QStdCtrls, QButtons, Inifiles;
+
+type
+  TfrmBaseDatos = class(TForm)
+    grpConexion: TGroupBox;
+    lblServidor: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    txtServidor: TEdit;
+    txtUsuario: TEdit;
+    txtBase: TEdit;
+    btnAceptar: TBitBtn;
+    btnCancelar: TBitBtn;
+    txtContra: TEdit;
+    rdbRemota: TRadioButton;
+    rdbLocal: TRadioButton;
+    btnBase: TBitBtn;
+    dlgAbrir: TOpenDialog;
+    procedure btnAceptarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure RecuperaConfig;
+    procedure FormCreate(Sender: TObject);
+    procedure btnBaseClick(Sender: TObject);
+    procedure LocalRemoto(Sender: TObject);
+  private
+    function VerificaDatos:boolean;
+    procedure GuardaDatos;
+  public
+    bAceptar : boolean;
+  end;
+
+var
+  frmBaseDatos: TfrmBaseDatos;
+
+implementation
+
+uses Permisos;
+
+{$R *.xfm}
+
+procedure TfrmBaseDatos.btnAceptarClick(Sender: TObject);
+begin
+    if(VerificaDatos) then begin
+        bAceptar := true;
+        GuardaDatos;
+        Close;
+    end;
+end;
+
+// -----------------------------------------------------------------------------
+// Función: VerificaDatos
+// Objetivo: Verificar que se introduzcan datos en los campos requeridos
+//           y que no exista algún error en la captura de los datos
+// Regresa: bVerifica (falso o verdadero)
+//          Falso: si existe un error en la captura de los datos
+//          Verdadero: si todos los datos están correctos
+// -----------------------------------------------------------------------------
+function TfrmBaseDatos.VerificaDatos:boolean;
+var
+    bRegreso : boolean;
+begin
+    bRegreso := true;
+    if(Length(txtServidor.Text) = 0) then begin
+        bRegreso := false;
+        Application.MessageBox('Introduce el servidor donde se encuentran las bases de datos','Error',[smbOK],smsCritical);
+        txtServidor.SetFocus;
+    end
+    else if(Length(txtUsuario.Text) = 0) then begin
+        bRegreso := false;
+        Application.MessageBox('Introduce un usuario válido para las bases de datos','Error',[smbOK],smsCritical);
+        txtUsuario.SetFocus;
+    end
+    else if(Length(txtContra.Text) = 0) then begin
+        bRegreso := false;
+        Application.MessageBox('Introduce una contraseña válida para el usuario','Error',[smbOK],smsCritical);
+        txtContra.SetFocus;
+    end
+    else if(Length(txtBase.Text) = 0) then begin
+        bRegreso := false;
+        Application.MessageBox('Introduce la ruta de la base de datos ventas','Error',[smbOK],smsCritical);
+        txtBase.SetFocus;
+    end;
+    Result := bRegreso;
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimientos: GuardaDatos
+// Objetivo: Guarda los datos de conexión en "config.ini"
+// -----------------------------------------------------------------------------
+procedure TfrmBaseDatos.GuardaDatos;
+var
+    iniArchivo : TIniFile;
+    sContra : String;
+begin
+    sContra := txtContra.Text;
+    with TFrmPermisos.Create(Self) do
+    try
+        sContra := Encripta(sContra);
+    finally
+        free;
+    end;
+
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'config.ini');
+    iniArchivo.WriteString('BaseDato', 'Servidor', txtServidor.Text);
+    iniArchivo.WriteString('BaseDato', 'Usuario', txtUsuario.Text);
+    iniArchivo.WriteString('BaseDato', 'Contra', sContra);
+    iniArchivo.WriteString('BaseDato', 'Base', txtBase.Text);
+    if(rdbLocal.Checked) then
+        iniArchivo.WriteString('BaseDato','Conexion','Local')
+    else
+        iniArchivo.WriteString('BaseDato','Conexion','Remota');
+        
+    iniArchivo.Free;
+end;
+
+procedure TfrmBaseDatos.FormShow(Sender: TObject);
+var
+    iniArchivo : TIniFile;
+    sConexion : String;
+begin
+    bAceptar := false;
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'config.ini');
+    with iniArchivo do begin
+        txtServidor.Text := ReadString('BaseDato', 'Servidor', '');
+        txtUsuario.Text := ReadString('BaseDato', 'Usuario', '');
+        txtContra.Text := frmPermisos.DesEncripta(ReadString('BaseDato', 'Contra', ''));
+        txtBase.Text := ReadString('BaseDato', 'Base', '');
+        sConexion := ReadString('BaseDato', 'Conexion', '');
+        if(sConexion = 'Local') then
+            rdbLocal.Checked := true
+        else
+            rdbRemota.Checked := true;
+        LocalRemoto(Sender);
+        Free;
+    end;
+end;
+
+procedure TfrmBaseDatos.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+  var iniArchivo : TIniFile;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'config.ini');
+    with iniArchivo do begin
+        // Registra la posición y de la ventana
+        WriteString('BaseDato', 'Posy', IntToStr(Top));
+
+        // Registra la posición X de la ventana
+        WriteString('BaseDato', 'Posx', IntToStr(Left));
+        Free;
+    end;
+end;
+
+procedure TfrmBaseDatos.RecuperaConfig;
+var
+    iniArchivo : TIniFile;
+    sIzq, sArriba : String;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) + 'config.ini');
+
+    with iniArchivo do begin
+        //Recupera la posición Y de la ventana
+        sArriba := ReadString('BaseDato', 'Posy', '');
+
+        //Recupera la posición X de la ventana
+        sIzq := ReadString('BaseDato', 'Posx', '');
+
+        if (Length(sIzq) > 0) and (Length(sArriba) > 0) then begin
+            Left := StrToInt(sIzq);
+            Top := StrToInt(sArriba);
+        end;
+
+        Free;
+    end;
+end;
+
+procedure TfrmBaseDatos.FormCreate(Sender: TObject);
+begin
+    RecuperaConfig;
+end;
+
+procedure TfrmBaseDatos.btnBaseClick(Sender: TObject);
+begin
+    if(dlgAbrir.Execute) then
+        txtBase.Text := dlgAbrir.FileName;
+end;
+
+procedure TfrmBaseDatos.LocalRemoto(Sender: TObject);
+begin
+    if(rdbLocal.Checked) then begin
+        lblServidor.Enabled := false;
+        txtServidor.Enabled := false;
+        btnBase.Enabled := true;
+        txtServidor.Text := 'localhost';
+    end
+    else begin
+        lblServidor.Enabled := true;
+        txtServidor.Enabled := true;
+        btnBase.Enabled := false;
+    end;
+end;
+
+end.

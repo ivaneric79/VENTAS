@@ -1,0 +1,599 @@
+object frmCalculadora: TfrmCalculadora
+  Left = 331
+  Top = 201
+  Width = 209
+  Height = 299
+  VertScrollBar.Range = 175
+  BorderIcons = [biSystemMenu]
+  BorderStyle = fbsSingle
+  Caption = 'Calculadora'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100001000400E80200001600000028000000200000004000
+    0000010004000000000000000000000000000000000000000000000000000000
+    0000000080000080000000808000800000008000800080800000C0C0C0008080
+    80000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF000000
+    0000000000000000000000000000000878888888888888888888888800000008
+    F7777777777777777777777800000008F7777777777777777777777800000008
+    F7887887887887887887887800000008F7F87F87F87F87F87F87F87800000008
+    F7777777777777777777777800000008F7788788788788788788777800000008
+    F77F87F87F87F87F87F8777800000008F7777777777777777777777800000008
+    F7887887887887887887887800000008F7F87F87F87F87F87F87F87800000008
+    F7777777777777777777777800000008F79A7777777777777777777800000008
+    FFFFFFFFFFFFFFFFFFFFFFF70000000080000000000000000000000000000008
+    77777777777777777777777800000008F77FFFFFFFFFFFFFFFFFF77800000008
+    F70E6E6E6E6E6E6E6E6E6F7800000008F706E6E6E6E6E6E6E6E6EF7800000008
+    F70E6E6E6E6E6E6E6E6E6F7800000008F706E6E6E6E6E6E6E6E6EF7800000008
+    F70E6E6E6E6E6E6E6E6E6F7800000008F706E6E6E6E6E6E6E6E6EF7800000008
+    F70E6E6E6E6E6E6E6E6E6F7800000008F706E6E6E6E6E6E6E6E6EF7800000008
+    F70E6E6E6E6E6E6E6E6E6F7800000008F706E6E6E6E6E6E6E6E6EF7800000008
+    F7700000000000000000077800000008F7777777777777777777777800000008
+    7FFFFFFFFFFFFFFFFFFFFFF7000000008888888888888888888888880000F000
+    000FE0000007E0000007E0000007E0000007E0000007E0000007E0000007E000
+    0007E0000007E0000007E0000007E0000007E0000007E0000007F000000FE000
+    0007E0000007E0000007E0000007E0000007E0000007E0000007E0000007E000
+    0007E0000007E0000007E0000007E0000007E0000007E0000007F000000F}
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object pnlNumeros: TPanel
+    Left = 0
+    Top = 101
+    Width = 209
+    Height = 175
+    Align = alBottom
+    TabOrder = 0
+    object btnUtilizar: TBitBtn
+      Left = 126
+      Top = 5
+      Width = 76
+      Height = 31
+      Anchors = [akTop, akRight, akBottom]
+      Caption = 'Utilizar'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      TabStop = False
+      OnClick = btnUtilizarClick
+    end
+    object btnRetroceso: TBitBtn
+      Left = 8
+      Top = 5
+      Width = 38
+      Height = 31
+      Hint = 'Borrar (Retroceso)'
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '<---'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      TabStop = False
+      OnClick = btnRetrocesoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn7: TBitBtn
+      Left = 8
+      Top = 42
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '7'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn8: TBitBtn
+      Left = 45
+      Top = 42
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '8'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn9: TBitBtn
+      Left = 82
+      Top = 42
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '9'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn4: TBitBtn
+      Left = 8
+      Top = 73
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '4'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn1: TBitBtn
+      Left = 8
+      Top = 104
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '1'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 6
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn5: TBitBtn
+      Left = 45
+      Top = 73
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '5'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn6: TBitBtn
+      Left = 82
+      Top = 73
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '6'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 8
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn2: TBitBtn
+      Left = 45
+      Top = 104
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '2'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 9
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn3: TBitBtn
+      Left = 82
+      Top = 104
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '3'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 10
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnDivision: TBitBtn
+      Left = 126
+      Top = 42
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '/'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 11
+      TabStop = False
+      OnClick = Operadores
+      OnEnter = btnUtilizarEnter
+    end
+    object btnMultiplicacion: TBitBtn
+      Left = 126
+      Top = 73
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '*'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 12
+      TabStop = False
+      OnClick = Operadores
+      OnEnter = btnUtilizarEnter
+    end
+    object btnRaiz: TBitBtn
+      Left = 163
+      Top = 42
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = 'Raiz'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 13
+      TabStop = False
+      OnClick = btnRaizClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnPorcentaje: TBitBtn
+      Left = 163
+      Top = 73
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '%'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 14
+      TabStop = False
+      OnClick = btnPorcentajeClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnResta: TBitBtn
+      Left = 126
+      Top = 104
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '-'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 15
+      TabStop = False
+      OnClick = Operadores
+      OnEnter = btnUtilizarEnter
+    end
+    object btnInverso: TBitBtn
+      Left = 163
+      Top = 104
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '1/x'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 16
+      TabStop = False
+      OnClick = btnInversoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnSuma: TBitBtn
+      Left = 126
+      Top = 135
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '+'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 17
+      TabStop = False
+      OnClick = Operadores
+      OnEnter = btnUtilizarEnter
+    end
+    object btnIgual: TBitBtn
+      Left = 163
+      Top = 135
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '='
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 18
+      TabStop = False
+      OnClick = Resultado
+      OnEnter = btnUtilizarEnter
+    end
+    object btnLimpiar: TBitBtn
+      Left = 45
+      Top = 5
+      Width = 38
+      Height = 31
+      Anchors = [akTop, akRight, akBottom]
+      Caption = 'CE'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 19
+      TabStop = False
+      OnClick = btnLimpiarClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnCancelar: TBitBtn
+      Left = 82
+      Top = 5
+      Width = 38
+      Height = 31
+      Hint = 'Borrar todo (C)'
+      Anchors = [akTop, akRight, akBottom]
+      Cancel = True
+      Caption = 'C'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 20
+      TabStop = False
+      OnClick = btnCancelarClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btn0: TBitBtn
+      Left = 8
+      Top = 135
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '0'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 21
+      TabStop = False
+      OnClick = BotonNumericoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnSigno: TBitBtn
+      Left = 45
+      Top = 135
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '+/-'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 22
+      TabStop = False
+      OnClick = btnSignoClick
+      OnEnter = btnUtilizarEnter
+    end
+    object btnPunto: TBitBtn
+      Left = 82
+      Top = 135
+      Width = 38
+      Height = 32
+      Anchors = [akTop, akRight, akBottom]
+      Caption = '.'
+      Font.Color = clBlack
+      Font.Height = 11
+      Font.Name = 'MS Shell Dlg'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 23
+      TabStop = False
+      OnClick = btnPuntoClick
+      OnEnter = btnUtilizarEnter
+    end
+  end
+  object grdCalculo: TStringGrid
+    Left = 0
+    Top = 0
+    Width = 209
+    Height = 101
+    TabStop = False
+    Align = alClient
+    ColCount = 4
+    DefaultColWidth = 190
+    DefaultRowHeight = 12
+    FixedCols = 0
+    RowCount = 1
+    FixedRows = 0
+    Font.Color = clBlack
+    Font.Height = 14
+    Font.Name = 'Courier New'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    Options = [goDrawFocusSelected, goRowSelect]
+    ParentFont = False
+    PopupMenu = ppmContextual
+    ScrollBars = ssAutoVertical
+    TabOrder = 1
+    OnDrawCell = grdCalculoDrawCell
+    OnKeyDown = FormKeyDown
+    OnKeyPress = FormKeyPress
+    OnMouseDown = grdCalculoMouseDown
+  end
+  object MainMenu1: TMainMenu
+    Left = 6
+    object mnuEdicion: TMenuItem
+      Caption = '&Edici'#243'n'
+      OnClick = mnuInsertar1Click
+      object mnuCopiar: TMenuItem
+        Caption = '&Copiar'
+        ShortCut = 16451
+        OnClick = mnuCopiarClick
+      end
+      object mnuPegar: TMenuItem
+        Caption = '&Pegar'
+        ShortCut = 16470
+        OnClick = mnuPegarClick
+      end
+      object N4: TMenuItem
+        Caption = '-'
+      end
+      object mnuInsertar: TMenuItem
+        Caption = '&Insertar'
+        ShortCut = 4102
+      end
+      object mnuEliminar: TMenuItem
+        Caption = '&Eliminar'
+        ShortCut = 4103
+        OnClick = mnuEliminar1Click
+      end
+    end
+    object mnuConfiguracion: TMenuItem
+      Caption = 'C&onfiguraci'#243'n'
+      object mnuDecimales: TMenuItem
+        Caption = '&Decimales'
+        ShortCut = 16452
+        OnClick = mnuDecimalesClick
+      end
+      object mnuLineas: TMenuItem
+        Caption = '&Lineas de visor'
+        ShortCut = 16460
+        OnClick = mnuLineasClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object mnuRedondear: TMenuItem
+        Caption = '&Redondear'
+        Checked = True
+        RadioItem = True
+        OnClick = mnuRedondearClick
+      end
+      object mnuTruncar: TMenuItem
+        Caption = '&Truncar'
+        RadioItem = True
+        OnClick = mnuRedondearClick
+      end
+    end
+    object mnuAyuda: TMenuItem
+      Caption = '&Ayuda'
+      object mnuAcercade: TMenuItem
+        Caption = 'Acerca de ...'
+      end
+    end
+  end
+  object ppmContextual: TPopupMenu
+    Left = 48
+    object Copiar1: TMenuItem
+      Caption = '&Copiar'
+      OnClick = mnuCopiarClick
+    end
+    object Pegar1: TMenuItem
+      Caption = 'Pegar'
+      OnClick = mnuPegarClick
+    end
+    object N3: TMenuItem
+      Caption = '-'
+    end
+    object mnuInsertar1: TMenuItem
+      Caption = '&Insertar'
+      OnClick = mnuInsertar1Click
+    end
+    object mnuEliminar1: TMenuItem
+      Caption = '&Eliminar'
+      OnClick = mnuEliminar1Click
+    end
+  end
+end

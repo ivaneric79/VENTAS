@@ -1,0 +1,880 @@
+// --------------------------------------------------------------------------
+// Archivo del Proyecto Ventas
+// Página del proyecto: http://sourceforge.net/projects/ventas
+// --------------------------------------------------------------------------
+// Este archivo puede ser distribuido y/o modificado bajo lo terminos de la
+// Licencia Pública General versión 2 como es publicada por la Free Software
+// Fundation, Inc.
+// --------------------------------------------------------------------------
+
+unit XPagar;
+
+interface
+
+uses
+  SysUtils, Types, Classes, Variants, QTypes, QGraphics, QControls, QForms,
+  QDialogs, QStdCtrls, QGrids, QDBGrids, QComCtrls, QMenus, QExtCtrls, Math,
+  QcurrEdit, QButtons, DB, IniFiles;
+
+type
+  TfrmXPagar = class(TForm)
+    pgeGeneral: TPageControl;
+    tabDatos: TTabSheet;
+    tabBusqueda: TTabSheet;
+    grdListado: TDBGrid;
+    grpProveedor: TGroupBox;
+    grpBuscar: TGroupBox;
+    chkEstatus: TCheckBox;
+    chkProveedor: TCheckBox;
+    chkDocumento: TCheckBox;
+    chkFecha: TCheckBox;
+    txtProveedBusq: TEdit;
+    cmbEstatus: TComboBox;
+    txtDiaIni: TEdit;
+    txtMesIni: TEdit;
+    txtAnioIni: TEdit;
+    lblDiagMes1: TLabel;
+    lblDiagDia1: TLabel;
+    txtDiaFin: TEdit;
+    txtMesFin: TEdit;
+    txtAnioFin: TEdit;
+    lblDiagMes2: TLabel;
+    lblDiagDia2: TLabel;
+    lblAl: TLabel;
+    rdgOrden: TRadioGroup;
+    Label1: TLabel;
+    pnlJuego: TPanel;
+    pnlNoInventariable: TPanel;
+    pnlNormal: TPanel;
+    Label25: TLabel;
+    Label24: TLabel;
+    Label23: TLabel;
+    btnBuscar: TBitBtn;
+    btnSeleccionar: TBitBtn;
+    btnLimpiar: TBitBtn;
+    btnSalir: TBitBtn;
+    Label26: TLabel;
+    txtRegistros: TcurrEdit;
+    Label4: TLabel;
+    txtProveedor: TEdit;
+    GroupBox1: TGroupBox;
+    grdCuentas: TStringGrid;
+    chkVencim: TCheckBox;
+    txtDiaVenIni: TEdit;
+    txtMesVenIni: TEdit;
+    txtAnioVenIni: TEdit;
+    lblDiagVenMes1: TLabel;
+    lblDiagVenDia1: TLabel;
+    txtDiaVenFin: TEdit;
+    txtMesVenFin: TEdit;
+    txtAnioVenFin: TEdit;
+    lblDiagVenMes2: TLabel;
+    lblDiagVenDia2: TLabel;
+    lblAlVen: TLabel;
+    btnAbono: TBitBtn;
+    btnCancelar: TBitBtn;
+    MainMenu1: TMainMenu;
+    Archivo1: TMenuItem;
+    Pagos1: TMenuItem;
+    Bsqueda1: TMenuItem;
+    Buscar1: TMenuItem;
+    Avanzaregistro1: TMenuItem;
+    Retrocederegistro1: TMenuItem;
+    N1: TMenuItem;
+    Seleccionar1: TMenuItem;
+    Fichas1: TMenuItem;
+    Bsqueda2: TMenuItem;
+    Cuentasporcobrar1: TMenuItem;
+    grpCredito: TGroupBox;
+    Label11: TLabel;
+    txtPlazo: TcurrEdit;
+    Label12: TLabel;
+    txtInteres: TcurrEdit;
+    Label13: TLabel;
+    txtIntMorat: TcurrEdit;
+    Label16: TLabel;
+    Label17: TLabel;
+    txtMonto: TcurrEdit;
+    Label15: TLabel;
+    txtApagar: TcurrEdit;
+    Label9: TLabel;
+    txtCantInteres: TcurrEdit;
+    Label14: TLabel;
+    txtCantIntMorat: TcurrEdit;
+    Label28: TLabel;
+    txtDocumento: TEdit;
+    txtPagos: TEdit;
+    Label2: TLabel;
+    Label8: TLabel;
+    txtProximoPago: TEdit;
+    Label3: TLabel;
+    txtFecha: TEdit;
+    Label5: TLabel;
+    txtPagado: TcurrEdit;
+    pnlEstatus: TPanel;
+    Reportes1: TMenuItem;
+    PagosGenerales: TMenuItem;
+    txtDoctoBusq: TEdit;
+    N2: TMenuItem;
+    mnuConsultaDocumento: TMenuItem;
+    BitBtn1: TBitBtn;
+    procedure btnBuscarClick(Sender: TObject);
+    procedure chkProveedorClick(Sender: TObject);
+    procedure chkFechaClick(Sender: TObject);
+    procedure chkDocumentoClick(Sender: TObject);
+    procedure chkEstatusClick(Sender: TObject);
+    procedure btnSeleccionarClick(Sender: TObject);
+    procedure btnSalirClick(Sender: TObject);
+    procedure Salta(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure RecuperaDatos;
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);    
+    procedure grdCuentasDrawCell(Sender: TObject; ACol, ARow: Integer;
+      Rect: TRect; State: TGridDrawState);
+    procedure btnAbonoClick(Sender: TObject);
+    procedure chkVencimClick(Sender: TObject);
+    procedure Cuentasporcobrar1Click(Sender: TObject);
+    procedure Bsqueda2Click(Sender: TObject);
+    procedure Avanzaregistro1Click(Sender: TObject);
+    procedure Retrocederegistro1Click(Sender: TObject);
+    procedure grdListadoDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure grdCuentasClick(Sender: TObject);
+    procedure PagosGeneralesClick(Sender: TObject);
+    procedure txtAnioIniExit(Sender: TObject);
+    procedure txtAnioFinExit(Sender: TObject);
+    procedure txtAnioVenIniExit(Sender: TObject);
+    procedure txtAnioVenFinExit(Sender: TObject);
+    procedure txtDiaIniExit(Sender: TObject);
+    procedure mnuConsultaDocumentoClick(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+
+  private
+    sProveedor, sCredito, sComentario, sBM, sEstatus, sFechaPago, sTipoPago : String;
+    sTipoInteres : String;
+    rInteresDiario, rTipoPlazo, rInteresMorat, rInteresAnual, rPlazos : real;
+    rImporte, rInteres, rIntMorat : real;
+
+    bAbono : boolean;
+
+    function  VerificaDatos : boolean;
+    procedure Rellena(Sender: TObject);
+    function  VerificaFechas(sFecha : string) : boolean;
+    procedure IniCuentas;
+    procedure RecuperaPagos;
+    procedure RecuperaConfig;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmXPagar: TfrmXPagar;
+
+implementation
+
+uses ClientesBusq, dm, xAbono, ReportesXPagar;
+
+{$R *.xfm}
+
+procedure TfrmXPagar.btnBuscarClick(Sender: TObject);
+begin
+   if(VerificaDatos) then begin
+        dmDatos.cdsCliente1.Active := false;
+        with dmDatos.qryListados1 do begin
+            Close;
+            SQL.Clear;
+            SQL.Add('SELECT x.clave, p.clave AS prov_clave, p.nombre AS proveedor, ');
+            SQL.Add('x.importe, x.pagado, x.proximopago, x.estatus, c.documento FROM xpagar x LEFT JOIN');
+            SQL.Add('proveedores p ON x.proveedor = p.clave LEFT JOIN compras c ON');
+            SQL.Add('x.compra = c.clave WHERE 1 = 1');
+
+            if(chkProveedor.Checked) then
+                SQL.Add('AND x.proveedor IN (SELECT clave FROM proveedores WHERE nombre LIKE ''%' + txtProveedBusq.Text + '%'')');
+            if(chkEstatus.Checked) then
+                SQL.Add('AND x.estatus = ''' + Copy(cmbEstatus.Text,1,1) + '''');
+            if(chkFecha.Checked) then begin
+                SQL.Add('AND c.fecha >= ''' + txtMesIni.Text + '/' + txtDiaIni.Text + '/' + txtAnioIni.Text + '''');
+                SQL.Add('AND c.fecha <= ''' + txtMesFin.Text + '/' + txtDiaFin.Text + '/' + txtAnioFin.Text + '''');
+            end;
+            if(chkVencim.Checked) then begin
+                SQL.Add('AND x.proximopago >= ''' + txtMesVenIni.Text + '/' + txtDiaVenIni.Text + '/' + txtAnioVenIni.Text + '''');
+                SQL.Add('AND x.proximopago <= ''' + txtMesVenFin.Text + '/' + txtDiaVenFin.Text + '/' + txtAnioVenFin.Text + '''');
+            end;
+            if(chkDocumento.Checked) then begin
+                SQL.Add('AND c.documento like ''%' + txtDoctoBusq.Text + '%''');
+            end;
+
+            case rdgOrden.ItemIndex of
+              0 : SQL.Add('ORDER BY p.nombre, x.proximopago');
+              1 : SQL.Add('ORDER BY x.proximopago, p.nombre');
+              2 : SQL.Add('ORDER BY x.estatus, c.fecha, c.hora');
+             end;
+             Open;
+        end;
+
+        with dmDatos.cdsCliente1 do begin
+            Active := true;
+
+            txtRegistros.Value := RecordCount;
+
+            FieldByName('clave').Visible := false;
+            FieldByName('prov_clave').Visible := false;
+            FieldByName('documento').Visible := false;
+            FieldByName('proveedor').DisplayLabel := 'Proveedor';
+            FieldByName('proveedor').DisplayWidth := 43;
+            FieldByName('importe').DisplayLabel := 'Importe';
+            FieldByName('importe').DisplayWidth := 10;
+            (FieldByName('importe') as TNumericField).DisplayFormat := '#,##0.00';
+            FieldByName('pagado').DisplayLabel := 'Pagado';
+            FieldByName('pagado').DisplayWidth := 10;
+            (FieldByName('pagado') as TNumericField).DisplayFormat := '#,##0.00';
+            FieldByName('proximopago').DisplayLabel := 'Prox. pago';
+            FieldByName('proximopago').DisplayWidth := 10;
+            FieldByName('estatus').DisplayLabel := 'Estatus';
+
+            try
+                Bookmark := sBM;
+            except
+                txtRegistros.Value := txtRegistros.Value;
+            end;
+
+        end;
+
+        if (pgeGeneral.ActivePage = tabBusqueda) then
+            grdListado.SetFocus;
+    end;
+end;
+
+function TfrmXPagar.VerificaDatos : boolean;
+begin
+    Result := true;
+    if(chkFecha.Checked) then begin
+        if(not VerificaFechas(txtDiaIni.Text + '/' + txtMesIni.Text + '/' + txtAnioIni.Text)) then begin
+            Application.MessageBox('Introduce una fecha válida','Error',[smbOK],smsCritical);
+            txtDiaIni.SetFocus;
+            Result := false;
+        end
+        else if(not VerificaFechas(txtDiaFin.Text + '/' + txtMesFin.Text + '/' + txtAnioFin.Text)) then begin
+            Application.MessageBox('Introduce una fecha válida','Error',[smbOK],smsCritical);
+            txtDiaFin.SetFocus;
+            Result := false;
+        end;
+    end;
+    if (chkVencim.Checked) and (Result) then begin
+        if(not VerificaFechas(txtDiaVenIni.Text + '/' + txtMesVenIni.Text + '/' + txtAnioVenIni.Text)) then begin
+            Application.MessageBox('Introduce una fecha válida','Error',[smbOK],smsCritical);
+            txtDiaVenIni.SetFocus;
+            Result := false;
+        end
+        else if(not VerificaFechas(txtDiaVenFin.Text + '/' + txtMesVenFin.Text + '/' + txtAnioVenFin.Text)) then begin
+            Application.MessageBox('Introduce una fecha válida','Error',[smbOK],smsCritical);
+            txtDiaVenFin.SetFocus;
+            Result := false;
+        end;
+    end;
+end;
+
+function TfrmXPagar.VerificaFechas(sFecha : string) : boolean;
+var
+   dteFecha : TDateTime;
+begin
+   Result:=true;
+   if(not TryStrToDate(sFecha,dteFecha)) then begin
+      Result:=false;
+   end;
+end;
+
+procedure TfrmXPagar.chkProveedorClick(Sender: TObject);
+begin
+   if(chkProveedor.Checked) then begin
+        txtProveedBusq.Visible := true;
+        if pgeGeneral.ActivePage = tabBusqueda then
+            txtProveedBusq.SetFocus;
+    end
+    else
+        txtProveedBusq.Visible := false;
+end;
+
+procedure TfrmXPagar.chkFechaClick(Sender: TObject);
+begin
+    if(chkFecha.Checked) then begin
+        txtDiaIni.Visible := true;
+        txtMesIni.Visible := true;
+        txtAnioIni.Visible := true;
+        lblDiagDia1.Visible := true;
+        lblDiagMes1.Visible := true;
+        txtDiaFin.Visible := true;
+        txtMesFin.Visible := true;
+        txtAnioFin.Visible := true;
+        lblDiagDia2.Visible := true;
+        lblDiagMes2.Visible := true;
+        lblAl.Visible := true;
+        if pgeGeneral.ActivePage = tabBusqueda then
+            txtDiaIni.SetFocus;
+    end
+    else begin
+        txtDiaIni.Visible := false;
+        txtMesIni.Visible := false;
+        txtAnioIni.Visible := false;
+        lblDiagDia1.Visible := false;
+        lblDiagMes1.Visible := false;
+        txtDiaFin.Visible := false;
+        txtMesFin.Visible := false;
+        txtAnioFin.Visible := false;
+        lblDiagDia2.Visible := false;
+        lblDiagMes2.Visible := false;
+        lblAl.Visible := false;
+    end;
+end;
+
+procedure TfrmXPagar.chkDocumentoClick(Sender: TObject);
+begin
+    if(chkDocumento.Checked) then begin
+        txtDoctoBusq.Visible := True;
+        if pgeGeneral.ActivePage = tabBusqueda then
+            txtDoctoBusq.SetFocus;
+    end
+    else
+        txtDoctoBusq.Visible := False;
+end;
+
+procedure TfrmXPagar.chkEstatusClick(Sender: TObject);
+begin
+    if(chkEstatus.Checked) then begin
+        cmbEstatus.Visible := true;
+        if(cmbEstatus.ItemIndex = -1) then
+            cmbEstatus.ItemIndex := 0;
+        if pgeGeneral.ActivePage = tabBusqueda then
+            cmbEstatus.SetFocus;
+    end
+    else
+        cmbEstatus.Visible := false;
+end;
+
+procedure TfrmXPagar.btnSeleccionarClick(Sender: TObject);
+begin
+    if (txtRegistros.Value > 0) then
+        RecuperaDatos;
+end;
+
+procedure TfrmXPagar.btnSalirClick(Sender: TObject);
+begin
+    Close;
+end;
+
+procedure TfrmXPagar.Salta(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+    {Inicio (36), Fin (35), Izquierda (37), derecha (39), arriba (38), abajo (40)}
+    if(Key >= 30) and (Key <= 122) and (Key <> 35) and (Key <> 36) and not ((Key >= 37) and (Key <= 40)) then
+        if( Length((Sender as TEdit).Text) = (Sender as TEdit).MaxLength) then
+            SelectNext(Sender as TWidgetControl, true, true);
+end;
+
+procedure TfrmXPagar.RecuperaDatos;
+var
+    rTotal : Real;
+begin
+    sCredito := dmDatos.cdsCliente1.FieldByName('clave').AsString;
+    sEstatus := dmDatos.cdsCliente1.FieldByName('estatus').AsString;
+    sBM := dmDatos.cdsCliente1.Bookmark;
+    with dmDatos.qryConsulta do begin
+        Close;
+        SQL.Clear;
+        SQL.Add('SELECT p.clave AS prov_clave, p.nombre, x.*, c.documento, c.fecha');
+        SQL.Add('FROM xpagar x LEFT JOIN proveedores p ON x.proveedor = p.clave');
+        SQL.Add('LEFT JOIN compras c ON x.compra = c.clave WHERE x.clave = ' + sCredito);
+
+        Open;
+        if(not Eof) then begin
+            pgeGeneral.ActivePageIndex := 0;
+            sProveedor := FieldByName('prov_clave').AsString;
+            txtProveedor.Text:= Trim(FieldByName('nombre').AsString);
+            txtDocumento.Text := FieldByName('documento').AsString;
+            txtFecha.Text := FormatDateTime('dd/mm/yyyy',FieldByName('fecha').AsDateTime);
+            txtPagos.Text := FieldByName('numpago').AsString;
+            txtPlazo.Value := FieldByName('plazo').AsFloat;
+            txtInteres.Value := FieldByName('interes').AsFloat;
+            txtIntMorat.Value := FieldByName('intmoratorio').AsFloat;
+            txtPagado.Value := FieldByName('pagado').AsFloat;
+            txtMonto.Value := FieldByName('importe').AsFloat;
+            txtProximoPago.Text := FormatDateTime('dd/mm/yyyy',FieldByName('proximopago').AsDateTime);
+            rTipoPlazo := FieldByName('tipoplazo').AsFloat;
+            sTipoInteres := FieldByName('tipointeres').AsString;
+
+            if(FieldByName('estatus').AsString <> 'P') then begin
+                if(sTipoInteres = 'S') then begin
+                    // interes simple
+                    rInteresDiario := txtInteres.Value * 12 / rTipoPlazo / 100;
+                    txtCantInteres.Value := txtMonto.Value * rInteresDiario * (Date - FieldByName('fecha').AsFloat);
+                    if (txtCantInteres.Value < 0) then
+                        txtCantInteres.Value := 0;
+
+                    rInteresMorat :=  txtIntMorat.Value * 12 / rTipoPlazo / 100;
+                    txtCantIntMorat.Value :=  txtMonto.Value * rInteresMorat * (Date - FieldByName('proximopago').AsFloat);
+                    if (txtCantIntMorat.Value < 0) then
+                        txtCantIntMorat.Value := 0;
+                end else
+                begin
+                    // interes compuesto
+
+                    // Interes  ------------------------------------------
+                    // Plazos (en el menor unidad de tiempo: días, y después convierto en períodos meses)
+                    rPlazos := (Date - FieldByName('fecha').AsFloat) / rTipoPlazo * 12;
+                    if(rPlazos < 0) then
+                        rPlazos := 0;
+
+                    // Tasa Anual interes
+                    rInteresAnual :=  txtInteres.Value * 12 / 100 / 12;
+
+                    rTotal := txtMonto.Value * Power(1 + rInteresAnual, rPlazos);
+                    txtCantInteres.Value := rTotal - txtMonto.Value;
+                    if (txtCantInteres.Value < 0) then
+                        txtCantInteres.Value := 0;
+
+                    // Interes Moratorio ---------------------------------
+                    // Plazos (en el menor unidad de tiempo: días, y después convierto en períodos meses)
+                    rPlazos := (Date - FieldByName('proximopago').AsFloat) / rTipoPlazo * 12;
+                    if(rPlazos < 0) then
+                        rPlazos := 0;
+
+                    // Tasa Anual interes Moratorio
+                    rInteresAnual :=  txtIntMorat.Value * 12 / 100 / 12;
+
+                    rTotal := (txtMonto.Value + txtCantInteres.Value) * Power(1 + rInteresAnual, rPlazos);
+                    txtCantIntMorat.Value := rTotal - (txtMonto.Value + txtCantInteres.Value);
+                    if (txtCantIntMorat.Value < 0) then
+                        txtCantIntMorat.Value := 0;
+
+                end;
+
+                btnAbono.Enabled := true;
+            end
+            else begin
+                txtCantInteres.Value := FieldByName('cantinteres').AsFloat;
+                txtCantIntMorat.Value :=  FieldByName('cantintmorat').AsFloat;
+                btnAbono.Enabled := false;
+            end;
+            txtCantInteres.Value := Trunc(txtCantInteres.Value * 100) / 100;
+            txtCantIntMorat.Value := Trunc(txtCantIntMorat.Value * 100) / 100;
+
+            txtAPagar.Value := txtMonto.Value + txtCantInteres.Value + txtCantIntMorat.Value - txtPagado.Value;
+
+            if(FieldByName('estatus').AsString = 'A') then begin
+                pnlEstatus.Caption := 'ACTIVA';
+                pnlEstatus.Color := $00BFCAB7;
+                btnAbono.Enabled := True;
+                btnCancelar.Enabled := True;                
+            end
+            else if(FieldByName('estatus').AsString = 'C') then begin
+                pnlEstatus.Caption := 'CANCELADA';
+                pnlEstatus.Color := $0099A7F7;
+                btnAbono.Enabled := False;
+                btnCancelar.Enabled := False;
+            end
+            else if(FieldByName('estatus').AsString = 'P') then begin
+                pnlEstatus.Caption := 'PAGADA';
+                pnlEstatus.Color := $00DCBFA5;
+                btnAbono.Enabled := False;
+                btnCancelar.Enabled := True;
+            end;
+        end;
+        Close;
+    end;
+    RecuperaPagos;
+end;
+
+procedure TfrmXPagar.RecuperaPagos;
+var
+    i : integer;
+begin
+    with dmDatos.qryConsulta do begin
+        Close;
+        SQL.Clear;
+        SQL.Add('SELECT x.*, t.nombre FROM xpagarpagos x LEFT JOIN tipopago t ON x.tipopago = t.clave');
+        SQL.Add('WHERE xpagar = ' + sCredito + ' ORDER BY numero');
+        Open;
+
+        i := 1;
+        grdCuentas.RowCount := i + 1;
+        grdCuentas.Cells[0,1] := '';
+        grdCuentas.Cells[1,1] := '';
+        grdCuentas.Cells[2,1] := '';
+        grdCuentas.Cells[3,1] := '';
+        grdCuentas.Cells[4,1] := '';
+
+        while(not Eof) do begin
+            grdCuentas.RowCount := i + 1;
+            grdCuentas.Cells[0,i] := FieldByName('numero').AsString;
+            grdCuentas.Cells[1,i] := FieldByName('fecha').AsString;
+            grdCuentas.Cells[2,i] := FieldByName('importe').AsString;
+            grdCuentas.Cells[3,i] := FieldByName('nombre').AsString;
+            grdCuentas.Cells[4,i] := FieldByName('comentario').AsString;
+            Inc(i);
+            Next;
+        end;
+        Close;
+        grdCuentasClick(Self);
+    end;
+end;
+
+procedure TfrmXPagar.FormShow(Sender: TObject);
+begin
+    IniCuentas;
+    RecuperaConfig;
+    grdCuentasClick(Sender);
+end;
+
+procedure TfrmXPagar.IniCuentas;
+begin
+    grdCuentas.RowCount := 2;
+    grdCuentas.Cells[0,0] := 'Número';
+    grdCuentas.Cells[1,0] := 'Fecha';
+    grdCuentas.Cells[2,0] := 'Importe';
+    grdCuentas.Cells[3,0] := 'Tipo de pago';
+    grdCuentas.Cells[4,0] := 'Comentario';
+
+    grdCuentas.ColWidths[0] := 50;
+    grdCuentas.ColWidths[1] := 70;
+    grdCuentas.ColWidths[2] := 70;
+    grdCuentas.ColWidths[3] := 110;
+    grdCuentas.ColWidths[4] := 320;
+end;
+
+procedure TfrmXPagar.grdCuentasDrawCell(Sender: TObject; ACol,
+  ARow: Integer; Rect: TRect; State: TGridDrawState);
+var
+    sCad : String;
+    i : real;
+begin
+    sCad := (Sender as TStringGrid).Cells[ACol,ARow];
+    if(Length(sCad) > 0) then begin
+        if(ARow = 0) or (ACol < 2) then begin
+            i := Rect.Left + (Rect.Right - Rect.Left) / 2 - (Sender as TStringGrid).Canvas.TextWidth(sCad) / 2;
+            (Sender as TStringGrid).Canvas.FillRect(Rect);
+            (Sender as TStringGrid).Canvas.TextOut(Round(i),Rect.Top + 2,sCad);
+        end;
+        if(ACol = 2) and (ARow > 0) then begin
+            sCad := FormatFloat('#,##0.00',StrToFloat(sCad));
+
+            i := Rect.Right - (Sender as TStringGrid).Canvas.TextWidth(sCad + ' ');
+            (Sender as TStringGrid).Canvas.FillRect(Rect);
+            (Sender as TStringGrid).Canvas.TextOut(Round(i),Rect.Top + 2,sCad);
+        end;
+    end;
+end;
+
+procedure TfrmXPagar.btnAbonoClick(Sender: TObject);
+var
+    iNumero : integer;
+    rTotalDeuda, rTotalPagos : double;
+begin
+    bAbono := false;
+    rImporte := 0;
+    rInteres := 0;
+    rIntmorat := 0;
+    if (sEstatus = 'A') then
+        with TFrmxAbono.Create(Self) do
+        try
+            rImporteIni:= txtMonto.Value;
+            rInteres   := Self.txtInteres.Value;
+            rIntMorat  := Self.txtIntMorat.Value;
+            rPagado    := Self.txtPagado.Value;
+            rTipoPlazo := Self.rTipoPlazo;
+            sProxPago  := Self.txtProximoPago.Text;
+            sFechaCredito := Self.txtFecha.Text;
+            sTipoInteres := Self.sTipoInteres;
+
+            ShowModal;
+            if (bAbono) then  begin
+                Self.sFechaPago := sFechaPago;
+                Self.rImporte := rImporte;
+                Self.rInteres := rInteres;
+                Self.rIntMorat := rIntMorat;
+                Self.sComentario := sComentario;
+                Self.sTipoPago := sTipoPago;
+                Self.bAbono := true;
+            end;
+        finally
+            Free;
+        end
+    else if (sEstatus = 'P') then
+        Application.MessageBox('La cuenta está saldada','Abono',[smbOK],smsWarning)
+    else if (sEstatus = 'C') then
+        Application.MessageBox('La cuenta está cancelada','Abono',[smbOK],smsWarning);
+
+    if(bAbono) then begin
+        with dmDatos.qryConsulta do begin
+            Close;
+            SQL.Clear;
+            SQL.Add('SELECT MAX(numero) AS numero FROM xpagarpagos WHERE xpagar = ' + sCredito);
+            Open;
+            iNumero := FieldByName('numero').AsInteger + 1;
+
+            Close;
+            SQL.Clear;
+            SQL.Add('INSERT INTO xpagarpagos (xpagar, numero, fecha, importe, interes, interesmorat, tipopago, comentario) VALUES(');
+            SQL.Add(sCredito + ',' + IntToStr(iNumero) + ',''' + sFechaPago + ''',' + FloatToStr(rImporte) + ',' + FloatToStr(rInteres) + ',' + FloatToStr(rIntMorat) + ',' + sTipoPago + ',''' + sComentario + ''')');
+            ExecSQL;
+
+            Close;
+            SQL.Clear;
+            SQL.Add('UPDATE xpagar SET pagado = pagado + ' + FloatToStr(rImporte) + ',');
+            SQL.Add('cantinteres = cantinteres + ' + FloatToStr(rInteres) + ',');
+            SQL.Add('cantintmorat = cantintmorat + ' + FloatToStr(rIntMorat));
+            SQL.Add('WHERE clave = ' + sCredito);
+            ExecSQL;
+
+
+            rTotalDeuda := txtMonto.Value + rInteres + rIntMorat;
+            rTotalPagos := txtPagado.Value + rImporte;
+            if (CompareText(FloatToStr(rTotalDeuda),FloatToStr(rTotalPagos)) = 0) then begin
+                Close;
+                SQL.Clear;
+                SQL.Add('UPDATE xpagar SET estatus = ''P'' WHERE clave = ' + sCredito);
+                ExecSQL;
+                Close;
+            end;
+          end;
+          btnBuscar.Click;
+          RecuperaDatos;
+    end;
+    if(btnAbono.Enabled) then
+        btnAbono.SetFocus;
+end;
+
+procedure TfrmXPagar.chkVencimClick(Sender: TObject);
+begin
+    if(chkVencim.Checked) then begin
+        txtDiaVenIni.Visible := true;
+        txtMesVenIni.Visible := true;
+        txtAnioVenIni.Visible := true;
+        lblDiagVenDia1.Visible := true;
+        lblDiagVenMes1.Visible := true;
+        txtDiaVenFin.Visible := true;
+        txtMesVenFin.Visible := true;
+        txtAnioVenFin.Visible := true;
+        lblDiagVenDia2.Visible := true;
+        lblDiagVenMes2.Visible := true;
+        lblAlVen.Visible := true;
+        if pgeGeneral.ActivePage = tabBusqueda then
+            txtDiaVenIni.SetFocus;
+    end
+    else begin
+        txtDiaVenIni.Visible := false;
+        txtMesVenIni.Visible := false;
+        txtAnioVenIni.Visible := false;
+        lblDiagVenDia1.Visible := false;
+        lblDiagVenMes1.Visible := false;
+        txtDiaVenFin.Visible := false;
+        txtMesVenFin.Visible := false;
+        txtAnioVenFin.Visible := false;
+        lblDiagVenDia2.Visible := false;
+        lblDiagVenMes2.Visible := false;
+        lblAlVen.Visible := false;
+    end;
+
+end;
+
+procedure TfrmXPagar.Cuentasporcobrar1Click(Sender: TObject);
+begin
+    pgeGeneral.ActivePage := tabDatos;
+end;
+
+procedure TfrmXPagar.Bsqueda2Click(Sender: TObject);
+begin
+    pgeGeneral.ActivePage := tabBusqueda;
+end;
+
+procedure TfrmXPagar.Avanzaregistro1Click(Sender: TObject);
+begin
+    if(dmDatos.cdsCliente1.Active) then begin
+        dmDatos.cdsCliente1.Next;
+        if(pgeGeneral.ActivePage <> tabBusqueda) then
+            RecuperaDatos;
+    end;
+end;
+
+procedure TfrmXPagar.Retrocederegistro1Click(Sender: TObject);
+begin
+    if(dmDatos.cdsCliente1.Active) then begin
+        dmDatos.cdsCliente1.Prior;
+        if(pgeGeneral.ActivePage <> tabBusqueda) then
+            RecuperaDatos;
+    end;
+end;
+
+procedure TfrmXPagar.grdListadoDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn;
+  State: TGridDrawState);
+begin
+    if(dmDatos.cdsCliente1.FieldByName('estatus').AsString = 'A') then
+        (Sender as TDBGrid).Canvas.Brush.Color := $00BFCAB7
+    else
+    if(dmDatos.cdsCliente1.FieldByName('estatus').AsString = 'C') then
+        (Sender as TDBGrid).Canvas.Brush.Color := $0099A7F7
+    else
+        (Sender as TDBGrid).Canvas.Brush.Color := $00DCBFA5;
+
+    (Sender as TDBGrid).Canvas.FillRect(Rect);
+    (Sender as TDBGrid).DefaultDrawColumnCell(Rect,DataCol,Column,State);
+end;
+
+procedure TfrmXPagar.RecuperaConfig;
+var
+    iniArchivo : TIniFile;
+    sIzq, sArriba, sValor : String;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+
+    with iniArchivo do begin
+        //Recupera la posición Y de la ventana
+        sArriba := ReadString('XPagar', 'Posy', '');
+
+        //Recupera la posición X de la ventana
+        sIzq := ReadString('XPagar', 'Posx', '');
+
+        if (Length(sIzq) > 0) and (Length(sArriba) > 0) then begin
+            Left := StrToInt(sIzq);
+            Top := StrToInt(sArriba);
+        end;
+
+        //Recupera el valor de los botones de radio de orden
+        sValor := ReadString('XPagar', 'Orden', '');
+
+        if (Length(sValor) > 0) then
+            rdgOrden.ItemIndex := StrToInt(sValor);
+
+        //Recupera la ultima ficha que se seleccionó
+        sValor := ReadString('XPagar', 'Ficha', '');
+        if (Length(sValor) > 0) then
+            pgeGeneral.ActivePageIndex := StrToInt(sValor);
+
+        Free;
+    end;
+end;
+
+procedure TfrmXPagar.FormClose(Sender: TObject; var Action: TCloseAction);
+var
+    iniArchivo : TIniFile;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+    with iniArchivo do begin
+        // Registra la posición y de la ventana
+        WriteString('XPagar', 'Posy', IntToStr(Top));
+
+        // Registra la posición X de la ventana
+        WriteString('XPagar', 'Posx', IntToStr(Left));
+
+        //Registra el valor de los botones de radio de orden
+        WriteString('XPagar', 'Orden', IntToStr(rdgOrden.ItemIndex));
+
+        //Registra la ultima ficha que se seleccionó
+        WriteString('XPagar', 'Ficha', IntToStr(pgeGeneral.ActivePageIndex));
+        Free;
+    end;
+    dmDatos.cdsCliente1.Active := false;
+    dmDatos.qryListados1.Close;
+end;
+
+procedure TfrmXPagar.btnCancelarClick(Sender: TObject);
+begin
+    if (sEstatus <> 'C') then begin
+        if (Application.MessageBox('¿Desea cancelar el abono seleccionado?','Cancelar',[smbOK,smbCancel], smsWarning) = smbOK) then
+            with dmDatos.qryModifica do begin
+                Close;
+                SQL.Clear;
+                SQL.Add('SELECT importe, interes, interesmorat FROM xpagarpagos');
+                SQL.Add('WHERE xpagar = ' + sCredito + ' AND numero = ' + grdCuentas.Cells[0,grdCuentas.Row]);
+                Open;
+
+                Close;
+                SQL.Clear;
+                SQL.Add('UPDATE xpagar SET estatus = ''A'', pagado = pagado - ' + grdCuentas.Cells[2,grdCuentas.Row]);
+                SQL.Add('WHERE clave = ' + sCredito);
+                ExecSQL;
+
+                Close;
+                SQL.Clear;
+                SQL.Add('DELETE FROM xpagarpagos WHERE XPagar = ' + sCredito);
+                SQL.Add('AND numero = ' + grdCuentas.Cells[0,grdCuentas.Row]);
+                ExecSQL;
+                Close;
+
+                btnBuscar.Click;
+                RecuperaDatos;
+            end;
+    end;
+ end;
+
+procedure TfrmXPagar.grdCuentasClick(Sender: TObject);
+begin
+    if (grdCuentas.Cells[0,grdCuentas.Row] = grdCuentas.Cells[0,grdCuentas.RowCount - 1]) and(grdCuentas.Cells[0,grdCuentas.Row] <> '') then
+        btnCancelar.Enabled := True
+    else
+        btnCancelar.Enabled := False;
+end;
+
+procedure TfrmXPagar.PagosGeneralesClick(Sender: TObject);
+begin
+    with TFrmReportesXPagar.Create(Self) do
+    try
+        ShowModal;
+    finally
+        Free;
+    end;
+    SetFocus;
+end;
+
+procedure TfrmXPagar.txtAnioIniExit(Sender: TObject);
+begin
+    txtAnioIni.Text := Trim(txtAnioIni.Text);
+    if(Length(txtAnioIni.Text) < 4) and (Length(txtAnioIni.Text) > 0) then
+        txtAnioIni.Text := IntToStr(StrToInt(txtAnioIni.Text) + 2000);
+end;
+
+procedure TfrmXPagar.txtAnioFinExit(Sender: TObject);
+begin
+    txtAnioFin.Text := Trim(txtAnioFin.Text);
+    if(Length(txtAnioFin.Text) < 4) and (Length(txtAnioFin.Text) > 0) then
+        txtAnioFin.Text := IntToStr(StrToInt(txtAnioFin.Text) + 2000);
+end;
+
+procedure TfrmXPagar.txtAnioVenIniExit(Sender: TObject);
+begin
+    txtAnioVenIni.Text := Trim(txtAnioVenIni.Text);
+    if(Length(txtAnioVenIni.Text) < 4) and (Length(txtAnioVenIni.Text) > 0) then
+        txtAnioVenIni.Text := IntToStr(StrToInt(txtAnioVenIni.Text) + 2000);
+end;
+
+procedure TfrmXPagar.txtAnioVenFinExit(Sender: TObject);
+begin
+    txtAnioVenFin.Text := Trim(txtAnioVenFin.Text);
+    if(Length(txtAnioVenFin.Text) < 4) and (Length(txtAnioVenFin.Text) > 0) then
+        txtAnioVenFin.Text := IntToStr(StrToInt(txtAnioVenFin.Text) + 2000);
+end;
+
+procedure TfrmXPagar.Rellena(Sender: TObject);
+var
+    i : integer;
+begin
+    for i := Length((Sender as TEdit).Text) to (Sender as TEdit).MaxLength - 1 do
+        (Sender as TEdit).Text := '0' + (Sender as TEdit).Text;
+end;
+
+procedure TfrmXPagar.txtDiaIniExit(Sender: TObject);
+begin
+    Rellena(Sender);
+end;
+
+procedure TfrmXPagar.mnuConsultaDocumentoClick(Sender: TObject);
+begin
+// 
+end;
+
+procedure TfrmXPagar.BitBtn1Click(Sender: TObject);
+begin
+    Close;
+end;
+
+end.

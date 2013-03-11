@@ -1,0 +1,60 @@
+-------------------------------------
+
+Sistema de Ventas 2004
+
+-------------------------------------
+
+Información para la compilación del sistema
+
+- Información
+- Base de datos
+- Componentes
+- Conexión
+
+
+-------------
+ Información
+-------------
+
+El sistema está desarrollado en Delphi 7 con clx
+
+
+---------------
+ Base de datos
+---------------
+
+La base de datos esta en dialecto 3, funciona con Interbase 6 o cualquier versión de Firebird y
+se encuentra en el directorio "Base"
+
+
+-------------
+ Componentes
+-------------
+
+- Instalar QcurrEdit.pas que se encuentra en el directorio "Controles"
+- Bajar los componentes de Report Manager versión 2.2 de http://sourceforge.net/projects/reportman/
+  e instalarlos
+
+
+----------
+ Conexión 
+----------
+
+Al ejecutarse el programa por primera vez se inahilitan todos los menús excepto el de
+Sistema con la opción "Base de datos", donde se deberán introducir los datos de conexión: 
+servidor, ubicación de la base de datos, usuario y contraseña. Para lo cual debe estar 
+ejecutándose Interbase o Firebird para aceptar la conexión.
+
+Ejemplo:
+Si la base de datos se encuentra en la misma computadora donde se está ejecutando el programa
+los datos que corresponden son los siguientes:
+
+Servidor: localhost
+Usuario:  sysdba
+Contraseña: masterkey
+Base de datos: c:\ventas1\base\ventas.gdb (un ejemplo de ubicación)
+
+Una vez conectado, se introduce el usuario para el sistema que por default se crea "admin" con
+la contraseña "admin".
+
+Listo, se entra al sistema

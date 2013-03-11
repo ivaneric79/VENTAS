@@ -1,0 +1,11 @@
+object dcfd: Tdcfd
+  Left = 227
+  Top = 107
+  Width = 317
+  Height = 217
+  Caption = 'dcfd'
+  Color = clBackground
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+end

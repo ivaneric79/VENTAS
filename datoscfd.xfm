@@ -1,0 +1,95 @@
+object dcfd: Tdcfd
+  Left = 363
+  Top = 374
+  Width = 259
+  Height = 136
+  VertScrollBar.Range = 129
+  HorzScrollBar.Range = 251
+  Caption = 'dcfd'
+  Color = clBackground
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object rfc: TEdit
+    Left = 88
+    Top = 24
+    Width = 161
+    Height = 21
+    TabOrder = 0
+  end
+  object usuario: TEdit
+    Left = 88
+    Top = 48
+    Width = 161
+    Height = 21
+    TabOrder = 1
+  end
+  object password: TEdit
+    Left = 88
+    Top = 72
+    Width = 161
+    Height = 21
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 52
+    Top = 27
+    Width = 30
+    Height = 16
+    Caption = 'RFC:'
+    Font.Color = clBlack
+    Font.Height = 15
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 20
+    Top = 50
+    Width = 64
+    Height = 16
+    Caption = 'USUARIO:'
+    Font.Color = clBlack
+    Font.Height = 15
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 4
+    Top = 73
+    Width = 82
+    Height = 16
+    Caption = 'PASSWORD:'
+    Font.Color = clBlack
+    Font.Height = 15
+    Font.Name = 'MS Shell Dlg'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 40
+    ParentFont = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 176
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = 'Cancelar'
+    ModalResult = 2
+    TabOrder = 6
+  end
+  object BitBtn2: TBitBtn
+    Left = 96
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = 'Aceptar'
+    TabOrder = 7
+    OnClick = BitBtn2Click
+  end
+end

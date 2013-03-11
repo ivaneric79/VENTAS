@@ -1,0 +1,1013 @@
+// --------------------------------------------------------------------------
+// Archivo del Proyecto Ventas   
+// Página del proyecto: http://sourceforge.net/projects/ventas
+// --------------------------------------------------------------------------
+// Este archivo puede ser distribuido y/o modificado bajo lo terminos de la
+// Licencia Pública General versión 2 como es publicada por la Free Software
+// Fundation, Inc.
+// --------------------------------------------------------------------------
+
+unit Permisos;
+
+interface
+
+uses
+  SysUtils, Types, Classes, QGraphics, QControls, QForms, QDialogs,
+  QStdCtrls, QMenus, QTypes, QComCtrls, QExtCtrls, QButtons, IniFiles,
+  QcurrEdit;
+
+
+type
+  TfrmPermisos = class(TForm)
+    MainMenu1: TMainMenu;
+    Archivo1: TMenuItem;
+    mnuInsertar: TMenuItem;
+    mnuEliminar: TMenuItem;
+    mnuModificar: TMenuItem;
+    N1: TMenuItem;
+    mnuGuardar: TMenuItem;
+    mnuCancelar: TMenuItem;
+    N2: TMenuItem;
+    Salir1: TMenuItem;
+    lstUsuarios: TListBox;
+    pgeGeneral: TPageControl;
+    tabUsuario: TTabSheet;
+    tabPermisos: TTabSheet;
+    tabPrivilegios: TTabSheet;
+    grpEntrada: TGroupBox;
+    Label2: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label9: TLabel;
+    txtUsuario: TEdit;
+    txtNombre: TEdit;
+    grpPersonales: TGroupBox;
+    Label3: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label1: TLabel;
+    Label12: TLabel;
+    label15: TLabel;
+    txtCalle: TEdit;
+    txtLocalidad: TEdit;
+    txtEstado: TEdit;
+    txtColonia: TEdit;
+    txtCP: TEdit;
+    txtTelefono: TEdit;
+    grpPermisos: TGroupBox;
+    pnlGeneral: TPanel;
+    pnlModulos: TPanel;
+    pnlCatalogos: TPanel;
+    chkAreasVenta: TCheckBox;
+    pnlReportes: TPanel;
+    CheckBox1: TCheckBox;
+    CheckBox16: TCheckBox;
+    CheckBox17: TCheckBox;
+    CheckBox19: TCheckBox;
+    pnlConsultas: TPanel;
+    CheckBox25: TCheckBox;
+    CheckBox26: TCheckBox;
+    pnlSeguridad: TPanel;
+    chkCambiaPassword: TCheckBox;
+    chkCambiaUsuario: TCheckBox;
+    chkPermisos: TCheckBox;
+    pnlSistema: TPanel;
+    chkConfig: TCheckBox;
+    chkTicket: TCheckBox;
+    chkEmpresa: TCheckBox;
+    chkSincronizar: TCheckBox;
+    chkInicilizar: TCheckBox;
+    CheckBox28: TCheckBox;
+    pnlMenus: TPanel;
+    chkModulos: TCheckBox;
+    chkCatalogos: TCheckBox;
+    chkReportes: TCheckBox;
+    chkConsultas: TCheckBox;
+    chkSeguridad: TCheckBox;
+    chkSistema: TCheckBox;
+    grpPrivilegios: TGroupBox;
+    Label10: TLabel;
+    Label11: TLabel;
+    lstPrivTotal: TListBox;
+    lstPrivOtor: TListBox;
+    btnDer: TBitBtn;
+    btnIzq: TBitBtn;
+    txtContra: TEdit;
+    txtRepiteContra: TEdit;
+    btnCancelar: TBitBtn;
+    btnGuardar: TBitBtn;
+    btnInsertar: TBitBtn;
+    btnEliminar: TBitBtn;
+    btnModificar: TBitBtn;
+    btnSalir: TBitBtn;
+    chkArticulos: TCheckBox;
+    chkCajas: TCheckBox;
+    chkCateg: TCheckBox;
+    chkClientes: TCheckBox;
+    chkDeptos: TCheckBox;
+    Label6: TLabel;
+    txtDescuento: TcurrEdit;
+    CheckBox6: TCheckBox;
+    CheckBox20: TCheckBox;
+    CheckBox21: TCheckBox;
+    CheckBox24: TCheckBox;
+    chkVentasRep: TCheckBox;
+    chkTicketsDia: TCheckBox;
+    chkActualizador: TCheckBox;
+    chkCompras: TCheckBox;
+    chkXCobrar: TCheckBox;
+    chkXPagar: TCheckBox;
+    chkDescuentos: TCheckBox;
+    btndertodos: TBitBtn;
+    btnizqtodos: TBitBtn;
+    chkInventario: TCheckBox;
+    chkGastos: TCheckBox;
+    chkProveed: TCheckBox;
+    chkTiposPago: TCheckBox;
+    chkVendedor: TCheckBox;
+    chkNotaCredito: TCheckBox;
+    chkVentas: TCheckBox;
+    CheckBox27: TCheckBox;
+    chkUnidades: TCheckBox;
+    chkRetirosRep: TCheckBox;
+    CheckBox2: TCheckBox;
+    Panel1: TPanel;
+    CheckBox3: TCheckBox;
+    CheckBox4: TCheckBox;
+    CheckBox5: TCheckBox;
+    procedure FormShow(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure lstUsuariosClick(Sender: TObject);
+    procedure btnDerClick(Sender: TObject);
+    procedure btnIzqClick(Sender: TObject);
+    procedure btnInsertarClick(Sender: TObject);
+    procedure btnEliminarClick(Sender: TObject);
+    procedure btnModificarClick(Sender: TObject);
+    procedure chkModulosClick(Sender: TObject);
+    procedure chkCatalogosClick(Sender: TObject);
+    procedure chkReportesClick(Sender: TObject);
+    procedure chkConsultasClick(Sender: TObject);
+    procedure chkSeguridadClick(Sender: TObject);
+    procedure chkSistemaClick(Sender: TObject);
+    procedure btnGuardarClick(Sender: TObject);
+    procedure Salta(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure btndertodosClick(Sender: TObject);
+    procedure btnizqtodosClick(Sender: TObject);
+    procedure ContraKeyPress(Sender: TObject; var Key: Char);
+  private
+    iClave : integer;
+    sModo : String;
+    procedure RecuperaRegistros;
+    procedure Botones;
+    procedure Controles;
+    procedure LimpiaDatos;
+    procedure RecuperaDatos;
+    procedure CargaListas;
+    function VerificaDatos:Boolean;
+    procedure GuardaPermisos;
+    procedure GuardaPrivilegios;
+    procedure RecuperaConfig;
+    function VerificaIntegridad:Boolean;
+  public
+    function Encripta(sCadena:String):String;
+    function DesEncripta(sCadena:String):String;
+    function BuscaAutoriza(sTipo : String):String;
+  end;
+
+var
+  frmPermisos: TfrmPermisos;
+
+implementation
+
+uses dm, variables, funciones;
+
+{$R *.xfm}
+// -----------------------------------------------------------------------------
+// Función: Encripta
+// Objetivo: Encripta una cadena
+// Parámetro: sCadena (Cadena a encriptar)
+// Regresa: sRegreso (Cadena encriptada)
+// Comentario: Se necesita un algoritmo para encriptar, esta función es sencilla
+//             simplemente para que nos se pueda leer facilmente las cadenas
+// -----------------------------------------------------------------------------
+function TfrmPermisos.Encripta(sCadena:String):String;
+var
+    sRegreso : String;
+    i, iTam : integer;
+    szBuffer, szCadena : array[0..100] of char;
+begin
+    sRegreso := '';
+    iTam := Length(sCadena);
+    StrPCopy(szBuffer,sCadena);
+    for i:=0 to iTam - 1 do
+        szCadena[i] := Chr(Ord(szBuffer[i])+iTam);
+    szCadena[iTam] := szBuffer[iTam];
+    sRegreso := StrPas(szCadena);
+    result := sRegreso;
+end;
+
+// -----------------------------------------------------------------------------
+// Función: DesEncripta
+// Objetivo: DesEncripta una cadena
+// Parámetro: sCadena (Cadena a Desencriptar)
+// Regresa: sRegreso (Cadena Desencriptada)
+// Comentario: Se necesita un algoritmo para desencriptar, esta función es sencilla
+//             simplemente para que nos se pueda leer facilmente las cadenas
+// -----------------------------------------------------------------------------
+function TfrmPermisos.DesEncripta(sCadena:String):String;
+var
+    sRegreso : String;
+    i, iTam : integer;
+    szBuffer, szCadena : array[0..100] of char;
+begin
+    sRegreso := '';
+    iTam := Length(sCadena);
+    StrPCopy(szBuffer,sCadena);
+    for i := 0 to iTam - 1 do
+        szCadena[i] := Chr(Ord(szBuffer[i])-iTam);
+    szCadena[iTam] := szBuffer[iTam];
+    sRegreso := StrPas(szCadena);
+    result := sRegreso;
+end;
+
+procedure TfrmPermisos.FormShow(Sender: TObject);
+begin
+    RecuperaRegistros;
+    btnCancelarClick(Sender);
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimientos: RecuperaRegistros
+// Objetivo: Recupera en un listbox el campo login de la tabla usuarios
+// -----------------------------------------------------------------------------
+procedure TfrmPermisos.RecuperaRegistros;
+begin
+    with dmDatos.qryConsulta do begin
+        Close;
+        SQL.Clear;
+        SQL.Add('SELECT login FROM usuarios ORDER BY login');
+        Open;
+
+        lstUsuarios.Items.Clear;
+        while not Eof do begin
+            lstUsuarios.Items.Add(FieldByName('login').AsString);
+            Next;
+        end;
+        Close;
+    end;
+end;
+
+procedure TfrmPermisos.btnCancelarClick(Sender: TObject);
+begin
+    Caption := 'Permisos';
+    sModo := 'Consulta';
+    Botones;
+    Controles;
+    LimpiaDatos;
+
+    grpEntrada.Enabled := False;
+    grpPersonales.Enabled := False;
+    grpPermisos.Enabled := False;
+    grpPrivilegios.Enabled := False;
+    txtDescuento.Enabled := false;
+
+    lstUsuarios.Enabled := true;
+    if lstUsuarios.ItemIndex < 0  then
+        lstUsuarios.ItemIndex := 0;
+    RecuperaRegistros;
+    RecuperaDatos;
+    lstUsuarios.SetFocus;
+end;
+
+// -----------------------------------------------------------------
+// Procedimiento: Botones
+// Objetivo: Habilitar o desabilitar los botones y menús
+// -----------------------------------------------------------------
+procedure TfrmPermisos.Botones;
+begin
+    // Activa o desactiva los botones y opciones del menú dependiendo del modo
+    if (sModo = 'Insertar') or (sModo = 'Modificar') then begin
+        btnInsertar.Visible := false;
+        btnEliminar.Visible := false;
+        btnModificar.Visible := false;
+        btnGuardar.Visible := true;
+        btnCancelar.Visible := true;
+
+        mnuInsertar.Enabled := false;
+        mnuEliminar.Enabled := false;
+        mnuModificar.Enabled := false;
+        mnuGuardar.Enabled := true;
+        mnuCancelar.Enabled := true;
+    end
+    else begin
+        btnInsertar.Visible := true;
+        btnEliminar.Visible := true;
+        btnModificar.Visible := true;
+        btnGuardar.Visible := false;
+        btnCancelar.Visible := false;
+
+        mnuInsertar.Enabled := true;
+        mnuEliminar.Enabled := true;
+        mnuModificar.Enabled := true;
+        mnuGuardar.Enabled := false;
+        mnuCancelar.Enabled := false;
+    end;
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimiento: Controles
+// Objetivo: Activa o desactiva los controles de la forma
+// -----------------------------------------------------------------------------
+procedure TfrmPermisos.Controles;
+var
+    iColor : integer;
+    bModo : boolean;
+begin
+    // si el modo actual es Insertar o Modificar el color de letra es negro y
+    // los controles son editables
+    if(sModo = 'Insertar') or (sModo = 'Modificar') then begin
+        iColor := clWindowText;
+        bModo := true;
+    end
+    else begin
+        // si el modo actual es Consulta el color de la letra es azul y los
+        // controles no son editables
+        iColor := clBlue;
+        bModo := false;
+    end;
+    txtUsuario.Font.Color := iColor;
+    txtUsuario.TabStop := bModo;
+    txtUsuario.ReadOnly := not bModo;
+    txtNombre.Font.Color := iColor;
+    txtNombre.TabStop := bModo;
+    txtNombre.ReadOnly := not bModo;
+    txtContra.Font.Color := iColor;
+    txtContra.TabStop := bModo;
+    txtContra.ReadOnly := not bModo;
+    txtRepiteContra.Font.Color := iColor;
+    txtRepiteContra.TabStop := bModo;
+    txtRepiteContra.ReadOnly := not bModo;
+    txtCalle.Font.Color := iColor;
+    txtCalle.TabStop := bModo;
+    txtCalle.ReadOnly := not bModo;
+    txtColonia.Font.Color := iColor;
+    txtColonia.TabStop := bModo;
+    txtColonia.ReadOnly := not bModo;
+    txtLocalidad.Font.Color := iColor;
+    txtLocalidad.TabStop := bModo;
+    txtLocalidad.ReadOnly := not bModo;
+    txtEstado.Font.Color := iColor;
+    txtEstado.TabStop := bModo;
+    txtEstado.ReadOnly := not bModo;
+    txtCp.Font.Color := iColor;
+    txtCp.TabStop := bModo;
+    txtCp.ReadOnly := not bModo;
+    txtTelefono.Font.Color := iColor;
+    txtTelefono.TabStop := bModo;
+    txtTelefono.ReadOnly := not bModo;
+    txtDescuento.TabStop := bModo;
+    txtDescuento.ReadOnly := not bModo;
+    lstPrivTotal.Font.Color := iColor;
+    lstPrivOtor.Font.Color := iColor;
+
+    if(txtUsuario.Text = 'ADMIN') then begin
+        txtUsuario.Font.Color := clBlue;
+        txtUsuario.TabStop := false;
+        txtUsuario.ReadOnly := true;
+    end;
+end;
+
+// -----------------------------------------------------------------
+// Procedimiento: LimpiaDatos
+// Objetivo: Limpia los controles de edición
+// -----------------------------------------------------------------
+procedure TfrmPermisos.LimpiaDatos;
+begin
+    txtUsuario.Text := '';
+    txtContra.Text := '';
+    txtRepiteContra.Clear;
+    txtNombre.Text := '';
+    txtCalle.Clear;
+    txtColonia.Clear;
+    txtLocalidad.Clear;
+    txtEstado.Clear;
+    txtTelefono.Clear;
+    txtCP.Clear;
+    CargaListas;
+end;
+
+procedure TfrmPermisos.lstUsuariosClick(Sender: TObject);
+begin
+    RecuperaDatos;
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimientos: RecuperaDatos
+// Objetivo: Recupera los datos del usuario seleccionado
+// -----------------------------------------------------------------------------
+procedure TfrmPermisos.RecuperaDatos;
+var
+    i, j, iInc, iSuma, iNivel : Integer;
+    pnlPanel : TPanel;
+begin
+    if(lstUsuarios.ItemIndex <> -1) then begin
+        CargaListas;
+
+        with dmDatos.qryConsulta do begin
+            Close;
+            SQL.Clear;
+            SQL.Add('SELECT * FROM usuarios WHERE login = ''' + lstUsuarios.Items.Strings[lstUsuarios.ItemIndex] + '''');
+            Open;
+
+            iClave := FieldByName('clave').asInteger;
+            txtUsuario.Text := Trim(FieldByName('login').AsString);
+            txtContra.Text := DesEncripta(Trim(FieldByName('contra').AsString));
+            txtRepiteContra.Text := DesEncripta(Trim(FieldByName('contra').AsString));
+            txtNombre.Text := Trim(FieldByName('nombre').AsString);
+            txtCalle.Text := Trim(FieldByName('calle').AsString);
+            txtColonia.Text := Trim(FieldByName('colonia').AsString);
+            txtLocalidad.Text := Trim(FieldByName('localidad').AsString);
+            txtEstado.Text := Trim(FieldByName('estado').AsString);
+            txtTelefono.Text := Trim(FieldByName('telefono').AsString);
+            txtDescuento.Value := FieldByName('descuento').AsFloat;
+            txtCp.Text := Trim(FieldByName('cp').AsString);
+
+            Close;
+            SQL.Clear;
+            SQL.Add('SELECT * FROM permisos WHERE usuario = ' + IntToStr(iClave) + ' ORDER BY usuario, menu');
+            Open;
+
+            i := 0;
+            while (not EOF) do begin
+                iSuma := FieldByName('permiso').AsInteger;
+                iInc := 1;
+                iNivel := FieldByName('opciones').AsInteger;
+                for j := 0 to iNivel - 2 do
+                    iInc := iInc * 2;
+                if(FieldByName('permiso').AsInteger = 0) then
+                    (pnlMenus.Controls[i] as TCheckBox).Checked := false
+                else begin
+                    (pnlMenus.Controls[i] as TCheckBox).Checked := true;
+                    pnlPanel := (pnlGeneral.Controls[i] as TPanel);
+                    for j := iNivel - 1 downto 0 do begin
+                        if((iSuma div iInc) >= 1) then begin
+                            (pnlPanel.Controls[j] as TCheckBox).Checked := true;
+                            iSuma := iSuma - iInc;
+                        end
+                        else
+                            (pnlPanel.Controls[j] as TCheckBox).Checked := false;
+                        iInc := iInc div 2;
+                    end;
+                end;
+                Next;
+                Inc(i);
+            end;
+
+            Close;
+            SQL.Clear;
+            SQL.Add('SELECT * FROM privilegios WHERE usuario = ' + IntToStr(iClave) + ' ORDER BY clave');
+            Open;
+            while (not EOF) do begin
+                for i := 0 to lstPrivTotal.Items.Count - 1 do begin
+                    if(Copy(lstPrivTotal.Items.Strings[i],1,3) = FieldByName('clave').AsString) then begin
+                        lstPrivTotal.ItemIndex := i;
+                        btnDerClick(lstPrivTotal);
+                        break;
+                    end;
+                end;
+                Next;
+            end;
+            Close;
+        end;
+    end;
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimiento: CargaListas
+// Objetivo: Carga a los combobox la información de los privilegios
+// -----------------------------------------------------------------------------
+procedure TfrmPermisos.CargaListas;
+begin
+    lstPrivTotal.Clear;
+    lstPrivOtor.Clear;
+
+    lstPrivTotal.Items.Add('C01-Corte del día (Corte)');
+    lstPrivTotal.Items.Add('C02-Reimpresión de cortes (Corte)');
+    lstPrivTotal.Items.Add('M01-Ajuste (Comprobantes)');
+    lstPrivTotal.Items.Add('M02-Cotización (Comprobantes)');
+    lstPrivTotal.Items.Add('M03-Devolución (Comprobantes)');
+    lstPrivTotal.Items.Add('M04-Factura (Comprobantes)');
+    lstPrivTotal.Items.Add('M05-Nota (Comprobantes)');
+    lstPrivTotal.Items.Add('M06-Ticket (Comprobantes)');
+    lstPrivTotal.Items.Add('M07-Pedido (Comprobantes)');
+    lstPrivTotal.Items.Add('P01-Ajuste (Compras)');
+    lstPrivTotal.Items.Add('P02-Gasto (Compras)');
+    lstPrivTotal.Items.Add('P03-Mercancia (Compras)');
+    lstPrivTotal.Items.Add('R01-Ajuste (Reimprimir)');
+    lstPrivTotal.Items.Add('R02-Convertir a factura (Reimprimir)');
+    lstPrivTotal.Items.Add('R03-Cotización (Reimprimir)');
+    lstPrivTotal.Items.Add('R04-Factura (Reimprimir)');
+    lstPrivTotal.Items.Add('R05-Nota (Reimprimir)');
+    lstPrivTotal.Items.Add('R06-Pedido (Reimprimir)');
+    lstPrivTotal.Items.Add('R07-Ticket (Reimprimir)');
+    lstPrivTotal.Items.Add('R08-Devolución (Reimprimir)');
+    lstPrivTotal.Items.Add('V01-Abrir cajón (Ventas)');
+    lstPrivTotal.Items.Add('V02-Buscar clientes (Ventas)');
+    lstPrivTotal.Items.Add('V03-Cancelar artículo (Ventas)');
+    lstPrivTotal.Items.Add('V04-Cancelar venta actual (Ventas)');
+    lstPrivTotal.Items.Add('V05-Cancelar venta realizada (Ventas)');
+    lstPrivTotal.Items.Add('V06-Cambiar precios (Ventas)');
+    lstPrivTotal.Items.Add('V07-Copiar venta anterior (Ventas)');
+    lstPrivTotal.Items.Add('V08-Otorgar descuentos (Ventas)');
+    lstPrivTotal.Items.Add('V09-Reimprimir comprobantes (Ventas)');
+    lstPrivTotal.Items.Add('V10-Retirar efectivo (Ventas)');
+    lstPrivTotal.Items.Add('V11-Consecutivos (Ventas)');
+    lstPrivTotal.Items.Add('V12-Modificar Consecutivos (Ventas)');
+    lstPrivTotal.Items.Add('V13-Otorgar Descuentos (Ventas)');
+    lstPrivTotal.Items.Add('V14-Notas de crédito (Ventas)');
+    lstPrivTotal.Items.Add('V15-Asignar vendedor (Ventas)');
+    lstPrivTotal.Items.Add('V16-Modificar Existencia');
+
+end;
+
+procedure TfrmPermisos.btnDerClick(Sender: TObject);
+var
+    iRen : integer;
+begin
+    if(lstPrivTotal.Items.Count > 0) and (lstPrivTotal.ItemIndex > -1) then begin
+        iRen := lstPrivTotal.ItemIndex;
+        lstPrivOtor.Items.Add(lstPrivTotal.Items.Strings[lstPrivTotal.ItemIndex]);
+        lstPrivTotal.Items.Delete(lstPrivTotal.ItemIndex);
+        if(grpPrivilegios.Enabled) and (pgeGeneral.ActivePage = tabPrivilegios) then begin
+            lstPrivTotal.SetFocus;
+            if(iRen < lstPrivTotal.Items.Count) then
+                lstPrivTotal.ItemIndex := iRen
+            else
+                lstPrivTotal.ItemIndex := iRen - 1;
+        end;
+    end;
+end;
+
+procedure TfrmPermisos.btnIzqClick(Sender: TObject);
+var
+    iRen : integer;
+begin
+    if(lstPrivOtor.Items.Count > 0) and (lstPrivOtor.ItemIndex > -1) then begin
+        iRen := lstPrivOtor.ItemIndex;
+        lstPrivTotal.Items.Add(lstPrivOtor.Items.Strings[lstPrivOtor.ItemIndex]);
+        lstPrivOtor.Items.Delete(lstPrivOtor.ItemIndex);
+        if(grpPrivilegios.Enabled) and (pgeGeneral.ActivePage = tabPrivilegios) then begin
+            lstPrivOtor.SetFocus;
+            if(iRen < lstPrivOtor.Items.Count) then
+                lstPrivOtor.ItemIndex := iRen
+            else
+                lstPrivOtor.ItemIndex := iRen - 1;
+        end;
+    end;
+end;
+
+procedure TfrmPermisos.btnInsertarClick(Sender: TObject);
+begin
+    Caption := 'Permisos - Insertar';
+    LimpiaDatos;
+    sModo := 'Insertar';
+    Botones;
+    Controles;
+
+    // Deshabilita los grupos de datos para impedir su edición
+    grpEntrada.Enabled := True;
+    grpPersonales.Enabled := True;
+    grpPermisos.Enabled := True;
+    grpPrivilegios.Enabled := True;
+    txtDescuento.Enabled := true;
+
+    pgeGeneral.ActivePage := tabUsuario;
+    txtUsuario.SetFocus;
+end;
+
+procedure TfrmPermisos.btnEliminarClick(Sender: TObject);
+var
+    szMensaje : array[0..120] of char;
+begin
+    if lstUsuarios.ItemIndex >= 0 then begin
+        if txtUsuario.Text = 'ADMIN' then
+            Application.MessageBox('No se permite eliminar el usuario ADMIN', 'Error',[smbOK],smsCritical)
+        else begin
+            StrPCopy(szMensaje,'Se eliminará al usuario ' + txtUsuario.Text);
+            if Application.MessageBox(szMensaje, 'Eliminar',[smbOK]+[smbCancel],smsWarning) = smbOK then begin
+                with dmDatos.qryModifica do begin
+                    Close;
+                    SQL.Clear;
+                    SQl.Add('DELETE FROM usuarios WHERE clave = ' + IntToStr(iClave));
+                    ExecSQL;
+                    Close;
+                end;
+                RecuperaRegistros;
+            end;
+        end;
+    end
+    else begin
+        StrPCopy(szMensaje,'Selecciona un usuario');
+        Application.MessageBox(szMensaje, 'Eliminar',[smbOK],smsCritical);
+    end;
+end;
+
+procedure TfrmPermisos.btnModificarClick(Sender: TObject);
+begin
+    if lstUsuarios.ItemIndex >= 0 then begin
+        Caption := 'Permisos - Modificar';
+        sModo := 'Modificar';
+        grpEntrada.Enabled := True;
+        grpPersonales.Enabled := True;
+        grpPermisos.Enabled := True;
+        grpPrivilegios.Enabled := True;
+        txtDescuento.Enabled := true;
+        lstUsuarios.Enabled := false;
+
+        Botones;
+        Controles;
+        if(pgeGeneral.ActivePage = tabUsuario) then
+            txtNombre.SetFocus;
+    end
+    else
+        Application.MessageBox('Selecciona un usuario', 'Eliminar',[smbOK],smsCritical);
+end;
+
+procedure TfrmPermisos.chkModulosClick(Sender: TObject);
+var
+    i : Integer;
+begin
+    //Activa o desactiva el panel correspondiente a las opciones del menú Módulos
+    pnlModulos.Visible := not pnlModulos.Visible;
+    if(not pnlModulos.Visible) then
+        for i := 0 to pnlModulos.ControlCount - 1do
+            (pnlModulos.Controls[i] as TCheckBox).Checked := false;
+
+end;
+
+procedure TfrmPermisos.chkCatalogosClick(Sender: TObject);
+var
+    i : Integer;
+begin
+    //Activa o desactiva el panel correspondiente a las opciones del menú Catálogos
+    pnlCatalogos.Visible := not pnlCatalogos.Visible;
+    if(not pnlCatalogos.Visible) then
+        for i := 0 to pnlCatalogos.ControlCount - 1do
+            (pnlCatalogos.Controls[i] as TCheckBox).Checked := false;
+end;
+
+procedure TfrmPermisos.chkReportesClick(Sender: TObject);
+var
+    i : Integer;
+begin
+    //Activa o desactiva el panel correspondiente a las opciones del menú Reportes
+    pnlReportes.Visible := not pnlReportes.Visible;
+    if(not pnlReportes.Visible) then
+        for i := 0 to pnlReportes.ControlCount - 1do
+            (pnlReportes.Controls[i] as TCheckBox).Checked := false;
+end;
+
+procedure TfrmPermisos.chkConsultasClick(Sender: TObject);
+var
+    i : Integer;
+begin
+    //Activa o desactiva el panel correspondiente a las opciones del menú Consulta
+    pnlConsultas.Visible := not pnlConsultas.Visible;
+    if(not pnlConsultas.Visible) then
+        for i := 0 to pnlConsultas.ControlCount - 1do
+            (pnlConsultas.Controls[i] as TCheckBox).Checked := false;
+end;
+
+procedure TfrmPermisos.chkSeguridadClick(Sender: TObject);
+var
+    i : Integer;
+begin
+    //Activa o desactiva el panel correspondiente a las opciones del menú Seguridad
+    pnlSeguridad.Visible := not pnlSeguridad.Visible;
+    if(not pnlSeguridad.Visible) then
+        for i := 0 to pnlSeguridad.ControlCount - 1do
+            (pnlSeguridad.Controls[i] as TCheckBox).Checked := false;
+end;
+
+procedure TfrmPermisos.chkSistemaClick(Sender: TObject);
+var
+    i : Integer;
+begin
+    //Activa o desactiva el panel correspondiente a las opciones del menú Sistema
+    pnlSistema.Visible := not pnlSistema.Visible;
+    if(not pnlSistema.Visible) then
+        for i := 0 to pnlSistema.ControlCount - 1do
+            (pnlSistema.Controls[i] as TCheckBox).Checked := false;
+end;
+
+procedure TfrmPermisos.btnGuardarClick(Sender: TObject);
+var
+    sContra : String;
+begin
+    btnGuardar.SetFocus;
+    if VerificaDatos then begin
+        with dmDatos.qryModifica do begin
+            sContra := Encripta(txtContra.Text);
+            if sModo = 'Insertar' then begin
+                Close;
+                SQL.Clear;
+                SQL.Add('INSERT INTO usuarios (login, contra,nombre, fecha_cap, calle, colonia,');
+                SQL.Add('localidad, estado, telefono, cp, fecha_umov, descuento) VALUES(');
+                SQL.Add('''' + txtUsuario.Text + ''',');
+                SQL.Add('''' + sContra + ''',''' + txtNombre.Text + ''',''01/01/2000'',');
+                SQL.Add('''' + txtCalle.Text + ''',''' + txtColonia.Text + ''',');
+                SQL.Add('''' + txtLocalidad.Text + ''',''' + txtEstado.Text + ''',''' + txtTelefono.Text + ''',');
+                SQL.Add('''' + txtCp.Text + ''',''' + FormatDateTime('mm/dd/yyyy hh:nn:ss',Now) + ''',');
+                SQL.Add(FloatToStr(txtDescuento.Value) + ')');
+                ExecSQL;
+
+                Close;
+                SQL.Clear;
+                SQL.Add('SELECT clave FROM usuarios WHERE login = ''' + txtUsuario.Text + '''');
+                Open;
+
+                iClave := FieldByName('clave').AsInteger;
+                Close;
+
+                lstUsuarios.Items.Add(txtUsuario.Text)
+            end
+            else begin
+                Close;
+                SQL.Clear;
+                SQL.Add('UPDATE usuarios SET login = ''' + txtUsuario.Text + ''',');
+                SQL.Add('nombre = ''' + txtNombre.Text + ''',');
+                SQL.Add('contra = ''' + sContra + ''',');
+                SQL.Add('calle = ''' + txtCalle.Text + ''',');
+                SQL.Add('colonia = ''' + txtColonia.Text + ''',');
+                SQL.Add('localidad = ''' + txtLocalidad.Text + ''',');
+                SQL.Add('estado = ''' + txtEstado.Text + ''',');
+                SQL.Add('telefono = ''' + txtTelefono.Text + ''',');
+                SQL.Add('cp = ''' + txtCp.Text + ''',');
+                SQL.Add('descuento = ' + FloatToStr(txtDescuento.Value) + ',');
+                SQL.Add('fecha_umov = ''' + FormatDateTime('mm/dd/yyyy hh:nn:ss',Now) + '''');
+                SQL.Add('WHERE clave = ' + IntToStr(iClave));
+                ExecSQL;
+            end;
+            Close;
+
+            // Elimina los permisos anteriores para evitar duplicados
+            Close;
+            SQL.Clear;
+            SQL.Add('DELETE FROM permisos WHERE usuario = ' + IntToStr(iClave));
+            ExecSQL;
+
+            Close;
+        end;
+        GuardaPermisos;
+        GuardaPrivilegios;
+
+        btnCancelarClick(Sender);
+    end;
+end;
+
+// -----------------------------------------------------------------------------
+// Función: VerificaDatos
+// Objetivo: Verificar que se introduzcan datos en los campos requeridos
+//           y que no exista algún error en la captura de los datos
+// Regresa: bVerifica (falso o verdadero)
+//          Falso: si existe un error en la captura de los datos
+//          Verdadero: si todos los datos están correctos
+// -----------------------------------------------------------------------------
+function TfrmPermisos.VerificaDatos:Boolean;
+var
+    bVerifica : Boolean;
+begin
+    bVerifica := True;
+    if(Length(txtUsuario.Text) = 0) then begin
+        pgeGeneral.ActivePage := tabUsuario;
+        txtUsuario.SetFocus;
+        Application.MessageBox('Introduce el nombre de entrada del usuario','Error',[smbOK],smsCritical);
+        bVerifica := False;
+    end
+    else if(Length(txtNombre.Text) = 0) then begin
+        pgeGeneral.ActivePage := tabUsuario;
+        txtNombre.SetFocus;
+        Application.MessageBox('Introduce el nombre del usuario','Error',[smbOK],smsCritical);
+        bVerifica := False;
+    end
+    else if(Length(txtContra.Text) = 0) then begin
+        pgeGeneral.ActivePage := tabUsuario;
+        txtContra.SetFocus;
+        Application.MessageBox('Introduce la contraseña','Error',[smbOK],smsCritical);
+        bVerifica := False;
+    end
+    else if(Length(txtRepiteContra.Text) = 0) then begin
+        pgeGeneral.ActivePage := tabUsuario;
+        txtRepiteContra.SetFocus;
+        Application.MessageBox('Repite la contraseña','Error',[smbOK],smsCritical);
+        bVerifica := False;
+    end
+    else if(txtContra.Text <> txtRepiteContra.Text) then begin
+        pgeGeneral.ActivePage := tabUsuario;
+        txtContra.SetFocus;
+        Application.MessageBox('Las contraseñas no coinciden','Error',[smbOK],smsCritical);
+        bVerifica := False;
+    end
+    else if not VerificaIntegridad then
+        bVerifica := false;
+
+    VerificaDatos := bVerifica;
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimientos: GuardaPermisos
+// Objetivo: Guarda los permisos establecidos para el usuario que se está modificando
+// -----------------------------------------------------------------------------
+procedure TfrmPermisos.GuardaPermisos;
+var
+    i, j, iSuma, iInc, iOpciones : Integer;
+    pnlPanel : TPanel;
+begin
+    // Recupera los permisos de acuerdo a lo que se ha especificado 
+    for i := 0 to pnlGeneral.ControlCount - 1 do begin
+        iSuma := 0;
+        iOpciones := 0;
+        if( (pnlMenus.Controls[i] as TCheckBox).Checked) then begin
+            pnlPanel := (pnlGeneral.Controls[i] as TPanel);
+            iInc := 1;
+            iOpciones := pnlPanel.ControlCount;
+            for j := 0 to pnlPanel.ControlCount - 1 do begin
+                if( (pnlPanel.Controls[j] as TCheckBox).Checked) then
+                    iSuma := iSuma + iInc;
+                iInc := iInc * 2;
+            end;
+        end;
+
+        // Guarda los permisos
+        with dmDatos.qryModifica do begin
+            Close;
+            SQL.Clear;
+            SQL.Add('INSERT INTO permisos (usuario, menu, opciones,permiso)');
+            SQL.Add('VALUES(' + IntToStr(iClave) + ',' + IntToStr(i) + ',');
+            SQL.Add(IntToStr(iOpciones) + ','+ IntToStr(iSuma) + ')');
+            ExecSQL;
+            Close;
+        end;
+    end;
+end;
+
+// -----------------------------------------------------------------------------
+// Procedimiento: GuardaPrivilegios
+// Objetivo: Guarda los privilegios seleccionados para el usuario
+// -----------------------------------------------------------------------------
+procedure TfrmPermisos.GuardaPrivilegios;
+var
+    i : integer;
+begin
+    with dmDatos.qryModifica do begin
+        Close;
+        SQL.Clear;
+        SQL.Add('DELETE FROM privilegios WHERE usuario = ' + IntToStr(iClave));
+        ExecSQL;
+        Close;
+
+        for i := 0 to lstPrivOtor.Items.Count - 1 do begin
+            Close;
+            SQL.Clear;
+            SQL.Add('INSERT INTO privilegios (usuario, clave, adicional)');
+            SQL.Add('VALUES(' + IntToStr(iClave) + ',''' + Copy(lstPrivOtor.Items.Strings[i],1,3) + ''','''')');
+            ExecSQL;
+        end;
+        Close;
+    end;
+end;
+
+// -----------------------------------------------------------------------------
+// Función: VerificaIntegridad
+// Objetivo: Verificar que no se repita el login del usuario
+// Regresa: bRegreso (falso o verdadero)
+//          Falso: si existe un duplicado
+//          Verdadero: si no existe duplicado
+// -----------------------------------------------------------------------------
+function TfrmPermisos.VerificaIntegridad:Boolean;
+var
+    bRegreso : boolean;
+    szMensaje : array[0..120] of char;
+begin
+    bRegreso := true;
+    with dmDatos.qryConsulta do begin
+        // Busca el usuario especificado
+        Close;
+        SQL.Clear;
+        SQL.Add('SELECT * FROM usuarios WHERE login = ''' + txtUsuario.Text + '''');
+        Open;
+
+        if(not Eof) and ((sModo = 'Insertar') or ((FieldByName('clave').AsInteger <> iClave) and
+        (sModo = 'Modificar'))) then begin
+            bRegreso := false;
+            StrPCopy(szMensaje,'El usuario ' + txtUsuario.Text + ' ya existe');
+            Application.MessageBox(szMensaje, 'Error',[smbOK],smsCritical);
+            pgeGeneral.ActivePage := tabUsuario;
+            txtUsuario.SetFocus;
+            txtUsuario.SelectAll;
+        end;
+        Close;
+    end;
+    VerificaIntegridad := bRegreso;
+end;
+
+function TfrmPermisos.BuscaAutoriza(sTipo : String):String;
+var
+    i : integer;
+    sRegreso : String;
+begin
+    CargaListas;
+    for i := 0 to lstPrivTotal.Items.Count - 1 do
+        if(sTipo = Copy(lstPrivTotal.Items.Strings[i],1,3)) then begin
+            sRegreso := Copy(lstPrivTotal.Items.Strings[i],5,Length(lstPrivTotal.Items.Strings[i])-4);
+        end;
+    Result := sRegreso;
+end;
+
+procedure TfrmPermisos.Salta(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+    {Inicio (36), Fin (35), Izquierda (37), derecha (39), arriba (38), abajo (40)}
+    if(Key >= 30) and (Key <= 122) and (Key <> 35) and (Key <> 36) and not ((Key >= 37) and (Key <= 40)) then
+        if( Length((Sender as TEdit).Text) = (Sender as TEdit).MaxLength) then
+            SelectNext(Sender as TWidgetControl, true, true);
+end;
+
+procedure TfrmPermisos.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+var
+    iniArchivo : TIniFile;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+    with iniArchivo do begin
+        // Registra la posición y de la ventana
+        WriteString('Permisos', 'Posy', IntToStr(Top));
+
+        // Registra la posición X de la ventana
+        WriteString('Permisos', 'Posx', IntToStr(Left));
+        Free;
+    end;
+end;
+
+
+procedure TfrmPermisos.RecuperaConfig;
+var
+    iniArchivo : TIniFile;
+    sIzq, sArriba : String;
+begin
+    iniArchivo := TIniFile.Create(ExtractFilePath(Application.ExeName) +'config.ini');
+
+    with iniArchivo do begin
+        //Recupera la posición Y de la ventana
+        sArriba := ReadString('Permisos', 'Posy', '');
+
+        //Recupera la posición X de la ventana
+        sIzq := ReadString('Permisos', 'Posx', '');
+
+        if (Length(sIzq) > 0) and (Length(sArriba) > 0) then begin
+            Left := StrToInt(sIzq);
+            Top := StrToInt(sArriba);
+        end;
+        Free;
+    end;
+end;
+
+
+procedure TfrmPermisos.FormCreate(Sender: TObject);
+begin
+    RecuperaConfig;
+end;
+
+procedure TfrmPermisos.btndertodosClick(Sender: TObject);
+var
+    iRen : integer;
+begin
+    for  iRen := lstPrivTotal.Items.Count - 1 downto 0 do begin
+        lstPrivOtor.Items.Add(lstPrivTotal.Items.Strings[iRen]);
+        lstPrivTotal.Items.Delete(iRen);
+    end;
+end;
+
+procedure TfrmPermisos.btnizqtodosClick(Sender: TObject);
+var
+    iRen : integer;
+begin
+    for iRen := lstPrivOtor.Items.Count-1 downto 0 do begin
+        lstPrivTotal.Items.Add(lstPrivOtor.Items.Strings[iRen]);
+        lstPrivOtor.Items.Delete(iRen);
+    end;
+end;
+
+procedure TfrmPermisos.ContraKeyPress(Sender: TObject; var Key: Char);
+begin
+    if not(Key in ['A'..'Z','a'..'z','0'..'9', TABULADOR, RETROCESO, ENTER]) then
+        Key:= #0;
+
+    if Key in ['A'..'Z','a'..'z'] then
+        // retira el acentos
+        TEdit(Sender).Text := QuitarAcentos(TEdit(Sender).Text);
+end;
+
+end.
