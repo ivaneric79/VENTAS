@@ -2584,8 +2584,35 @@ importef,factor,factual :real;
 precio,cantidad:string;
 art : array of integer;
 sqll,temp : string;
+arr2 :string;
 begin
- with dmDatos.qryConsulta do begin
+   arr2:='';
+   with dmDatos.qryConsulta do begin
+
+
+
+   Close;
+        SQL.Clear;
+        SQL.Add('select clave, desc_larga, factor from articulos where factor > 0');
+        Open;
+        n:=0;
+         while(not Eof) do begin
+         with dmDatos.qryModifica do begin
+
+           arr2:= TrimRight(dmDatos.qryConsulta.FieldByName('desc_larga').AsString)+' (c/'+dmDatos.qryConsulta.FieldByName('factor').AsString+')';
+          sqll := ''''+dmDatos.qryConsulta.FieldByName('clave').AsString+'''';
+            dmDatos.qryModifica.SQL.Clear;
+        dmDatos.qryModifica.SQL.Add('update ARTICULOS set articulos.DESC_LARGA = '''+arr2+''' where articulos.clave = '+sqll);
+            dmDatos.qryModifica.ExecSQL;
+            dmDatos.qryModifica.close;
+            end;
+               arr2:='';
+          next;
+        end;
+
+ //Close;
+ end;
+{ with dmDatos.qryConsulta do begin
       Close;
         SQL.Clear;
         SQL.Add('select count(distinct(fecha)) as cnt from VENTAS');
@@ -2676,7 +2703,7 @@ Close;
 
 
 
-  ShowMessage('Factor de ventas calculado');
+  ShowMessage('Factor de ventas calculado');      }
 
 end;
 
