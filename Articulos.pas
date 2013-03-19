@@ -2583,17 +2583,17 @@ var registros,nart,n: integer;
 importef,factor,factual :real;
 precio,cantidad:string;
 art : array of integer;
-sqll : string;
+sqll,temp : string;
 begin
  with dmDatos.qryConsulta do begin
-  Close;
+      Close;
         SQL.Clear;
         SQL.Add('select count(distinct(fecha)) as cnt from VENTAS');
         Open;
             registros := FieldByName('cnt').AsInteger;
-  Close;
+Close;
  end;
-
+//qryConsulta
   with dmDatos.qryConsulta do begin
   Close;
         SQL.Clear;
@@ -2601,12 +2601,13 @@ begin
         Open;
             nart:= FieldByName('cnt').AsInteger;
               SetLength(art, nart);
-  Close;
+ Close;
+
  end;
 
 
-  with dmDatos.qryConsulta do begin
-  Close;
+  with dmDatos.qryModifica do begin
+   Close;
         SQL.Clear;
         SQL.Add('select distinct(articulo) from VENTASDET');
         Open;
@@ -2617,20 +2618,20 @@ begin
           next;
         end;
 
-   Close;
+ //Close;
  end;
 
  for n:=0 to  nart-1 do
  begin
 
-  with dmDatos.qryConsulta  do
+  with dmDatos.qryConsulta do
      begin
-         Close;
+     Close;
          SQL.Clear;
-          SQL.Add('select FACTORVENTAS as fact from articulos where clave = '+ inttostr(art[n]));
+          SQL.Add('select FACTORVENTAS from articulos where clave = '+ inttostr(art[n]));
          open;
-
-           factual :=  strtofloat(dmDatos.qryConsulta.FieldByName('fact').Asstring);
+               temp :=  dmDatos.qryConsulta.FieldByName('FACTORVENTAS').Asstring;
+         factual :=  strtofloat(temp);
            close;
          end;
 

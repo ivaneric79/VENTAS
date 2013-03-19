@@ -2918,7 +2918,7 @@ object frmArticulos: TfrmArticulos
     AsyncExecution = False
     Title = 'Untitled'
     Driver = rpDriverQt
-    Left = 532
-    Top = 226
+    Left = 484
+    Top = 194
   end
 end
